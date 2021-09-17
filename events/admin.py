@@ -4,14 +4,20 @@ from .models import *
 
 class CafeAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
+    list_display = ('id', 'title', 'category', 'recomended')
+    list_display_links = ('id', 'title')
 
 
 class HotelAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
+    list_display = ('id', 'title', 'category', 'recomended')
+    list_display_links = ('id', 'title')
 
 
 class EntertainmentAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
+    list_display = ('id', 'title', 'category', 'recomended')
+    list_display_links = ('id', 'title')
 
 
 class CafeCategoryAdmin(admin.ModelAdmin):

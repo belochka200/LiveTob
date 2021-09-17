@@ -70,7 +70,7 @@
                 {% endfor %}
                 </div>
             </div>
-            {% if cafe_list.count|add:cafe_list_rec.count >= 9 %}
+            {% if cafe_list.count|add:cafe_list_rec.count >= 9 or cafe_list.count >= 9 or cafe_list_rec.count >= 9 %}
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-12 col-md-4">
                     <p class="text-center mt-5"><div class="_btn btn__show-more-eat" btn-url="{% url 'load_more_cafe' %}">Показать ещё</div></p>

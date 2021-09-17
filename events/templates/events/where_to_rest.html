@@ -70,7 +70,7 @@
                 {% endfor %}
                 </div>
             </div>
-            {% if hotel_list.count|add:hotel_list_rec.count >= 9 %}
+            {% if hotel_list.count|add:hotel_list_rec.count >= 9 or hotel_list.count >= 9 or hotel_list_rec.count >= 9 %}
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-12 col-md-4">
                     <p class="text-center mt-5"><div class="_btn btn__show-more-rest" btn-url="{% url 'load_more_hotel' %}">Показать ещё</div></p>

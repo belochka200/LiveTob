@@ -70,7 +70,7 @@
                 {% endfor %}
                 </div>
             </div>
-            {% if entertainment_list.count|add:entertainment_list_rec.count >= 9 %}
+            {% if entertainment_list.count|add:entertainment_list_rec.count >= 9 or entertainment_list.count >= 9 or entertainment_list_rec.count >= 9 %}
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-12 col-md-4">
                     <p class="text-center mt-5"><div class="_btn btn__show-more-to-do" btn-url="{% url 'load_more_entertainment' %}">Показать ещё</div></p>
