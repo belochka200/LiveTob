@@ -1,0 +1,123 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<section>   
+    <div class="container">
+        <div class="content">
+            <h1 class="text-center page-title w-100">{{ title }}</h1>
+            <div class="row justify-content-evenly mt-5">
+                <div class="col-12 col-md-4 my-3">
+                    <a href="#where-to-eat">
+                        <div class="btn-cus-1">Где поесть</div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 my-3">
+                    <a href="#where-to-rest">
+                        <div class="btn-cus-1">Где остановиться</div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4">
+                    <a href="#where-to-do">
+                        <div class="btn-cus-1 my-3">Чем заняться</div>
+                    </a>
+                </div>
+            </div>
+            <div class="row where-to-eat" id="where-to-eat">
+                <div class="col-12">
+                    <div class="mt-5">
+                        <h3 class="text-center py-3 h-bold">Где поесть</h3>
+                        <div class="row">
+                            {% for i in cafe %}
+                            <div class="col-12 col-md-4 px-3">
+                                <a href="{% url 'show_to_eat' slug=i.slug %}">
+                                    <div class="card where-to-go__card">
+                                        <img src="{{ i.image_preview.url }}" class="card-img-top round">
+                                        <p class="card-title position-absolute">{{ i.title }}</p>
+                                        <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.address }}" target="_blank">
+                                            <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="row justify-content-center mt-5">
+                            <div class="col-12 col-md-4">
+                                <a href="{% url 'where_to_eat' %}">
+                                    <div class="_btn">Посмотреть ещё</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5 where-to-rest" id="where-to-rest">
+                <div class="col-12">
+                    <div class="mt-5">
+                        <h3 class="text-center py-3 h-bold">Где остановиться</h3>
+                        <div class="row">
+                            {% for i in hotel %}
+                            <div class="col-12 col-md-4 px-3">
+                                <a href="{% url 'show_to_rest' slug=i.slug %}">
+                                    <div class="card where-to-go__card">
+                                        <img src="{{ i.image_preview.url }}" class="card-img-top round">
+                                        <p class="card-title position-absolute">{{ i.title }}</p>
+                                        <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.address }}" target="_blank">
+                                            <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="row d-flex justify-content-center mt-5">
+                            <div class="col-12 col-md-4">
+                                <a href="{% url 'where_to_rest' %}">
+                                    <div class="_btn">Посмотреть ещё</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5 where-to-go" id="where-to-do">
+                <div class="col-12">
+                    <div class="mt-5">
+                        <h3 class="text-center py-3 h-bold">Чем заняться</h3>
+                        <div class="row">
+                            {% for i in entertainment %}
+                            <div class="col-12 col-md-4 px-3">
+                                <a href="{% url 'show_to_do' slug=i.slug %}">
+                                    <div class="card where-to-go__card">
+                                        <img src="{{ i.image_preview.url }}" class="card-img-top round">
+                                        <p class="card-title position-absolute">{{ i.title }}</p>
+                                        <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.address }}" target="_blank">
+                                            <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="row justify-content-center mt-5">
+                            <div class="col-12 col-md-4">
+                                <a href="{% url 'where_to_do' %}">
+                                    <div class="_btn">Посмотреть ещё</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

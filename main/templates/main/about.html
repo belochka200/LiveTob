@@ -1,0 +1,46 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<section>
+	<div class="container">
+		<div class="content mt-6">
+			<h1 class="text-center page-title w-100">О нас</h1>
+			<div class="row">
+				<div class="our-team mb-5">
+					<h3 class="text-center">команда</h3>
+					<div class="row d-flex justify-content-evenly">
+						<div class="col-12 col-md-5 mt-5">
+							<div class="card">
+								<img src="../../static/main/img/q4N0OAFdY5Q.png" alt="" class="card-img-top round">
+								<div class="card-title position-absolute">
+									Дубина Егор Максимович
+									<p style="color: #FCCA00">Веб разработчик</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-5 mt-5">
+							<div class="card">
+								<img src="../../static/main/img/ei482FvWRl8.png" alt="" class="card-img-top round">
+								<div class="card-title position-absolute">
+									Евдокимова Екатерина Сергеевна
+									<p style="color: #FCCA00">Менеджер проекта</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h3 class="text-center">цель</h3>
+				<p class="text-center text mt-3 about-text-block">Развитие туризма в Тобольске и приобщение местных жителей к его истории и культуре.</p>
+				<h3 class="text-center mt-5">работа</h3>
+				<p class="text-center text mt-3 about-text-block">Помочь туристам и жителям города узнать новую информацию о его исторически и культурно значимых местах, показать туристам и жителям города, где и как можно провести свой досуг.</p>
+				<h3 class="text-center mt-5">будущее</h3>
+				<!-- <p class="text-center text mt-3">Возможно появление новых разделов, как "афиша" — анонс мероприятий в городе и "новости" — главные события города.</p> -->
+				<p class="text-center text mt-3 about-text-block">В разделе "афиша" пользователи смогут анонсировать свои мероприятия. Также появится возможность ставить оценку всем местам из раздела "Куда сходить" и дополнять оценку комментарием.</p>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

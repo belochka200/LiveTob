@@ -1,0 +1,84 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="content">
+            <h1 class="text-center page-title w-100">{{ title }}</h1>
+            <div class="filter__block d-flex justify-content-center">
+                <div class="filter__menu d-flex justify-content-center align-items-center">
+                    <div class="filter__wrap">
+                        <a href="{% url 'where_to_do' %}" class="filter__item">Все</a>
+                        {% for i in category_list %}
+                            <a href="{% url 'where_to_do' %}?category={{ i.slug }}" class="filter__item">{{ i }}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="filter__btn-in-menu">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="filter__btn"><i class="fas fa-sliders-h"></i></div>
+            </div>
+            <div class="chosen_category">
+                {{ chosen_category }}
+                <a href="{% url 'sights' %}" class="btn__close-category">
+                    <i class="fas fa-times"></i>
+                </a>
+            </div>
+
+            <div class="row justify-content-center m-0 all-to-do">
+                {% for i in entertainment_list_rec %}
+                    {% if forloop.last %}
+                    <div class="col-12 col-md-4 posts-to-do last-post-to-do" data-postid="{{ i.pk }}">
+                    {% else %}
+                    <div class="col-12 col-md-4 posts-to-do">
+                    {% endif %}
+                        <a href="{% url 'show_to_do' slug=i.slug %}">
+                            <div class="card mt-5">
+                                <img src="{{ i.image_preview.url }}" class="card-img-top round">
+                                <div class="rec-card">Рекомендовано нами!</div>
+                                <p class="card-title position-absolute">{{ i.title }}</p>
+                                <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.address }}" target="_blank">
+                                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+                {% for i in entertainment_list %}
+                    {% if forloop.last %}
+                    <div class="col-12 col-md-4 posts-to-do last-post-to-do" data-postid="{{ i.pk }}">
+                    {% else %}
+                    <div class="col-12 col-md-4 posts-to-do">
+                    {% endif %}
+                        <a href="{% url 'show_to_do' slug=i.slug %}">
+                            <div class="card mt-5">
+                                <img src="{{ i.image_preview.url }}" class="card-img-top round">
+                                <p class="card-title position-absolute">{{ i.title }}</p>
+                                <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.address }}" target="_blank">
+                                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            {% if entertainment_list.count|add:entertainment_list_rec.count >= 9 %}
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-12 col-md-4">
+                    <p class="text-center mt-5"><div class="_btn btn__show-more-to-do" btn-url="{% url 'load_more_entertainment' %}">Показать ещё</div></p>
+                    <p class="no-more text-center"></p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}
