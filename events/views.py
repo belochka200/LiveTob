@@ -1,7 +1,6 @@
 from django.db.models import Q
 from django.http.response import JsonResponse
 from django.shortcuts import get_object_or_404, render
-from django.views import View
 
 from .models import (Cafe, CafeCategory, CafeImage, Entertainment,
                      EntertainmentCategory, EntertainmentImage, Hotel,
