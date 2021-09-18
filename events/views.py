@@ -262,3 +262,11 @@ def show_to_do(request, slug):
             numbers.append(j)
     data['number'] = numbers
     return render(request, 'events/show_to_do.html', context=data)
+
+
+
+
+
+
+
+
