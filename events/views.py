@@ -1,9 +1,11 @@
+from django.db.models import Q
 from django.http.response import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.views import View
 
-from .models import (Cafe, CafeCategory, Entertainment, EntertainmentCategory, EntertainmentImage,
-                     Hotel, HotelCategory, CafeImage, HotelImage)
+from .models import (Cafe, CafeCategory, CafeImage, Entertainment,
+                     EntertainmentCategory, EntertainmentImage, Hotel,
+                     HotelCategory, HotelImage)
 
 
 def where_to_go(request): # all
@@ -20,6 +22,7 @@ def where_to_go(request): # all
 
 def where_to_eat(request): # еда
     category = request.GET.get('category')
+    # category_list = CafeCategory.objects.filter(~Q(id=2))
     category_list = CafeCategory.objects.all()
     data = {
         'title': 'Где поесть',
@@ -132,67 +135,64 @@ def where_to_do(request): # куда сходить
             data['entertainment_list'] = entertainment_list
     return render(request, 'events/where_to_do.html', context=data)
 
-class DynamicCafeLoad(View):
 
-    @staticmethod
-    def get(request, *args, **kwargs):
-        lastid = request.GET.get('lastid')
-        more_cafe_rec = Cafe.objects.filter(pk__gt=int(lastid), recomended=True).values('id', 'title', 'slug', 'image_preview', 'address')[:9]
-        more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address')[:9]
-        if not more_cafe:
-            return JsonResponse({'data': False})
-        data = []
-        for item in more_cafe:
-            obj = {
-                'id': item['id'],
-                'title': item['title'],
-                'slug': item['slug'],
-                'image_preview': item['image_preview'],
-                'address': item['address'],
-            }
-            data.append(obj)
-        data[-1]['last-post-eat'] = True
-        return JsonResponse({'data': data})
+def cafe_load(request):
+    lastid = request.GET.get('lastid')
+    print(lastid)
+    for i in lastid:
+        print(i)
+    more_cafe_rec = Cafe.objects.filter(pk__gt=int(lastid), recomended=True).values('id', 'title', 'slug', 'image_preview', 'address')[:9]
+    more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address')[:9]
+    if not more_cafe:
+        return JsonResponse({'data': False})
+    data = []
+    for item in more_cafe:
+        obj = {
+            'id': item['id'],
+            'title': item['title'],
+            'slug': item['slug'],
+            'image_preview': item['image_preview'],
+            'address': item['address'],
+        }
+        data.append(obj)
+    data[-1]['last-post-eat'] = True
+    return JsonResponse({'data': data})
 
-class DynamicHotelLoad(View):
-    
-    @staticmethod
-    def get(request, *args, **kwargs):
-        lastid = request.GET.get('lastid')
-        more_hotels_rec = Hotel.objects.filter(pk__gt=int(lastid), recomended=True).values('id', 'title', 'slug')[:9]
-        more_hotels = Hotel.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug')[:9]
-        if not more_hotels:
-            return JsonResponse({'data': False})
-        data = []
-        for item in more_hotels:
-            obj = {
-                'id': item['id'],
-                'title': item['title'],
-                'slug': item['slug']
-            }
-            data.append(obj)
-        data[-1]['last-post-rest'] = True
-        return JsonResponse({'data': data})
 
-class DynamicEntertainmentLoad(View):
-    
-    @staticmethod
-    def get(request, *args, **kwargs):
-        lastid = request.GET.get('lastid')
-        more_ent_rec = Entertainment.objects.filter(pk__gt=int(lastid), recomended=True).values('id', 'title', 'slug')[:9]
-        more_ent = Entertainment.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug')[:9]
-        if not more_ent:
-            return JsonResponse({'data': False})
-        data = []
-        for item in more_ent:
-            obj = {
-                'id': item['id'],
-                'title': item['title'],
-                'slug': item['slug']
-            }
-            data.append(obj)
-        data[-1]['last-post-to-do'] = True
-        return JsonResponse({'data': data})
+def hotel_load(request):
+    lastid = request.GET.get('lastid')
+    more_hotels_rec = Hotel.objects.filter(pk__gt=int(lastid), recomended=True).values('id', 'title', 'slug')[:9]
+    more_hotels = Hotel.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug')[:9]
+    if not more_hotels:
+        return JsonResponse({'data': False})
+    data = []
+    for item in more_hotels:
+        obj = {
+            'id': item['id'],
+            'title': item['title'],
+            'slug': item['slug']
+        }
+        data.append(obj)
+    data[-1]['last-post-rest'] = True
+    return JsonResponse({'data': data})
+
+
+def ent_load(request):
+    lastid = request.GET.get('lastid')
+    more_ent_rec = Entertainment.objects.filter(pk__gt=int(lastid), recomended=True).values('id', 'title', 'slug')[:9]
+    more_ent = Entertainment.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug')[:9]
+    if not more_ent:
+        return JsonResponse({'data': False})
+    data = []
+    for item in more_ent:
+        obj = {
+            'id': item['id'],
+            'title': item['title'],
+            'slug': item['slug']
+        }
+        data.append(obj)
+    data[-1]['last-post-to-do'] = True
+    return JsonResponse({'data': data})
 
 def show_to_eat(request, slug):
     cafe = get_object_or_404(Cafe, slug=slug)

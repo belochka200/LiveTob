@@ -33,7 +33,7 @@
                     {% if forloop.last %}
                     <div class="col-12 col-md-4 posts-eat last-post-eat" data-postid="{{ i.pk }}">
                     {% else %}
-                    <div class="col-12 col-md-4 posts-eat">
+                    <div class="col-12 col-md-4 posts-eat" data-postid="{{ i.pk }}">
                     {% endif %}
                         <a href="{% url 'show_to_eat' slug=i.slug %}">
                             <div class="card mt-5">
@@ -53,7 +53,7 @@
                     {% if forloop.last %}
                     <div class="col-12 col-md-4 posts-eat last-post-eat" data-postid="{{ i.pk }}">
                     {% else %}
-                    <div class="col-12 col-md-4 posts-eat">
+                    <div class="col-12 col-md-4 posts-eat" data-postid="{{ i.pk }}">
                     {% endif %}
                         <a href="{% url 'show_to_eat' slug=i.slug %}">
                             <div class="card mt-5">

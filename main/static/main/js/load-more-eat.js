@@ -42,7 +42,7 @@ $(document).ready(function() {
                                 )
                             } else {
                                 $('.all-eat').append(
-                                    '<div class="col-12 col-md-4 post-eat dark-theme">' + 
+                                    '<div class="col-12 col-md-4 posts-eat dark-theme">' + 
                                         '<a href="show-to-eat-' + obj['slug'] + '" class="dark-theme">' + 
                                             '<div class="card mt-5 dark-theme">' + 
                                                 '<img src="../../media/' + obj['image_preview'] + '" class="card-img-top round dark-theme">' + 
@@ -80,7 +80,7 @@ $(document).ready(function() {
                                 )
                             } else {
                                 $('.all-eat').append(
-                                    '<div class="col-12 col-md-4 post-eat">' + 
+                                    '<div class="col-12 col-md-4 posts-eat">' + 
                                     '<a href="show-to-eat-' + obj['slug'] + '">' + 
                                         '<div class="card mt-5">' + 
                                             '<img src="../../media/' + obj['image_preview'] + '" class="card-img-top round">' + 
