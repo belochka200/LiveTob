@@ -1,6 +1,5 @@
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
-from django.views import View
 
 from .models import Category, Sight, SightImage
 
@@ -11,8 +10,7 @@ def sights(request):
         sights_list = Sight.objects.all()[:9]
         chosen_category = ''
     else: # если категория есть
-        chosen_category = Category.objects.filter(slug=category)
-        chosen_category = chosen_category[0]
+        chosen_category = get_object_or_404(Category, slug=category)
         sights_list = Sight.objects.filter(category=chosen_category)[:9]
 
     category_list = Category.objects.all()
@@ -48,24 +46,24 @@ def show_sights(request, slug):
     return render(request, 'sights/show_sights.html', context=data)
 
 
-class DynamicPostLoad(View):
-
-    @staticmethod
-    def get(request, *args, **kwargs):
-        last_sight_id = request.GET.get('lastSightId')
+def load_sights(request):
+    last_sight_id = request.GET.get('lastSightId')
+    category = request.GET.get('category')
+    if category:
+        more_sights = Sight.objects.filter(pk__gt=int(last_sight_id), category=category).values('id', 'title', 'slug', 'image_preview', 'adress')[:9]
+    else:
         more_sights = Sight.objects.filter(pk__gt=int(last_sight_id)).values('id', 'title', 'slug', 'image_preview', 'adress')[:9]
-        if not more_sights:
-            return JsonResponse({'data': False})
-
-        data = []
-        for sight in more_sights:
-            obj = {
-                'id': sight['id'],
-                'title': sight['title'],
-                'slug': sight['slug'],
-                'image_preview': sight['image_preview'],
-                'address': sight['adress'],
-            }
-            data.append(obj)
-        data[-1]['last_sight'] = True
-        return JsonResponse({'data': data})
+    if not more_sights:
+        return JsonResponse({'data': False})
+    data = []
+    for sight in more_sights:
+        obj = {
+            'id': sight['id'],
+            'title': sight['title'],
+            'slug': sight['slug'],
+            'image_preview': sight['image_preview'],
+            'address': sight['adress'],
+        }
+        data.append(obj)
+    data[-1]['last_sight'] = True
+    return JsonResponse({'data': data})

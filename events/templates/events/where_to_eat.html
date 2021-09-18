@@ -21,20 +21,16 @@
                 </div>
                 <div class="filter__btn"><i class="fas fa-sliders-h"></i></div>
             </div>
-            <div class="chosen_category">
+            <div class="chosen_category" data-categoryid="{{ chosen_category.id }}">
                 {{ chosen_category }}
-                <a href="{% url 'sights' %}" class="btn__close-category">
+                <a href="{% url 'where_to_eat' %}" class="btn__close-category">
                     <i class="fas fa-times"></i>
                 </a>
             </div>
 
             <div class="row justify-content-center m-0 all-eat">
                 {% for i in cafe_list_rec %}
-                    {% if forloop.last %}
-                    <div class="col-12 col-md-4 posts-eat last-post-eat" data-postid="{{ i.pk }}">
-                    {% else %}
-                    <div class="col-12 col-md-4 posts-eat" data-postid="{{ i.pk }}">
-                    {% endif %}
+                    <div class="col-12 col-md-4 posts-eat">
                         <a href="{% url 'show_to_eat' slug=i.slug %}">
                             <div class="card mt-5">
                                 <img src="{{ i.image_preview.url }}" class="card-img-top round">
@@ -53,7 +49,7 @@
                     {% if forloop.last %}
                     <div class="col-12 col-md-4 posts-eat last-post-eat" data-postid="{{ i.pk }}">
                     {% else %}
-                    <div class="col-12 col-md-4 posts-eat" data-postid="{{ i.pk }}">
+                    <div class="col-12 col-md-4 posts-eat">
                     {% endif %}
                         <a href="{% url 'show_to_eat' slug=i.slug %}">
                             <div class="card mt-5">

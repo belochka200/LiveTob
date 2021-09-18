@@ -1,8 +1,10 @@
 $(document).ready(function() {
     $('.btn__show-more-eat').click(function() {
         let lastid = $('.last-post-eat').attr('data-postid')
-        let data = {
-            lastid: lastid
+        let category = $('.chosen_category').attr('data-categoryid')
+        let data = { 
+            lastid: lastid,
+            category: category
         }
         $('.posts-eat').removeClass('last-post-eat')
         $('.posts-eat').removeAttr('data-postid')

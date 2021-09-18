@@ -1,8 +1,10 @@
 $(document).ready(function() {
     $('.btn__show-more-to-do').click(function() {
         let lastid = $('.last-post-to-do').attr('data-postid')
-        let data = {
-            lastid: lastid
+        let category = $('.chosen_category').attr('data-categoryid')
+        let data = { 
+            lastid: lastid,
+            category: category
         }
         $('.posts-to-do').removeClass('last-post-to-do')
         $('.posts-to-do').removeAttr('data-postid')

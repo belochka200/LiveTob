@@ -21,7 +21,7 @@
                 </div>
                 <div class="filter__btn"><i class="fas fa-sliders-h"></i></div>
             </div>
-            <div class="chosen_category">
+            <div class="chosen_category" data-categoryid="{{ chosen_category.id }}">
                 {{ chosen_category }}
                 <a href="{% url 'sights' %}" class="btn__close-category">
                     <i class="fas fa-times"></i>

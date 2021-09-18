@@ -21,20 +21,16 @@
                 </div>
                 <div class="filter__btn"><i class="fas fa-sliders-h"></i></div>
             </div>
-            <div class="chosen_category">
+            <div class="chosen_category" data-categoryid="{{ chosen_category.id }}">
                 {{ chosen_category }}
-                <a href="{% url 'sights' %}" class="btn__close-category">
+                <a href="{% url 'where_to_rest' %}" class="btn__close-category">
                     <i class="fas fa-times"></i>
                 </a>
             </div>
 
             <div class="row justify-content-center m-0 all-posts-rest">
                 {% for i in hotel_list_rec %}
-                    {% if forloop.last %}
-                    <div class="col-12 col-md-4 posts-rest last-post-rest" data-postid="{{ i.pk }}">
-                    {% else %}
                     <div class="col-12 col-md-4 posts-rest">
-                    {% endif %}
                         <a href="{% url 'show_to_rest' slug=i.slug %}">
                             <div class="card mt-5">
                                 <img src="{{ i.image_preview.url }}" class="card-img-top round">

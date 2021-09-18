@@ -8,6 +8,8 @@ class SightAdmin(admin.ModelAdmin):
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('category_name',)}
+    list_display = ('id', 'category_name')
+    list_display_links = ('id', 'category_name')
 
 admin.site.register(Sight, SightAdmin)
 admin.site.register(SightImage)

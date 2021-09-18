@@ -1,15 +1,17 @@
 $(document).ready(function() {
     $('.btn__show-more-rest').click(function() {
         let lastid = $('.last-post-rest').attr('data-postid')
-        let data = {
-            lastid: lastid
+        let category = $('.chosen_category').attr('data-categoryid')
+        let data = { 
+            lastid: lastid,
+            category: category
         }
         $('.posts-rest').removeClass('last-post-rest')
         $('.posts-rest').removeAttr('data-postid')
         let url = $('.btn__show-more-rest').attr('btn-url')
         $.ajax({
-            method: 'GET',
-            dataType: 'json',
+            method: "GET",
+            dataType: "json",
             url: url,
             data: data,
             success: function(data) {

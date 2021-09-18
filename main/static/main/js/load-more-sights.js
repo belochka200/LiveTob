@@ -1,8 +1,10 @@
 $(document).ready(function() {
     $('.btn__show-more-sights').click(function() {
         let lastSightId = $('.last-sight').attr('data-sightid')
+        let category = $('.chosen_category').attr('data-categoryid')
         let data = {
-            lastSightId: lastSightId
+            lastSightId: lastSightId,
+            category: category,
         }
         $('.sights').removeClass('last-sight')
         $('.sights').removeAttr('data-postid')
