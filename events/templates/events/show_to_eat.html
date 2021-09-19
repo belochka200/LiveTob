@@ -40,6 +40,9 @@
                 <div class="btn__in-sights">
                     <a href="https://yandex.ru/maps/?text=Тобольск, {{ address }}" target="_blank" class="url__sights">Показать на карте</a>
                 </div>
+                {% if recomended %}
+                <div class="btn__in-sights rec">Рекомендовано нами!</div>
+                {% endif %}
             </div>
             <p class="text">Телефон:
                 {% for number in number %}

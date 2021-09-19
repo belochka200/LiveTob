@@ -674,6 +674,19 @@ nav {
         margin-right: 1rem;
         text-align: center;
         transition: box-shadow $anim-delay-fast ease;
+        &.rec {
+            &.dark-theme {
+                color: $primory-orange;
+                &:hover {
+                    cursor: default;
+                    box-shadow: 0 0 $box-shadow $primory-orange;
+                }
+            }
+            &:hover {
+                cursor: default;
+                box-shadow: 0 0 $box-shadow $primory-purple;
+            }
+        }
         a {
             color: $primory-dark-theme-color;
         }
@@ -988,7 +1001,6 @@ nav {
         overflow: hidden;
         position: fixed;
         z-index: 99999;
-        // display: none;
         .logo-loader {
             position: absolute;
             margin-top: 10vh;

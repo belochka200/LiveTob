@@ -137,65 +137,447 @@ def where_to_do(request): # куда сходить
 
 def cafe_load(request):
     lastid = request.GET.get('lastid')
+    lastrecid = request.GET.get('lastrecid')
     category = request.GET.get('category')
-    if category:
-        more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address')[:9]
-    else:
-        more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address')[:9]
-    if not more_cafe:
-        return JsonResponse({'data': False})
     data = []
-    for item in more_cafe:
-        obj = {
-            'id': item['id'],
-            'title': item['title'],
-            'slug': item['slug'],
-            'image_preview': item['image_preview'],
-            'address': item['address'],
-        }
-        data.append(obj)
-    data[-1]['last-post-eat'] = True
-    return JsonResponse({'data': data})
+    if category: # если есть категория
+        if lastrecid: # если есть идшник рек. карточки
+            more_cafe_rec = Cafe.objects.filter(pk__gt=int(lastrecid), recomended=True, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]        
+            if not more_cafe_rec: # если больше нет реков
+                more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+                if more_cafe:
+                    for item in more_cafe:
+                        obj = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj)
+                    data[-1]['last-post-eat'] = True
+                    return JsonResponse({'data': data})
+                else:
+                    return JsonResponse({'data': False})
+            else: # если реки есть
+                for item in more_cafe_rec:
+                    obj_rec = {
+                        'id': item['id'],
+                        'title': item['title'],
+                        'slug': item['slug'],
+                        'image_preview': item['image_preview'],
+                        'address': item['address'],
+                        'recomended': item['recomended'],
+                    }
+                    data.append(obj_rec)
+                x = 9-more_cafe_rec.count()
+                more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:x]
+                if more_cafe:
+                    for item in more_cafe:
+                        obj = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj)
+                    data[-1]['last-post-eat'] = True
+                    return JsonResponse({'data': data})
+                else:
+                    data[-1]['last-post-eat'] = True
+                    return JsonResponse({'data': data})
+        else: # если нет идшника реков последнего
+            more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+            if more_cafe:
+                for item in more_cafe:
+                    obj = {
+                        'id': item['id'],
+                        'title': item['title'],
+                        'slug': item['slug'],
+                        'image_preview': item['image_preview'],
+                        'address': item['address'],
+                        'recomended': item['recomended'],
+                    }
+                    data.append(obj)
+                data[-1]['last-post-eat'] = True
+                return JsonResponse({'data': data})
+            else:
+                return JsonResponse({'data': False})
+    else: # если нет категории
+        if lastrecid: # если есть идшник рек. карточки
+            more_cafe_rec = Cafe.objects.filter(pk__gt=int(lastrecid), recomended=True).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]        
+            if not more_cafe_rec: # если больше нет реков
+                more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+                if more_cafe:
+                    for item in more_cafe:
+                        obj = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj)
+                    data[-1]['last-post-eat'] = True
+                    return JsonResponse({'data': data})
+                else:
+                    return JsonResponse({'data': False})
+            else: # если реки есть
+                for item in more_cafe_rec:
+                    obj_rec = {
+                        'id': item['id'],
+                        'title': item['title'],
+                        'slug': item['slug'],
+                        'image_preview': item['image_preview'],
+                        'address': item['address'],
+                        'recomended': item['recomended'],
+                    }
+                    data.append(obj_rec)
+                x = 9-more_cafe_rec.count()
+                more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:x]
+                if more_cafe:
+                    for item in more_cafe:
+                        obj = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj)
+                    data[-1]['last-post-eat'] = True
+                    return JsonResponse({'data': data})
+                else:
+                    for item in more_cafe_rec:
+                        obj_rec = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj_rec)
+                    data[-1]['last-post-eat'] = True
+                    return JsonResponse({'data': data})
+        else: # если нет идшника реков последнего
+            more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+            if more_cafe:
+                for item in more_cafe:
+                    obj = {
+                        'id': item['id'],
+                        'title': item['title'],
+                        'slug': item['slug'],
+                        'image_preview': item['image_preview'],
+                        'address': item['address'],
+                        'recomended': item['recomended'],
+                    }
+                    data.append(obj)
+                data[-1]['last-post-eat'] = True
+                return JsonResponse({'data': data})
+            else:
+                return JsonResponse({'data': False})
 
 def hotel_load(request):
     lastid = request.GET.get('lastid')
+    lastrecid = request.GET.get('lastrecid')
     category = request.GET.get('category')
-    if category:
-        more_hotels = Hotel.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug')[:9]
-    else:
-        more_hotels = Hotel.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug')[:9]
-    if not more_hotels:
-        return JsonResponse({'data': False})
     data = []
-    for item in more_hotels:
-        obj = {
-            'id': item['id'],
-            'title': item['title'],
-            'slug': item['slug']
-        }
-        data.append(obj)
-    data[-1]['last-post-rest'] = True
-    return JsonResponse({'data': data})
-
+    if category: # если есть категория
+        if lastrecid: # если есть идшник рек. карточки
+            more_hotels_rec = Hotel.objects.filter(pk__gt=int(lastrecid), recomended=True, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]        
+            if not more_hotels_rec: # если больше нет реков
+                more_hotels = Hotel.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+                if more_hotels:
+                    for item in more_hotels:
+                        obj = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj)
+                    data[-1]['last-post-rest'] = True
+                    return JsonResponse({'data': data})
+                else:
+                    return JsonResponse({'data': False})
+            else: # если реки есть
+                for item in more_hotels_rec:
+                    obj_rec = {
+                        'id': item['id'],
+                        'title': item['title'],
+                        'slug': item['slug'],
+                        'image_preview': item['image_preview'],
+                        'address': item['address'],
+                        'recomended': item['recomended'],
+                    }
+                    data.append(obj_rec)
+                x = 9-more_hotels_rec.count()
+                more_hotels = Hotel.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:x]
+                if more_hotels:
+                    for item in more_hotels:
+                        obj = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj)
+                    data[-1]['last-post-rest'] = True
+                    return JsonResponse({'data': data})
+                else:
+                    data[-1]['last-post-rest'] = True
+                    return JsonResponse({'data': data})
+        else: # если нет идшника реков последнего
+            more_hotels = Hotel.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+            if more_hotels:
+                for item in more_hotels:
+                    obj = {
+                        'id': item['id'],
+                        'title': item['title'],
+                        'slug': item['slug'],
+                        'image_preview': item['image_preview'],
+                        'address': item['address'],
+                        'recomended': item['recomended'],
+                    }
+                    data.append(obj)
+                data[-1]['last-post-rest'] = True
+                return JsonResponse({'data': data})
+            else:
+                return JsonResponse({'data': False})
+    else: # если нет категории
+        if lastrecid: # если есть идшник рек. карточки
+            more_hotels_rec = Hotel.objects.filter(pk__gt=int(lastrecid), recomended=True).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]        
+            if not more_hotels_rec: # если больше нет реков
+                more_hotels = Hotel.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+                if more_hotels:
+                    for item in more_hotels:
+                        obj = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj)
+                    data[-1]['last-post-rest'] = True
+                    return JsonResponse({'data': data})
+                else:
+                    return JsonResponse({'data': False})
+            else: # если реки есть
+                for item in more_hotels_rec:
+                    obj_rec = {
+                        'id': item['id'],
+                        'title': item['title'],
+                        'slug': item['slug'],
+                        'image_preview': item['image_preview'],
+                        'address': item['address'],
+                        'recomended': item['recomended'],
+                    }
+                    data.append(obj_rec)
+                x = 9-more_hotels_rec.count()
+                more_hotels = Hotel.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:x]
+                if more_hotels:
+                    for item in more_hotels:
+                        obj = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj)
+                    data[-1]['last-post-rest'] = True
+                    return JsonResponse({'data': data})
+                else:
+                    for item in more_hotels_rec:
+                        obj_rec = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj_rec)
+                    data[-1]['last-post-rest'] = True
+                    return JsonResponse({'data': data})
+        else: # если нет идшника реков последнего
+            more_hotels = Hotel.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+            if more_hotels:
+                for item in more_hotels:
+                    obj = {
+                        'id': item['id'],
+                        'title': item['title'],
+                        'slug': item['slug'],
+                        'image_preview': item['image_preview'],
+                        'address': item['address'],
+                        'recomended': item['recomended'],
+                    }
+                    data.append(obj)
+                data[-1]['last-post-rest'] = True
+                return JsonResponse({'data': data})
+            else:
+                return JsonResponse({'data': False})
+                
 def ent_load(request):
     lastid = request.GET.get('lastid')
+    lastrecid = request.GET.get('lastrecid')
     category = request.GET.get('category')
-    if category:
-        more_ent = Entertainment.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug')[:9]
-    else:
-        more_ent = Entertainment.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug')[:9]   
-    if not more_ent:
-        return JsonResponse({'data': False})
     data = []
-    for item in more_ent:
-        obj = {
-            'id': item['id'],
-            'title': item['title'],
-            'slug': item['slug']
-        }
-        data.append(obj)
-    data[-1]['last-post-to-do'] = True
-    return JsonResponse({'data': data})
+    if category: # если есть категория
+        if lastrecid: # если есть идшник рек. карточки
+            more_ent_rec = Entertainment.objects.filter(pk__gt=int(lastrecid), recomended=True, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]        
+            if not more_ent_rec: # если больше нет реков
+                more_ent = Entertainment.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+                if more_ent:
+                    for item in more_ent:
+                        obj = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj)
+                    data[-1]['last-post-rest'] = True
+                    return JsonResponse({'data': data})
+                else:
+                    return JsonResponse({'data': False})
+            else: # если реки есть
+                for item in more_ent_rec:
+                    obj_rec = {
+                        'id': item['id'],
+                        'title': item['title'],
+                        'slug': item['slug'],
+                        'image_preview': item['image_preview'],
+                        'address': item['address'],
+                        'recomended': item['recomended'],
+                    }
+                    data.append(obj_rec)
+                x = 9-more_ent_rec.count()
+                more_ent = Entertainment.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:x]
+                if more_ent:
+                    for item in more_ent:
+                        obj = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj)
+                    data[-1]['last-post-rest'] = True
+                    return JsonResponse({'data': data})
+                else:
+                    data[-1]['last-post-rest'] = True
+                    return JsonResponse({'data': data})
+        else: # если нет идшника реков последнего
+            more_ent = Entertainment.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+            if more_ent:
+                for item in more_ent:
+                    obj = {
+                        'id': item['id'],
+                        'title': item['title'],
+                        'slug': item['slug'],
+                        'image_preview': item['image_preview'],
+                        'address': item['address'],
+                        'recomended': item['recomended'],
+                    }
+                    data.append(obj)
+                data[-1]['last-post-rest'] = True
+                return JsonResponse({'data': data})
+            else:
+                return JsonResponse({'data': False})
+    else: # если нет категории
+        if lastrecid: # если есть идшник рек. карточки
+            more_ent_rec = Entertainment.objects.filter(pk__gt=int(lastrecid), recomended=True).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]        
+            if not more_ent_rec: # если больше нет реков
+                more_ent = Entertainment.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+                if more_ent:
+                    for item in more_ent:
+                        obj = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj)
+                    data[-1]['last-post-to-do'] = True
+                    return JsonResponse({'data': data})
+                else:
+                    return JsonResponse({'data': False})
+            else: # если реки есть
+                for item in more_ent_rec:
+                    obj_rec = {
+                        'id': item['id'],
+                        'title': item['title'],
+                        'slug': item['slug'],
+                        'image_preview': item['image_preview'],
+                        'address': item['address'],
+                        'recomended': item['recomended'],
+                    }
+                    data.append(obj_rec)
+                x = 9-more_ent_rec.count()
+                more_ent = Hotel.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:x]
+                if more_ent:
+                    for item in more_ent:
+                        obj = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj)
+                    data[-1]['last-post-to-do'] = True
+                    return JsonResponse({'data': data})
+                else:
+                    for item in more_ent_rec:
+                        obj_rec = {
+                            'id': item['id'],
+                            'title': item['title'],
+                            'slug': item['slug'],
+                            'image_preview': item['image_preview'],
+                            'address': item['address'],
+                            'recomended': item['recomended'],
+                        }
+                        data.append(obj_rec)
+                    data[-1]['last-post-to-do'] = True
+                    return JsonResponse({'data': data})
+        else: # если нет идшника реков последнего
+            more_ent = Hotel.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+            if more_ent:
+                for item in more_ent:
+                    obj = {
+                        'id': item['id'],
+                        'title': item['title'],
+                        'slug': item['slug'],
+                        'image_preview': item['image_preview'],
+                        'address': item['address'],
+                        'recomended': item['recomended'],
+                    }
+                    data.append(obj)
+                data[-1]['last-post-to-do'] = True
+                return JsonResponse({'data': data})
+            else:
+                return JsonResponse({'data': False})
 
 
 def show_to_eat(request, slug):
@@ -209,6 +591,7 @@ def show_to_eat(request, slug):
         'address': cafe.address,
         'number': cafe.number,
         'site': cafe.site,
+        'recomended': cafe.recomended,
     }
     split_num = []
     temp = data['number'].split(', ')
@@ -232,6 +615,7 @@ def show_to_rest(request, slug):
         'address': rest.address,
         'number': rest.number,
         'site': rest.site,
+        'recomended': rest.recomended,
     }
     split_num = []
     temp = data['number'].split(', ')
@@ -255,6 +639,7 @@ def show_to_do(request, slug):
         'address': do.address,
         'number': do.number,
         'site': do.site,
+        'recomended': do.recomended,
     }
     split_num = []
     temp = data['number'].split(', ')

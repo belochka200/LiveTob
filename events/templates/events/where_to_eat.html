@@ -31,7 +31,7 @@
             <div class="row justify-content-center m-0 all-eat">
                 {% for i in cafe_list_rec %}
                     {% if cafe_list_rec.count >= 9 and forloop.last %}
-                    <div class="col-12 col-md-4 posts-eat last-post-eat" data-postid="0">
+                    <div class="col-12 col-md-4 posts-eat last-post-eat" data-postid="0" data-postidrec="{{ i.pk }}">
                     {% else %}
                     <div class="col-12 col-md-4 posts-eat">
                     {% endif %}

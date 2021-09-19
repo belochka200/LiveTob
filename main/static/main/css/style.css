@@ -892,6 +892,22 @@ nav .nav__body .nav__burger {
   transition: box-shadow 0.25s ease, -webkit-box-shadow 0.25s ease;
 }
 
+.btn__in-sights-wrap .btn__in-sights.rec.dark-theme {
+  color: #FCCA00;
+}
+
+.btn__in-sights-wrap .btn__in-sights.rec.dark-theme:hover {
+  cursor: default;
+  -webkit-box-shadow: 0 0 8px #FCCA00;
+          box-shadow: 0 0 8px #FCCA00;
+}
+
+.btn__in-sights-wrap .btn__in-sights.rec:hover {
+  cursor: default;
+  -webkit-box-shadow: 0 0 8px #8453ff;
+          box-shadow: 0 0 8px #8453ff;
+}
+
 .btn__in-sights-wrap .btn__in-sights a {
   color: #161616;
 }

@@ -10,7 +10,7 @@ urlpatterns = [
     path('load-more-cafe/', cafe_load, name='load_more_cafe'),
     path('load-more-hotel/', hotel_load, name='load_more_hotel'),
     path('load-more-entertainment/', ent_load, name='load_more_entertainment'),
-    path('show-to-eat-<slug:slug>/', show_to_eat, name='show_to_eat'),
-    path('show-to-rest-<slug:slug>/', show_to_rest, name='show_to_rest'),
-    path('show-to-do-<slug:slug>/', show_to_do, name='show_to_do')
+    path('where-to-eat/show-to-eat-<slug:slug>/', show_to_eat, name='show_to_eat'),
+    path('where-to-rest/show-to-rest-<slug:slug>/', show_to_rest, name='show_to_rest'),
+    path('where-to-do/show-to-do-<slug:slug>/', show_to_do, name='show_to_do')
 ]

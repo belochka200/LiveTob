@@ -18,10 +18,10 @@
 	<link rel="icon" type="image/png" href="{% static 'main/img/favicon.png' %}" sizes="16x16">
 </head>
 <body class="d-flex flex-column">
-
 	<div class="loader">
 		<div class="d-flex justify-content-center">
-			<img src="../../static/main/img/livetob.svg" class="logo-loader">
+			<img src="{% static 'main/img/livetob.svg' %}" class="logo-loader">
+			<!-- <img src="../../static/main/img/livetob.svg" class="logo-loader"> -->
 		</div>
 		<div class="loader-inner">
 			<div class="loader-line-wrap">
@@ -35,7 +35,6 @@
 			</div>
 		</div>
 	</div>
-
 	<content class="mb-5">
 		<section>
 			<div class="container d-flex justify-content-center">
