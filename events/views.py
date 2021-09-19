@@ -1,4 +1,3 @@
-from django.db.models import Q
 from django.http.response import JsonResponse
 from django.shortcuts import get_object_or_404, render
 
@@ -143,7 +142,6 @@ def cafe_load(request):
         more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address')[:9]
     else:
         more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug', 'image_preview', 'address')[:9]
-    # more_cafe_rec = Cafe.objects.filter(pk__gt=int(lastid), recomended=True).values('id', 'title', 'slug', 'image_preview', 'address')[:9]
     if not more_cafe:
         return JsonResponse({'data': False})
     data = []
@@ -166,7 +164,6 @@ def hotel_load(request):
         more_hotels = Hotel.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug')[:9]
     else:
         more_hotels = Hotel.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug')[:9]
-    # more_hotels_rec = Hotel.objects.filter(pk__gt=int(lastid), recomended=True).values('id', 'title', 'slug')[:9]    if not more_hotels:
     if not more_hotels:
         return JsonResponse({'data': False})
     data = []
@@ -187,7 +184,7 @@ def ent_load(request):
         more_ent = Entertainment.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug')[:9]
     else:
         more_ent = Entertainment.objects.filter(pk__gt=int(lastid), recomended=False).values('id', 'title', 'slug')[:9]   
-    # more_ent_rec = Entertainment.objects.filter(pk__gt=int(lastid), recomended=True).values('id', 'title', 'slug')[:9]    if not more_ent:
+    if not more_ent:
         return JsonResponse({'data': False})
     data = []
     for item in more_ent:

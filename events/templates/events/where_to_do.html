@@ -30,7 +30,11 @@
 
             <div class="row justify-content-center m-0 all-to-do">
                 {% for i in entertainment_list_rec %}
+                    {% if entertainment_list_rec.count >= 9 and forloop.last %}
+                    <div class="col-12 col-md-4 posts-to-do last-post-to-do" data-postid="{{ i.pk }}">
+                    {% else %}
                     <div class="col-12 col-md-4 posts-to-do">
+                    {% endif %}
                         <a href="{% url 'show_to_do' slug=i.slug %}">
                             <div class="card mt-5">
                                 <img src="{{ i.image_preview.url }}" class="card-img-top round">

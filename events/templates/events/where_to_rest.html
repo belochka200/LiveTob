@@ -30,7 +30,11 @@
 
             <div class="row justify-content-center m-0 all-posts-rest">
                 {% for i in hotel_list_rec %}
+                    {% if hotel_list_rec.count >= 9 and forloop.last %}
+                    <div class="col-12 col-md-4 posts-rest last-post-rest" data-postid="{{ i.pk }}">
+                    {% else %}
                     <div class="col-12 col-md-4 posts-rest">
+                    {% endif %}
                         <a href="{% url 'show_to_rest' slug=i.slug %}">
                             <div class="card mt-5">
                                 <img src="{{ i.image_preview.url }}" class="card-img-top round">

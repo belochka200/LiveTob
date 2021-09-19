@@ -30,7 +30,11 @@
 
             <div class="row justify-content-center m-0 all-eat">
                 {% for i in cafe_list_rec %}
+                    {% if cafe_list_rec.count >= 9 and forloop.last %}
+                    <div class="col-12 col-md-4 posts-eat last-post-eat" data-postid="0">
+                    {% else %}
                     <div class="col-12 col-md-4 posts-eat">
+                    {% endif %}
                         <a href="{% url 'show_to_eat' slug=i.slug %}">
                             <div class="card mt-5">
                                 <img src="{{ i.image_preview.url }}" class="card-img-top round">
