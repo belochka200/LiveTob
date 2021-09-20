@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from sights.models import Sight
+import requests
 # from django.views.generic import ListView
 
 
@@ -28,5 +29,17 @@ def history(request): # история города
     }
     return render(request, 'main/history.html', context=data)
 
-def load(request):
-    return render(request, 'main/load.html')
+# def load(request):
+#     return render(request, 'main/load.html')
+
+def developers(request):
+    data = {
+        'title': 'Разработчикам'
+    }
+    # response = requests.get('http://127.0.0.1:8000/api/sights/?format=json')
+    # response = response.json()
+    # for i in response:
+    #     print(f'Название: {i["title"]} | Категория: {i["category"]}')
+        # print(i['title'])
+    # print(response)
+    return render(request, 'main/developers.html', context=data)

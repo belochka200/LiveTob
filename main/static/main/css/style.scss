@@ -991,6 +991,13 @@ nav {
     }
 }
 
+.dev-block {
+    padding: 1rem;
+    display: flex;
+    box-shadow: 0 0 $box-shadow $primory-purple;
+    border-radius: $border-radius;
+}
+
 @media (prefers-color-scheme: dark) {
     .loader {
         background-color: $primory-dark-theme-color;

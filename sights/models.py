@@ -16,6 +16,7 @@ class Sight(models.Model):
     title = models.CharField('Название', max_length=255, blank=True)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, verbose_name='Категория')
     slug = models.SlugField('URL', max_length=255, unique=True)
+    views = models.PositiveIntegerField('Просмотры', default=0)
     full_text = models.TextField('Текст', blank=True)
     adress = models.CharField('Адрес', max_length=255, blank=True)
     schedule = models.CharField('График работы', max_length=255, blank=True)

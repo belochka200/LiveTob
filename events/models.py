@@ -1,3 +1,4 @@
+from main import views
 from django.db import models
 
 
@@ -42,6 +43,7 @@ class Cafe(models.Model):
     category = models.ForeignKey(CafeCategory, on_delete=models.PROTECT, verbose_name='Категория кафе')
     slug = models.SlugField(max_length=255, unique=True, verbose_name='URL')
     recomended = models.BooleanField('Рекомандовано')
+    views = models.PositiveIntegerField('Просмотры', default=0)
     address = models.CharField('Адресс', max_length=255, blank=True)
     schedule = models.CharField('График работы', max_length=255, blank=True)
     number = models.CharField('Номер телефона', max_length=255, blank=True)
@@ -62,6 +64,7 @@ class Hotel(models.Model):
     category = models.ForeignKey(HotelCategory, on_delete=models.PROTECT, verbose_name='Категория отеля')
     slug = models.SlugField(max_length=255, unique=True, verbose_name='URL')
     recomended = models.BooleanField('Рекомандовано')
+    views = models.PositiveIntegerField('Просмотры', default=0)
     address = models.CharField('Адресс', max_length=255, blank=True)
     schedule = models.CharField('График работы', max_length=255, blank=True)
     number = models.CharField('Номер телефона', max_length=255, blank=True)
@@ -82,6 +85,7 @@ class Entertainment(models.Model):
     category = models.ForeignKey(EntertainmentCategory, on_delete=models.PROTECT, verbose_name='Категория отеля')
     slug = models.SlugField(max_length=255, unique=True, verbose_name='URL')
     recomended = models.BooleanField('Рекомандовано')
+    views = models.PositiveIntegerField('Просмотры', default=0)
     address = models.CharField('Адресс', max_length=255, blank=True)
     schedule = models.CharField('График работы', max_length=255, blank=True)
     number = models.CharField('Номер телефона', max_length=255, blank=True)

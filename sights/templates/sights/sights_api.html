@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+{% verbatim %}
+
+<div class="container" id="test">
+
+        <div class="col-12 col-md-4 sights" v-for="sight in sights">
+            <div class="card mt-5">
+                <img src="{{ sight.image_preview.url }}" class="card-img-top round">
+                <p class="card-title position-absolute">{{ sight.title }}</p>
+                <!-- {{  }}
+                <a href="https://yandex.ru/maps/?text=Тобольск, {{ sight.adress }}" target="_blank">
+                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                </a> -->
+            </div>
+        </div>
+
+</div>
+
+{% endverbatim %}
+<script src="{% static 'main/js/api.js' %}"></script>
+{% endblock %}

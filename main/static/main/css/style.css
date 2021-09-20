@@ -1343,6 +1343,16 @@ nav .nav__body .nav__burger {
           box-shadow: 0 0 8px #FCCA00;
 }
 
+.dev-block {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 0 8px #8453ff;
+          box-shadow: 0 0 8px #8453ff;
+  border-radius: 8px;
+}
+
 @media (prefers-color-scheme: dark) {
   .loader {
     background-color: #161616;

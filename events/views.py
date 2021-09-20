@@ -583,6 +583,15 @@ def ent_load(request):
 def show_to_eat(request, slug):
     cafe = get_object_or_404(Cafe, slug=slug)
     cafe_img = CafeImage.objects.filter(cafe=cafe.pk)
+    cafe.views += 1
+    Cafe.objects.filter(slug=slug).update(views=cafe.views)
+    if cafe.views >= 1000:
+        view = []
+        for i in str(cafe.views):
+            view.append(i)
+        cafe_views = f'{view[0]}.{view[1]}k'
+    else:
+        cafe_views = cafe.views
     data = {
         'title': cafe.title,
         'description': cafe.description,
@@ -592,6 +601,7 @@ def show_to_eat(request, slug):
         'number': cafe.number,
         'site': cafe.site,
         'recomended': cafe.recomended,
+        'views': cafe_views,
     }
     split_num = []
     temp = data['number'].split(', ')
@@ -607,6 +617,15 @@ def show_to_eat(request, slug):
 def show_to_rest(request, slug):
     rest = get_object_or_404(Hotel, slug=slug)
     rest_img = HotelImage.objects.filter(hotel=rest.pk)
+    rest.views += 1
+    Hotel.objects.filter(slug=slug).update(views=rest.views)
+    if rest.views >= 1000:
+        view = []
+        for i in str(rest.views):
+            view.append(i)
+        rest_views = f'{view[0]}.{view[1]}k'
+    else:
+        rest_views = rest.views
     data = {
         'title': rest.title,
         'description': rest.description,
@@ -616,6 +635,7 @@ def show_to_rest(request, slug):
         'number': rest.number,
         'site': rest.site,
         'recomended': rest.recomended,
+        'views': rest_views,
     }
     split_num = []
     temp = data['number'].split(', ')
@@ -631,6 +651,15 @@ def show_to_rest(request, slug):
 def show_to_do(request, slug):
     do = get_object_or_404(Entertainment, slug=slug)
     do_img = EntertainmentImage.objects.filter(ent=do.pk)
+    do.views += 1
+    Entertainment.objects.filter(slug=slug).update(views=do.views)
+    if do.views >= 1000:
+        view = []
+        for i in str(do.views):
+            view.append(i)
+        do_views = f'{view[0]}.{view[1]}k'
+    else:
+        do_views = do.views
     data = {
         'title': do.title,
         'description': do.description,
@@ -640,6 +669,7 @@ def show_to_do(request, slug):
         'number': do.number,
         'site': do.site,
         'recomended': do.recomended,
+        'views': do_views,
     }
     split_num = []
     temp = data['number'].split(', ')

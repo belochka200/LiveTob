@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
-
+from rest_framework.viewsets import ModelViewSet
+from .serializers import SightSerializer
 from .models import Category, Sight, SightImage
 
 
@@ -25,6 +26,15 @@ def sights(request):
 def show_sights(request, slug):
     sight = get_object_or_404(Sight, slug=slug)
     sight_img = SightImage.objects.filter(sight_id=sight.pk)
+    sight.views += 1
+    Sight.objects.filter(slug=slug).update(views=sight.views)
+    if sight.views >= 1000:
+        view = []
+        for i in str(sight.views):
+            view.append(i)
+        sight_views = f'{view[0]}.{view[1]}k'
+    else:
+        sight_views = sight.views
     data = {
         'title': sight.title,
         'full_text': sight.full_text,
@@ -33,6 +43,7 @@ def show_sights(request, slug):
         'address': sight.adress,
         'number': sight.number,
         'site': sight.site,
+        'views': sight_views,
     }
     split_num = []
     temp = data['number'].split(', ')
@@ -67,3 +78,10 @@ def load_sights(request):
         data.append(obj)
     data[-1]['last_sight'] = True
     return JsonResponse({'data': data})
+
+def sights_api(request):
+    return render(request, 'sights/sights_api.html')
+
+class SightsViewAPI(ModelViewSet):
+    queryset = Sight.objects.all()
+    serializer_class = SightSerializer

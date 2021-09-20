@@ -7,7 +7,7 @@ $(document).ready(function() {
             category: category,
         }
         $('.sights').removeClass('last-sight')
-        $('.sights').removeAttr('data-postid')
+        $('.sights').removeAttr('data-sightid')
         let url = $('.btn__show-more-sights').attr('btn-url')
         $.ajax({
             method: "GET",
