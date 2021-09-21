@@ -10,6 +10,5 @@ new Vue({
             console.log(response.data)
             vm.sights = response.data
         })
-
-    } 
+    }
 })
