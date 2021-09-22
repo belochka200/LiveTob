@@ -1326,8 +1326,11 @@ nav .nav__body .nav__burger {
   border-radius: 8px;
   -webkit-box-shadow: 0 0 8px #8453ff;
           box-shadow: 0 0 8px #8453ff;
-  padding: 1rem;
+  padding: 2.2rem;
   min-height: 300px;
+}
+
+.about-text-block p {
   font-size: 1.4rem;
 }
 
@@ -1336,24 +1339,25 @@ nav .nav__body .nav__burger {
           box-shadow: 0 0 8px #FCCA00;
 }
 
-.about-img-1, .about-img-2, .about-img-3 {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+@media only screen and (max-width: 990px) {
+  .about-text-block {
+    padding: 1rem;
+  }
+}
+
+.about-text-block .about-img {
+  max-width: 100%;
   border-radius: 8px;
-  opacity: .9;
 }
 
-.about-img-1 {
-  background-image: url("../img/aboutimg1.png");
-}
-
-.about-img-2 {
-  background-image: url("../img/aboutimg2.png");
-}
-
-.about-img-3 {
-  background-image: url("../img/aboutimg3.png");
+@media only screen and (max-width: 767px) {
+  .about-text-block .about-img {
+    margin-top: 3rem;
+  }
+  .about-text-block .about-img.about-img-no-margin-top {
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
 }
 
 .dev-block {
