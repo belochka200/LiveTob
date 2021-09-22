@@ -1019,17 +1019,27 @@ nav {
             color: $primory-orange;
         }
     }
-    .img-wrap {
-        .brand-logo-1 {
+    .wrap-mob {
+        @media screen and (max-width: 990px) {
+            flex-direction: column;
+        }
+    }
+    img {
+        &.logo-icon, &.logo-full {
+            max-width: 100%;
+        }
+        &.logo-icon {
             box-shadow: 0 0 $box-shadow $primory-dark-theme-color;
             border-radius: $border-radius;
+            @media screen and (max-width: 990px) {
+                margin-top: 3rem;            
+            }
         }
-        .brand-logo-1, .brand-logo-2 {
-            max-height: 60px;
-        }
-        @media screen and (max-width: 990px) {
-            margin-top: 3rem;
-        }
+        // &.logo-full {
+        //     @media screen and (max-width: 426px) {
+        //         height: 50px;
+        //     }
+        // }
     }
     &.dark-theme {
         background-color: $secondary-dark-theme-color;

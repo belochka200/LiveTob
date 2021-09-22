@@ -9,23 +9,19 @@
 		<div class="content">
 			<h1 class="text-center page-title w-100">{{ title }}</h1>
             <div class="row brand-block justify-content-between">
-                <div class="wrap col-12 col-md-4">
+                <div class="col-12 col-xl-4">
                     <h1 class="fw-bold">Логотип</h1><br>
                     <p class="text">
                         Он представлен в двух версиях: полная состоит из текста, компактная — только из иконки.<br><br>
                         Иконка состоит из квадратной подложки с закруглёнными краями и монограммы LiveTob. Для текста используется шрифт Monserrat.
                     </p>
                 </div>
-                <div class="wrap col-12 col-md-8 d-flex justify-content-evenly align-items-center">
-                    <div class="col-12 col-md-4">
-                        <div class="img-wrap">
-                            <img src="{% static 'main/img/livetob.svg' %}" class="brand-logo-2">                    
-                        </div>    
+                <div class="col-12 col-xl-8 d-flex justify-content-evenly align-items-center my-5 wrap-mob">
+                    <div class="col-12 col-md-8 col-xl-7 text-center">
+                        <img src="{% static 'main/img/livetob.svg' %}" class="logo-full">                       
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="img-wrap">
-                            <img src="{% static 'main/img/logo_icon.svg' %}" class="brand-logo-1">
-                        </div>
+                    <div class="col-12 col-md-4 col-xl-2 text-center">
+                        <img src="{% static 'main/img/logo_icon.svg' %}" class="logo-icon">
                     </div>              
                 </div>
             </div>
