@@ -1,0 +1,72 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<section>
+	<div class="container">
+		<div class="content">
+			<h1 class="text-center page-title w-100">{{ title }}</h1>
+            <div class="row brand-block justify-content-between">
+                <div class="wrap col-12 col-md-4">
+                    <h1 class="fw-bold">Логотип</h1><br>
+                    <p class="text">
+                        Он представлен в двух версиях: полная состоит из текста, компактная — только из иконки.<br><br>
+                        Иконка состоит из квадратной подложки с закруглёнными краями и монограммы LiveTob. Для текста используется шрифт Monserrat.
+                    </p>
+                </div>
+                <div class="wrap col-12 col-md-8 d-flex justify-content-evenly align-items-center">
+                    <div class="col-12 col-md-4">
+                        <div class="img-wrap">
+                            <img src="{% static 'main/img/livetob.svg' %}" class="brand-logo-2">                    
+                        </div>    
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="img-wrap">
+                            <img src="{% static 'main/img/logo_icon.svg' %}" class="brand-logo-1">
+                        </div>
+                    </div>              
+                </div>
+            </div>
+            <div class="row brand-block">
+                <div class="row">
+                    <h1 class="fw-bold">Цвета</h1><br>
+                </div>
+                <div class="row d-flex mt-5 brand-colors justify-content-center">
+                    <div class="col-12 col-sm-6 col-md-4 col-xl-2 d-flex flex-column align-items-center my-3">
+                        <div class="color-1"></div>
+                        <p><span>HEX:</span> #ECEEF2</p>
+                        <p><span>RGB:</span> 236 238 242</p>
+                        <p><span>CMYK:</span> 2 2 0 5</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-xl-2 d-flex flex-column align-items-center my-3">
+                        <div class="color-2"></div>
+                        <p><span>HEX:</span> #8453FF</p>
+                        <p><span>RGB:</span> 132 83 255</p>
+                        <p><span>CMYK:</span> 48 67 0 1</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-xl-2 d-flex flex-column align-items-center my-3">
+                        <div class="color-3"></div>
+                        <p><span>HEX:</span> #FCCA00</p>
+                        <p><span>RGB:</span> 252 202 0</p>
+                        <p><span>CMYK:</span> 0 20 100 1</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-xl-2 d-flex flex-column align-items-center my-3">
+                        <div class="color-4"></div>
+                        <p><span>HEX:</span> #161616</p>
+                        <p><span>RGB:</span> 22 22 22</p>
+                        <p><span>CMYK:</span> 0 0 0 91</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-xl-2 d-flex flex-column align-items-center my-3">
+                        <div class="color-5"></div>
+                        <p><span>HEX:</span> #232323</p>
+                        <p><span>RGB:</span> 35 35 35</p>
+                        <p><span>CMYK:</span> 0 0 0 86</p>
+                    </div>
+                </div>           
+            </div>
+		</div>
+	</div>
+</section>
+{% endblock %}

@@ -56,10 +56,6 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   }
 }
 
-img.dark-theme {
-  opacity: 0.9;
-}
-
 content {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
@@ -1288,7 +1284,11 @@ nav .nav__body .nav__burger {
   margin-top: 1rem;
 }
 
-.hist-img-wrap {
+.hist-wrap {
+  margin: 0 25%;
+}
+
+.hist-wrap .hist-img-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1297,13 +1297,13 @@ nav .nav__body .nav__burger {
           justify-content: center;
 }
 
-.hist-img-wrap .hist-img {
-  width: 50%;
+.hist-wrap .hist-img-wrap .hist-img {
+  width: 100%;
 }
 
 @media only screen and (max-width: 990px) {
-  .hist-img-wrap .hist-img {
-    width: 100%;
+  .hist-wrap {
+    margin: 0;
   }
 }
 
@@ -1336,6 +1336,7 @@ nav .nav__body .nav__burger {
   -webkit-box-shadow: 0 0 8px #8453ff;
           box-shadow: 0 0 8px #8453ff;
   padding: 1rem;
+  min-height: 200px;
 }
 
 .about-text-block.dark-theme {
@@ -1351,6 +1352,101 @@ nav .nav__body .nav__burger {
   -webkit-box-shadow: 0 0 8px #8453ff;
           box-shadow: 0 0 8px #8453ff;
   border-radius: 8px;
+}
+
+.dev-block.dark-theme {
+  -webkit-box-shadow: 0 0 8px #FCCA00;
+          box-shadow: 0 0 8px #FCCA00;
+}
+
+.brand-block {
+  background-color: #8453ff;
+  border-radius: 8px;
+  padding: 5rem;
+  margin: 5rem 0;
+  -webkit-box-shadow: 0 0 8px #161616;
+          box-shadow: 0 0 8px #161616;
+}
+
+@media screen and (max-width: 990px) {
+  .brand-block {
+    padding: 1rem;
+  }
+}
+
+.brand-block h1, .brand-block p {
+  color: #ECEEF2;
+}
+
+.brand-block p {
+  font-weight: 700;
+}
+
+.brand-block p span {
+  color: #FCCA00;
+}
+
+.brand-block .img-wrap .brand-logo-1 {
+  -webkit-box-shadow: 0 0 8px #161616;
+          box-shadow: 0 0 8px #161616;
+  border-radius: 8px;
+}
+
+.brand-block .img-wrap .brand-logo-1, .brand-block .img-wrap .brand-logo-2 {
+  max-height: 60px;
+}
+
+@media screen and (max-width: 990px) {
+  .brand-block .img-wrap {
+    margin-top: 3rem;
+  }
+}
+
+.brand-block.dark-theme {
+  background-color: #232323;
+  -webkit-box-shadow: 0 0 8px #FCCA00;
+          box-shadow: 0 0 8px #FCCA00;
+}
+
+.brand-block .brand-colors {
+  margin: auto;
+}
+
+.brand-block .brand-colors .color-1, .brand-block .brand-colors .color-2, .brand-block .brand-colors .color-3, .brand-block .brand-colors .color-4, .brand-block .brand-colors .color-5 {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 8px #161616;
+          box-shadow: 0 0 8px #161616;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.brand-block .brand-colors .color-1.dark-theme, .brand-block .brand-colors .color-2.dark-theme, .brand-block .brand-colors .color-3.dark-theme, .brand-block .brand-colors .color-4.dark-theme, .brand-block .brand-colors .color-5.dark-theme {
+  -webkit-box-shadow: 0 0 8px #ECEEF2;
+          box-shadow: 0 0 8px #ECEEF2;
+}
+
+.brand-block .brand-colors .color-1 {
+  background-color: #ECEEF2;
+}
+
+.brand-block .brand-colors .color-2 {
+  background-color: #8453ff;
+}
+
+.brand-block .brand-colors .color-3 {
+  background-color: #FCCA00;
+}
+
+.brand-block .brand-colors .color-4 {
+  background-color: #161616;
+}
+
+.brand-block .brand-colors .color-5 {
+  background-color: #232323;
 }
 
 @media (prefers-color-scheme: dark) {

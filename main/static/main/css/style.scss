@@ -59,11 +59,6 @@ html, body {
 }
 
 
-img {
-    &.dark-theme {
-        opacity: 0.9;
-    }
-}
 content {
     flex: 1 0 auto;
     .content {
@@ -957,14 +952,17 @@ nav {
     }
 }
 
-.hist-img-wrap {
-    display: flex;
-    justify-content: center;
-    .hist-img {
-        width: 50%;
-        @media only screen and (max-width: 990px) {
+.hist-wrap {
+    margin: 0 25%;
+    .hist-img-wrap {
+        display: flex;
+        justify-content: center;
+        .hist-img {
             width: 100%;
         }
+    }
+    @media only screen and (max-width: 990px) {
+        margin: 0;
     }
 }
 
@@ -986,6 +984,8 @@ nav {
     border-radius: $border-radius;
     box-shadow: 0 0 $box-shadow $primory-purple;
     padding: 1rem;
+    min-height: 200px;
+    // height: 500px;
     &.dark-theme {
         box-shadow: 0 0 $box-shadow $primory-orange;
     }
@@ -996,6 +996,76 @@ nav {
     display: flex;
     box-shadow: 0 0 $box-shadow $primory-purple;
     border-radius: $border-radius;
+    &.dark-theme {
+        box-shadow: 0 0 $box-shadow $primory-orange;
+    }
+}
+
+.brand-block {
+    background-color: $primory-purple;
+    border-radius: $border-radius;
+    padding: 5rem;
+    margin: 5rem 0;
+    box-shadow: 0 0 $box-shadow $primory-dark-theme-color;
+    @media screen and (max-width: 990px) {
+        padding: 1rem;
+    }
+    h1, p {
+        color: $milk-white;
+    }
+    p {
+        font-weight: 700;
+        span {
+            color: $primory-orange;
+        }
+    }
+    .img-wrap {
+        .brand-logo-1 {
+            box-shadow: 0 0 $box-shadow $primory-dark-theme-color;
+            border-radius: $border-radius;
+        }
+        .brand-logo-1, .brand-logo-2 {
+            max-height: 60px;
+        }
+        @media screen and (max-width: 990px) {
+            margin-top: 3rem;
+        }
+    }
+    &.dark-theme {
+        background-color: $secondary-dark-theme-color;
+        box-shadow: 0 0 $box-shadow $primory-orange;
+    }
+    .brand-colors {
+        margin: auto;
+        .color-1, .color-2, .color-3, .color-4, .color-5 {
+            width: 8rem;
+            height: 8rem;
+            border-radius: $border-radius;
+            border-radius: $border-radius;
+            box-shadow: 0 0 $box-shadow $primory-dark-theme-color;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            margin: 1rem 0;
+            &.dark-theme {
+                box-shadow: 0 0 $box-shadow $milk-white;
+            }
+        }
+        .color-1 {
+            background-color: $milk-white;
+        }
+        .color-2 {
+            background-color: $primory-purple;
+        }
+        .color-3 {
+            background-color: $primory-orange;
+        }
+        .color-4 {
+            background-color: $primory-dark-theme-color;
+        }
+        .color-5 {
+            background-color: $secondary-dark-theme-color;
+        }
+    }
 }
 
 @media (prefers-color-scheme: dark) {
