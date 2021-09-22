@@ -28,28 +28,45 @@
             </button>
           </div>
         <div class="sights__fast-info">
-            <p class="text title">Краткая информация</p>
-            <!-- <p class="text">Адрес: <a href="https://yandex.ru/maps/?text=Тобольск, {{ address }}" target="_blank" class="url__sights">{{ address }}</a></p> -->
-            <div class="btn__in-sights-wrap">
+            <h5 class="text title">Краткая информация</h5>
+            <div class="btn__in-sights-wrap d-flex justify-content-start align-items-start flex-column">
                 {% if site %}
                 <div class="btn__in-sights">
                     <a href="http://{{ site }}" target="_blank">Перейти на сайт</a>
                 </div>
                 {% else %}
                 {% endif %}
-                <div class="btn__in-sights">
-                    <a href="https://yandex.ru/maps/?text=Тобольск, {{ address }}" target="_blank" class="url__sights">Показать на карте</a>
+                {% if address|length >= 2 %}
+                <p class="text title my-3">Адреса</p>
+                {% else %}
+                <p class="text title my-3">Адрес</p>
+                {% endif %}
+                <div class="addresses d-flex flex-wrap">
+                    {% for address in address %}
+                    <div class="btn__in-sights">
+                        <a href="https://yandex.ru/maps/?text=Тобольск, {{ address }}" target="_blank" class="url__sights">{{ address }}</a>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
-            <p class="text">Телефон:
+            {% if number|length >= 2 %}
+            <p class="text title">Телефоны:</p><br>
+            {% else %}
+            <p class="text title">Телефон:</p><br>
+            {% endif %}
+            <div class="d-flex flex-wrap">
                 {% for number in number %}
                     {% if number %}
-                    <a href="tel:{{ number }}" class='url__sights'>{{ number }}</a> |
+                        {% if forloop.last %}
+                        <a href="tel:{{ number }}" class='url__sights'>{{ number }}</a>
+                        {% else %}
+                        <a href="tel:{{ number }}" class='url__sights'>{{ number }}</a> | 
+                        {% endif %}
                     {% else %}
                     отсутствует
                     {% endif %}
                 {% endfor %}
-            </p>
+            </div><br>
             <p class="text"><i class="far fa-eye"></i> {{ views }}</p>
         </div>
         <p class="text">

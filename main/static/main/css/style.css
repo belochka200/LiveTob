@@ -860,15 +860,6 @@ nav .nav__body .nav__burger {
 }
 
 .btn__in-sights-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin: 1rem 0;
 }
 
@@ -879,7 +870,7 @@ nav .nav__body .nav__burger {
   border-radius: 8px;
   padding: .5rem;
   margin-top: .5rem;
-  max-width: 200px;
+  max-width: 250px;
   margin-right: 1rem;
   text-align: center;
   -webkit-transition: -webkit-box-shadow 0.25s ease;
@@ -1336,12 +1327,33 @@ nav .nav__body .nav__burger {
   -webkit-box-shadow: 0 0 8px #8453ff;
           box-shadow: 0 0 8px #8453ff;
   padding: 1rem;
-  min-height: 200px;
+  min-height: 300px;
+  font-size: 1.4rem;
 }
 
 .about-text-block.dark-theme {
   -webkit-box-shadow: 0 0 8px #FCCA00;
           box-shadow: 0 0 8px #FCCA00;
+}
+
+.about-img-1, .about-img-2, .about-img-3 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  opacity: .9;
+}
+
+.about-img-1 {
+  background-image: url("../img/aboutimg1.png");
+}
+
+.about-img-2 {
+  background-image: url("../img/aboutimg2.png");
+}
+
+.about-img-3 {
+  background-image: url("../img/aboutimg3.png");
 }
 
 .dev-block {

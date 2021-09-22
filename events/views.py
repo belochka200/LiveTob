@@ -612,6 +612,15 @@ def show_to_eat(request, slug):
         for j in i:
             numbers.append(j)
     data['number'] = numbers
+    split_address = []
+    temp = data['address'].split(' / ')
+    split_address.append(temp)
+    data['address'] = split_address
+    addresses = []
+    for i in data['address']:
+        for j in i:
+            addresses.append(j)
+    data['address'] = addresses
     return render(request, 'events/show_to_eat.html', context=data)
 
 def show_to_rest(request, slug):
@@ -646,6 +655,15 @@ def show_to_rest(request, slug):
         for j in i:
             numbers.append(j)
     data['number'] = numbers
+    split_address = []
+    temp = data['address'].split(' / ')
+    split_address.append(temp)
+    data['address'] = split_address
+    addresses = []
+    for i in data['address']:
+        for j in i:
+            addresses.append(j)
+    data['address'] = addresses
     return render(request, 'events/show_to_rest.html', context=data)
 
 def show_to_do(request, slug):
@@ -680,4 +698,13 @@ def show_to_do(request, slug):
         for j in i:
             numbers.append(j)
     data['number'] = numbers
+    split_address = []
+    temp = data['address'].split(' / ')
+    split_address.append(temp)
+    data['address'] = split_address
+    addresses = []
+    for i in data['address']:
+        for j in i:
+            addresses.append(j)
+    data['address'] = addresses
     return render(request, 'events/show_to_do.html', context=data)

@@ -6,6 +6,10 @@ from .models import Category, Sight, SightImage
 
 
 def sights(request):
+    # temp = Sight.objects.all()
+    # for i in temp:
+    #     Sight.objects.filter(slug=i.slug).update(views=0)
+
     category = request.GET.get('category')
     if not category: # если категории нет
         sights_list = Sight.objects.all()[:9]
@@ -54,8 +58,16 @@ def show_sights(request, slug):
         for j in i:
             numbers.append(j)
     data['number'] = numbers
+    split_address = []
+    temp = data['address'].split(' / ')
+    split_address.append(temp)
+    data['address'] = split_address
+    addresses = []
+    for i in data['address']:
+        for j in i:
+            addresses.append(j)
+    data['address'] = addresses
     return render(request, 'sights/show_sights.html', context=data)
-
 
 def load_sights(request):
     last_sight_id = request.GET.get('lastSightId')

@@ -655,9 +655,6 @@ nav {
 }
 
 .btn__in-sights-wrap {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     margin: 1rem 0;
     .btn__in-sights {
         background-color: $milk-white;
@@ -665,7 +662,7 @@ nav {
         border-radius: $border-radius;
         padding: .5rem;
         margin-top: .5rem;
-        max-width: 200px;
+        max-width: 250px;
         margin-right: 1rem;
         text-align: center;
         transition: box-shadow $anim-delay-fast ease;
@@ -984,11 +981,31 @@ nav {
     border-radius: $border-radius;
     box-shadow: 0 0 $box-shadow $primory-purple;
     padding: 1rem;
-    min-height: 200px;
-    // height: 500px;
+    min-height: 300px;
+    font-size: 1.4rem;
     &.dark-theme {
         box-shadow: 0 0 $box-shadow $primory-orange;
     }
+}
+
+.about-img-1, .about-img-2, .about-img-3 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: $border-radius;
+    opacity: .9;
+}
+
+.about-img-1 {
+    background-image: url('../img/aboutimg1.png');
+}
+
+.about-img-2 {
+    background-image: url('../img/aboutimg2.png');
+}
+
+.about-img-3 {
+    background-image: url('../img/aboutimg3.png');
 }
 
 .dev-block {

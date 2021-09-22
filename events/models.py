@@ -82,7 +82,7 @@ class Hotel(models.Model):
 
 class Entertainment(models.Model):
     title = models.CharField('Название', max_length=255, blank=True)
-    category = models.ForeignKey(EntertainmentCategory, on_delete=models.PROTECT, verbose_name='Категория отеля')
+    category = models.ForeignKey(EntertainmentCategory, on_delete=models.PROTECT, verbose_name='Категория развлечения')
     slug = models.SlugField(max_length=255, unique=True, verbose_name='URL')
     recomended = models.BooleanField('Рекомандовано')
     views = models.PositiveIntegerField('Просмотры', default=0)
@@ -122,7 +122,7 @@ class HotelImage(models.Model):
 
     class Meta:
         verbose_name = 'Отель изображение'
-        verbose_name_plural = 'Отель изображения'
+        verbose_name_plural = 'Отели изображения'
 
 
 class EntertainmentImage(models.Model):
@@ -133,5 +133,5 @@ class EntertainmentImage(models.Model):
         return self.ent.title
 
     class Meta:
-        verbose_name = 'Место изображение'
-        verbose_name_plural = 'Место изображения'
+        verbose_name = 'Развлечение изображение'
+        verbose_name_plural = 'Развлечения изображения'
