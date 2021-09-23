@@ -1,18 +1,23 @@
 $milk-white: #ECEEF2;
 $primory-purple: #8453ff;
-// $secondary-purple: #8453ff;
 $primory-orange: #FCCA00;
-$primory-dark-theme-color: #161616; // 1F1F1F
+$primory-dark-theme-color: #161616;
 $secondary-dark-theme-color: #232323;
 $box-shadow: 8px;
 $nav-height: 55px;
 $anim-delay-slow: .8s;
 $anim-delay-fast: .25s;
-// $anim-timing-fun: cubic-bezier(0.68, 1, 0.265, 1);
-$border-radius: 8px;
+$border-radius: 16px;
 
 *::selection {
     background-color: $primory-purple;
+}
+
+img {
+    border-radius: $border-radius;
+    &.logo-loader, &.logo-full {
+        border-radius: 0;
+    }
 }
 
 
@@ -276,6 +281,7 @@ nav {
             z-index: 3;
             img {
                 max-width: 100%;
+                border-radius: 0;
                 &.dark-theme {
                     opacity: 1;
                 }
@@ -522,7 +528,6 @@ nav {
     border: none;
     height: 520px;
     box-shadow: 0 0 $box-shadow $primory-dark-theme-color;
-    border-radius: calc(#{$border-radius} + 2px);
     transition: box-shadow $anim-delay-fast ease;
     &.dark-theme {
         box-shadow: 0 0 $box-shadow $primory-orange;
@@ -533,6 +538,7 @@ nav {
     .card-title {
         color: $milk-white;
         bottom: 0;
+        margin: 0;
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         z-index: 1;
@@ -540,6 +546,7 @@ nav {
         font-size: 1.2rem;
         background-color: $secondary-dark-theme-color;
         width: 100%;
+        border-radius: 0 0 $border-radius $border-radius;
         @media only screen and (max-width: 990px) {
             font-size: 1rem;
         }
@@ -760,18 +767,54 @@ nav {
         color: $milk-white;
         &:hover {
             box-shadow: 0 0 calc(#{$box-shadow}*2) $primory-orange;
-            // background-color: $primory-orange;
-            // color: $primory-dark-theme-color;
+        }
+    }
+    &.btn-close-modal {
+        @media only screen and (max-width: 990px) {
+            width: 100%;
         }
     }
 }
 
-.btn-favorites {
-    position: fixed;
-    bottom: 5vh;
-    z-index: 10;
-    height: 3rem;
-    width: 3rem;
+.carousel {
+    img {
+        border-radius: $border-radius;
+    }
+}
+
+.modal-content {
+    background-color: $milk-white;
+    &.dark-theme {
+        background-color: $primory-dark-theme-color;
+    }
+    .modal-header {
+        border: 0;
+        box-shadow: 0 0 $box-shadow $primory-purple;
+        &.dark-theme {
+            box-shadow: 0 0 $box-shadow $primory-orange;
+        }
+    }
+    .modal-footer {
+        border: 0;
+        // box-shadow: 0 0 $box-shadow $primory-purple;
+        // &.dark-theme {
+            // box-shadow: 0 0 $box-shadow $primory-orange;
+        // }
+    }
+    .modal-body {
+        img {
+            border-radius: $border-radius;
+        }
+        @media only screen and (max-width: 990px) {
+            flex-direction: column;
+        }
+    }
+}
+
+.img-open {
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .image__menu {
@@ -784,7 +827,8 @@ nav {
         top: 10vh;
         img {
             width: 200px;
-            top: 0
+            top: 0;
+            border-radius: 0;
         }
     }
 }
@@ -1004,26 +1048,6 @@ nav {
     }
 }
 
-// .about-img-1, .about-img-2, .about-img-3 {
-//     background-size: cover;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     border-radius: $border-radius;
-//     opacity: .9;
-// }
-
-// .about-img-1 {
-//     background-image: url('../img/aboutimg1.png');
-// }
-
-// .about-img-2 {
-//     background-image: url('../img/aboutimg2.png');
-// }
-
-// .about-img-3 {
-//     background-image: url('../img/aboutimg3.png');
-// }
-
 .dev-block {
     padding: 1rem;
     display: flex;
@@ -1068,11 +1092,6 @@ nav {
                 margin-top: 3rem;            
             }
         }
-        // &.logo-full {
-        //     @media screen and (max-width: 426px) {
-        //         height: 50px;
-        //     }
-        // }
     }
     &.dark-theme {
         background-color: $secondary-dark-theme-color;
