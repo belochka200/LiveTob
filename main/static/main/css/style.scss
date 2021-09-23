@@ -971,17 +971,16 @@ nav {
 
 
 .spoiler-wrap {
-    box-shadow: 0 0 $box-shadow $milk-white;
+    box-shadow: 0 0 $box-shadow $primory-purple;
     border-radius: $border-radius;
     padding: 1rem;
     margin-bottom: 3rem;
-    background-color: $primory-dark-theme-color;
+    background-color: $milk-white;
     &.dark-theme {
-        box-shadow: 0 0 $box-shadow $milk-white;
+        box-shadow: 0 0 $box-shadow $primory-orange;
         background-color: $secondary-dark-theme-color;
     }    
     &.active {
-        background-color: $primory-dark-theme-color;
         box-shadow: 0 0 $box-shadow $primory-purple;
         &.dark-theme {
             box-shadow: 0 0 $box-shadow $primory-orange;
@@ -991,9 +990,6 @@ nav {
     .spoiler-head {
         display: flex;
         justify-content: center;
-        h6 {
-            color: $milk-white;
-        }
         &:hover {
             cursor: pointer;
         }

@@ -1299,22 +1299,21 @@ nav .nav__body .nav__burger {
 }
 
 .spoiler-wrap {
-  -webkit-box-shadow: 0 0 8px #ECEEF2;
-          box-shadow: 0 0 8px #ECEEF2;
+  -webkit-box-shadow: 0 0 8px #8453ff;
+          box-shadow: 0 0 8px #8453ff;
   border-radius: 16px;
   padding: 1rem;
   margin-bottom: 3rem;
-  background-color: #161616;
+  background-color: #ECEEF2;
 }
 
 .spoiler-wrap.dark-theme {
-  -webkit-box-shadow: 0 0 8px #ECEEF2;
-          box-shadow: 0 0 8px #ECEEF2;
+  -webkit-box-shadow: 0 0 8px #FCCA00;
+          box-shadow: 0 0 8px #FCCA00;
   background-color: #232323;
 }
 
 .spoiler-wrap.active {
-  background-color: #161616;
   -webkit-box-shadow: 0 0 8px #8453ff;
           box-shadow: 0 0 8px #8453ff;
 }
@@ -1332,10 +1331,6 @@ nav .nav__body .nav__burger {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.spoiler-wrap .spoiler-head h6 {
-  color: #ECEEF2;
 }
 
 .spoiler-wrap .spoiler-head:hover {
