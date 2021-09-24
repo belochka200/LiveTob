@@ -1036,15 +1036,11 @@ nav {
         display: flex;
         .popular-people-card-block, .facts-card-block {
             box-shadow: none;
+            border: 0;
             &.dark-theme {
                 border-bottom: 1px solid $primory-orange;
                 box-shadow: none;
-                &:last-child {
-                    border: none;
-                }
-            }
-            &:last-child {
-                border: none;
+                border: 0;
             }
         }
     }

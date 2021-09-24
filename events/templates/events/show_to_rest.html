@@ -6,57 +6,57 @@
 {% block content %}
 <h1 class="text-center sights__title">{{ title }}</h1>
 <div class="container">
-    <div class="content mt-5">
-        <div id="carouselExampleIndicators" class="carousel slide mb-5 slider__show-sight" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item cur-pointer" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <img src="{{ title_image }}" class="d-block w-100" alt="image">
-              </div>
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-fullscreen">
-                      <div class="modal-content">
-                          <div class="modal-header justify-content-center">
-                              <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
-                          </div>
-                          <div class="modal-body">
-                              <img src="{{ title_image }}" alt="">
-                          </div>
-                          <div class="modal-footer d-flex justify-content-center">
-                              <div class="btn-cus-1 btn-close-modal" data-bs-dismiss="modal">Закрыть</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              {% for i in img %}
-              <div class="carousel-item cur-pointer" data-bs-toggle="modal" data-bs-target="#exampleModal{{ i.id }}">
-                <img src="{{ i.image.url }}" class="d-block w-100" alt="image">
-              </div>
-              <div class="modal fade" id="exampleModal{{ i.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-fullscreen">
-                      <div class="modal-content">
-                          <div class="modal-header justify-content-center">
-                              <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
-                          </div>
-                          <div class="modal-body">
-                              <img src="{{ i.image.url }}" alt="">
-                          </div>
-                          <div class="modal-footer d-flex justify-content-center">
-                              <div class="btn-cus-1 btn-close-modal" data-bs-dismiss="modal">Закрыть</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              {% endfor %}
+  <div class="content mt-5">
+    <div id="carouselExampleIndicators" class="carousel slide mb-5 slider__show-sight" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active cur-pointer" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <img src="{{ title_image }}" class="d-block w-100" alt="title-image">
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content">
+                        <div class="modal-header justify-content-center">
+                            <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
+                        </div>
+                        <div class="modal-body">
+                            <img src="{{ title_image }}" alt="">
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <div class="btn-cus-1 btn-close-modal" data-bs-dismiss="modal">Закрыть</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% for i in img %}
+                <div class="carousel-item cur-pointer" data-bs-toggle="modal" data-bs-target="#exampleModal{{ i.id }}">
+                    <img src="{{ i.image.url }}" class="d-block w-100" alt="image">
+                </div>
+                <div class="modal fade" id="exampleModal{{ i.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content">
+                            <div class="modal-header justify-content-center">
+                                <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
+                            </div>
+                            <div class="modal-body">
+                                <img src="{{ i.image.url }}" alt="">
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <div class="btn-cus-1 btn-close-modal" data-bs-dismiss="modal">Закрыть</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
         <div class="sights__fast-info">
             <h5 class="text title">Краткая информация</h5>
             <div class="btn__in-sights-wrap d-flex justify-content-start align-items-start flex-column">
@@ -93,14 +93,14 @@
                         <a href="tel:{{ number }}" class='url__sights'>{{ number }}</a> | 
                         {% endif %}
                     {% else %}
-                    отсутствует
+                    <p class="text">отсутствует</p>
                     {% endif %}
                 {% endfor %}
             </div><br>
             <p class="text"><i class="far fa-eye"></i> {{ views }}</p>
         </div>
         <p class="text">
-            {{ full_text|linebreaksbr }}
+            {{ description|linebreaksbr }}
         </p>
     </div>
 </div>

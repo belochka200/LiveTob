@@ -1398,17 +1398,13 @@ nav .nav__body .nav__burger {
   .spoiler-mob .popular-people-card-block, .spoiler-mob .facts-card-block {
     -webkit-box-shadow: none;
             box-shadow: none;
+    border: 0;
   }
   .spoiler-mob .popular-people-card-block.dark-theme, .spoiler-mob .facts-card-block.dark-theme {
     border-bottom: 1px solid #FCCA00;
     -webkit-box-shadow: none;
             box-shadow: none;
-  }
-  .spoiler-mob .popular-people-card-block.dark-theme:last-child, .spoiler-mob .facts-card-block.dark-theme:last-child {
-    border: none;
-  }
-  .spoiler-mob .popular-people-card-block:last-child, .spoiler-mob .facts-card-block:last-child {
-    border: none;
+    border: 0;
   }
 }
 
