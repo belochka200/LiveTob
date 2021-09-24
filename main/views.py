@@ -1,14 +1,18 @@
 from django.shortcuts import render
 from sights.models import Sight
+from .models import PopularPeople, InterestingFact
 
 
 def index(request): # главная страница
     sights_list = Sight.objects.all()[:3]
+    popular_people = PopularPeople.objects.all()
+    interesting_facts = InterestingFact.objects.all()
     data = {
         'title': 'Live Tob',
         'sights': 'Достопримечательности',
-        # 'page_title': 'Главная',
         'sights_list': sights_list,
+        'popular_people': popular_people,
+        'interesting_facts': interesting_facts,
     }
     return render(request, 'main/index.html', context=data)
 
