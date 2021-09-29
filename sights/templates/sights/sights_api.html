@@ -10,7 +10,7 @@
 
         <div class="col-12 col-md-4 sights" v-for="sight in sights">
             <div class="card mt-5">
-                <img src="{{ sight.image_preview.url }}" class="card-img-top round">
+                <img :src="sight.image_preview" class="card-img-top round">
                 <p class="card-title position-absolute">{{ sight.title }}</p>
                 <!-- {{  }}
                 <a href="https://yandex.ru/maps/?text=Тобольск, {{ sight.adress }}" target="_blank">
