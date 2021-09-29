@@ -1,0 +1,78 @@
+$milk-white: #ECEEF2;
+$primory-purple: #8453ff;
+$primory-orange: #FCCA00;
+$primory-dark-theme-color: #161616;
+$secondary-dark-theme-color: #232323;
+$box-shadow-color: #161616;
+$box-shadow: 4px;
+$border-radius: 16px;
+$border-radius-card: 4px;
+
+.brand-block {
+    background-color: $primory-purple;
+    border-radius: $border-radius-card;
+    padding: 5rem;
+    margin: 5rem 0;
+    @media screen and (max-width: 990px) {
+        padding: 1rem;
+    }
+    h1, p {
+        color: $milk-white;
+    }
+    p {
+        font-weight: 700;
+        span {
+            color: $primory-orange;
+        }
+    }
+    .wrap-mob {
+        @media screen and (max-width: 990px) {
+            flex-direction: column;
+        }
+    }
+    img {
+        &.logo-icon, &.logo-full {
+            max-width: 100%;
+        }
+        &.logo-icon {
+            box-shadow: 0 0 $box-shadow $box-shadow-color;
+            border-radius: $border-radius;
+            @media screen and (max-width: 990px) {
+                margin-top: 3rem;            
+            }
+        }
+    }
+    &.dark-theme {
+        background-color: $secondary-dark-theme-color;
+    }
+    .brand-colors {
+        margin: auto;
+        .color-1, .color-2, .color-3, .color-4, .color-5 {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 100%;
+            box-shadow: 0 2px $box-shadow $box-shadow-color;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            margin: 1rem 0;
+            &.dark-theme {
+                box-shadow: 0 0 $box-shadow $milk-white; // цвет тени не менять
+            }
+        }
+        .color-1 {
+            background-color: $milk-white;
+        }
+        .color-2 {
+            background-color: $primory-purple;
+        }
+        .color-3 {
+            background-color: $primory-orange;
+        }
+        .color-4 {
+            background-color: $primory-dark-theme-color;
+        }
+        .color-5 {
+            background-color: $secondary-dark-theme-color;
+        }
+    }
+}

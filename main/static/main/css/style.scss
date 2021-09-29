@@ -1,21 +1,27 @@
+@import "loader";
+@import "footer";
+@import "brand";
+@import "animations";
+
 $milk-white: #ECEEF2;
 $primory-purple: #8453ff;
 $primory-orange: #FCCA00;
 $primory-dark-theme-color: #161616;
 $secondary-dark-theme-color: #232323;
 $box-shadow-color: #161616;
-$box-shadow: 8px;
+$box-shadow: 4px;
 $nav-height: 55px;
 $anim-delay-slow: .8s;
 $anim-delay-fast: .25s;
 $border-radius: 16px;
+$border-radius-card: 4px;
 
 *::selection {
     background-color: $primory-purple;
 }
 
 img {
-    border-radius: $border-radius;
+    border-radius: $border-radius-card;
     &.logo-loader, &.logo-full {
         border-radius: 0;
     }
@@ -79,57 +85,6 @@ content {
     }
 }
 
-footer {
-    background-color: $primory-purple;
-    padding: 4rem 1rem 1rem 1rem;
-    flex: 0 0 auto;
-    @media only screen and (max-width: 990px) {
-        flex: 0 0 auto;
-        padding-bottom: calc(#{$nav-height} + 16px);
-        font-size: 1.4rem
-    }
-    &.dark-theme {
-        background-color: $secondary-dark-theme-color;
-    }
-    .footer-links {
-        @media only screen and (max-width: 990px) {
-            text-align: center;
-        }
-    }
-    .footer__block {
-        @media only screen and (max-width: 990px) {
-            &:first-child {
-                margin: 0;
-            }
-            &:last-child {
-                margin-bottom: 3rem;
-            }
-            margin-top: 3rem;
-        }
-    }
-    .email {
-        color: $primory-orange;
-    }
-    .footer__text {
-        color: $milk-white;
-        @media only screen and (max-width: 990px) {
-            font-size: 1.4rem;
-            &:last-child {
-                font-size: 1rem;
-            }
-        }
-    }
-    .footer-link {
-        color: $primory-orange;
-    }
-    .social-networks-footer {
-        padding-top: 1rem;
-        @media only screen and (max-width: 990px) {
-            padding-top: 0;
-        }
-    }
-}
-
 a {
     text-decoration: none;
     &.url__sights {
@@ -177,7 +132,7 @@ h1 {
         top: $nav-height;
         left: 0;
         z-index: 2;
-        box-shadow: 0 0 $box-shadow $box-shadow-color;
+        box-shadow: 0 -2px $box-shadow $box-shadow-color;
         font-size: 1rem;
         &.dark-theme {
             background-color: $secondary-dark-theme-color;
@@ -195,12 +150,11 @@ h1 {
             top: 0;
             z-index: 6;
             padding: 1rem 0;
-            box-shadow: 0 0 $box-shadow $box-shadow-color;
+            box-shadow: 0 -2px $box-shadow $box-shadow-color;
             background-color: $milk-white;
             &.dark-theme {
                 color: $milk-white;
                 background-color: $secondary-dark-theme-color;
-                box-shadow: none;
             }
         }
     }
@@ -235,13 +189,13 @@ nav {
         z-index: 2;
         background-color: $primory-purple;
         @media screen and (max-width: 990px) {
-            box-shadow: 0 0 $box-shadow $box-shadow-color;
+            box-shadow: 0 2px $box-shadow $box-shadow-color;
         }
     }
     &.dark-theme:before {
         background-color: $secondary-dark-theme-color;
         @media screen and (max-width: 990px) {
-            box-shadow: 0 0 $box-shadow $box-shadow-color;
+            box-shadow: 0 2px $box-shadow $box-shadow-color;
         }
     }
     .nav__body {
@@ -262,17 +216,14 @@ nav {
                 @media only screen and (max-width: 990px) {
                     font-size: 1.4rem;
                     width: 100%;
-                    border-radius: $border-radius;
+                    border-radius: $border-radius-card;
                     margin-top: 1rem;
                     &:first-child {
                         margin-top: 0;
                     }
                     color: $milk-white;
-                    box-shadow: 0 0 $box-shadow $milk-white; // цвет тени не менять
+                    box-shadow: 0 2px $box-shadow $milk-white; // цвет тени не менять
                     font-family: 'Montserrat', sans-serif;
-                    &.dark-theme {
-                        box-shadow: 0 0 $box-shadow $milk-white; // цвет тени не менять
-                    }
                 }
                 @media only screen and (max-width: 375px) {
                     font-size: 1rem;
@@ -310,7 +261,7 @@ nav {
                     position: absolute;
                     height: 2px;
                     border-radius: $border-radius;
-                    transition: all $anim-delay-slow cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    transition: all $anim-delay-slow ease;
                 }
                 &:before {
                     top: 0;
@@ -324,7 +275,7 @@ nav {
                     border-radius: $border-radius;
                     width: 100%;
                     top: 9px;
-                    transition: transform $anim-delay-slow cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    transition: all $anim-delay-slow ease;
                 }
                 &.active:before {
                     transform: rotate(45deg);
@@ -356,7 +307,7 @@ nav {
             width: 100%;
             height: calc(100% + #{$nav-height});
             background-color: $primory-purple;
-            transition: all $anim-delay-slow cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all $anim-delay-slow ease;
             &.active {
                 top: 0;
             }
@@ -382,7 +333,7 @@ nav {
         .filter__wrap {
            .filter__item {
                 background-color: $milk-white;
-                box-shadow: 0 0 $box-shadow $primory-purple; // цвет тени не менять
+                box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
                 padding: 8px 16px;
                 margin: 8px;
                 border-radius: $border-radius;
@@ -390,32 +341,30 @@ nav {
                 font-family: 'Open Sans', sans-serif;
                 font-weight: 400;
                 font-size: 1rem;
-                transition: box-shadow $anim-delay-fast ease;
+                transition: box-shadow, border $anim-delay-fast ease;
+                border: 1px solid rgba(0, 0, 0, 0);
                 &:hover {
-                    box-shadow: 0 0 calc(#{$box-shadow}*2) $primory-purple; // цвет тени не менять
+                    // box-shadow: 0 4px $box-shadow $primory-purple; // цвет тени не менять
+                    border: 1px solid $primory-purple;
                     &.dark-theme {
-                        background-color: $primory-dark-theme-color;
-                        color: $milk-white;
-                        box-shadow: 0 0 $box-shadow $primory-orange;
-                        &:hover {
-                            box-shadow: 0 0 calc(#{$box-shadow}*2) $primory-orange; // цвет тени не менять
-                        }
+                        // box-shadow: 0 4px $box-shadow $primory-orange; // цвет тени не менять
+                        border: 1px solid $primory-orange;
                     }
                 }
                 &.active {
                 background-color: $primory-purple;
                 color: $milk-white;
-                box-shadow: 0 0 $box-shadow $primory-purple; // цвет тени не менять
+                box-shadow: none;
                     &.dark-theme {
                         background-color: $primory-orange;
                         color: $primory-dark-theme-color;
-                        box-shadow: 0 0 $box-shadow $primory-orange; // цвет тени не менять
+                        box-shadow: none;
                     }
                 }
                 &.dark-theme {
                     background-color: $primory-dark-theme-color;
                     color: $milk-white;
-                    box-shadow: 0 0 $box-shadow $primory-orange; // цвет тени не менять
+                    box-shadow: 0 2px $box-shadow $primory-orange; // цвет тени не менять
                 }
             }
             @media only screen and (max-width: 990px) {
@@ -448,10 +397,11 @@ nav {
             bottom: calc(#{$nav-height} + 16px);
             z-index: 4;
             background-color: $milk-white;
-            border-radius: $border-radius;
+            border-radius: $border-radius-card;
             width: 90%;
-            box-shadow: 0 0 $box-shadow $primory-purple; // цвет тени не менять
+            box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
             padding: 1rem .5rem;
+            // border: 1px solid $primory-purple;
             &.active {
                 transform: scale(1);
             }
@@ -459,7 +409,7 @@ nav {
         @media only screen and (max-width: 990px) {
             &.dark-theme {
                 background-color: $primory-dark-theme-color;
-                box-shadow: 0 0 $box-shadow $primory-orange; // цвет тени не менять
+                box-shadow: 0 2px $box-shadow $primory-orange; // цвет тени не менять
             }
         }
     }
@@ -487,9 +437,8 @@ nav {
                 transform: scale(0);
             }
             &.dark-theme {
-                background-color: $secondary-dark-theme-color;
-                box-shadow: 0 0 $box-shadow $box-shadow-color;
-                color: $primory-orange;
+                background-color: $primory-orange;
+                color: $primory-dark-theme-color;
             }
         }
     }
@@ -507,14 +456,13 @@ nav {
         right: 0;
         z-index: 5;
         padding: .5rem;
-        border-radius: $border-radius;
+        border-radius: $border-radius-card;
         margin: 1rem;
         background-color: $primory-purple;
         color: $milk-white;
-        box-shadow: 0 0 $box-shadow $box-shadow-color;
+        box-shadow: 0 2px $box-shadow $box-shadow-color;
         font-size: 1.2rem;
         &.dark-theme {
-            box-shadow: 0 0 $box-shadow $box-shadow-color;
             background-color: $primory-orange;
             color: $primory-dark-theme-color;
         }
@@ -530,19 +478,15 @@ nav {
 
 .card {
     display: block;
-    border-radius: $border-radius;
+    border-radius: $border-radius-card;
     border: none;
-    height: 520px;
-    box-shadow: 0 0 $box-shadow $box-shadow-color;
-    transition: box-shadow $anim-delay-fast ease;
-    &.dark-theme {
-        box-shadow: 0 0 $box-shadow $primory-orange; // цвет тени не менять
-    }
+    height: 400px;
+    transition: all $anim-delay-fast ease;
     @media only screen and (max-width: 990px) {
         height: 320px;
     }
     .card-title {
-        color: $milk-white;
+        color: $primory-dark-theme-color;
         bottom: 0;
         margin: 0;
         font-family: 'Montserrat', sans-serif;
@@ -550,11 +494,15 @@ nav {
         z-index: 1;
         padding: 1rem;
         font-size: 1.2rem;
-        background-color: $secondary-dark-theme-color;
+        background-color: #fff;
         width: 100%;
-        border-radius: 0 0 $border-radius $border-radius;
+        border-radius: 0 0 $border-radius-card $border-radius-card;
         @media only screen and (max-width: 990px) {
             font-size: 1rem;
+        }
+        &.dark-theme {
+            background-color: $secondary-dark-theme-color;
+            color: $milk-white;
         }
     }
     img {
@@ -564,17 +512,14 @@ nav {
             object-position: center;
         }
         &.round {
-            border-radius: $border-radius;
+            border-radius: $border-radius-card;
         }
     }
     &.dark-theme {
         background-color: #343434;
     }
     &:hover {
-        box-shadow: 0 0 calc(#{$box-shadow}*2) $box-shadow-color;
-        &.dark-theme {
-            box-shadow: 0 0 calc(#{$box-shadow}*2) $primory-orange; // цвет тени не менять
-        }
+        margin: 0 -.5rem;
     }
     .sights__gps-mark {
         z-index: 2;
@@ -671,7 +616,7 @@ nav {
     margin: 1rem 0;
     .btn__in-sights {
         background-color: $milk-white;
-        box-shadow: 0 0 $box-shadow $primory-purple; // цвет тени не менять
+        border: 1px solid $primory-purple;
         border-radius: $border-radius;
         padding: .5rem;
         margin-top: .5rem;
@@ -679,30 +624,26 @@ nav {
         margin-right: 1rem;
         text-align: center;
         transition: box-shadow $anim-delay-fast ease;
-        &.rec {
-            &.dark-theme {
-                color: $primory-orange;
-                &:hover {
-                    cursor: default;
-                    box-shadow: 0 0 $box-shadow $primory-orange; // цвет тени не менять
-                }
-            }
-            &:hover {
-                cursor: default;
-                box-shadow: 0 0 $box-shadow $primory-purple; // цвет тени не менять
-            }
-        }
+        // &.rec {
+        //     color: black;
+        //     &.dark-theme {
+        //         color: $primory-orange;
+        //         &:hover {
+        //             cursor: default;
+        //         }
+        //     }
+        //     &:hover {
+        //         cursor: default;
+        //     }
+        // }
         a {
             color: $primory-dark-theme-color;
         }
         &.dark-theme {
             background-color: $primory-dark-theme-color;
-            box-shadow: 0 0 $box-shadow $primory-orange; // цвет тени не менять
+            border: 1px solid $primory-orange;
             a {
                 color: $primory-orange;
-            }
-            &:hover {
-                box-shadow: 0 0 calc(#{$box-shadow}*2) $primory-orange; // цвет тени не менять
             }
         }
         @media only screen and (max-width: 990px) {
@@ -710,14 +651,10 @@ nav {
         }
         &:hover {
             cursor: pointer;
-            box-shadow: 0 0 calc(#{$box-shadow}*2) $primory-purple; // цвет тени не менять
         }
     }
 }
 
-// .welcome {
-//     margin-top: calc(#{$nav-height} + 3rem);
-// }
 
 ._btn {
     color: $milk-white;
@@ -729,19 +666,19 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 $box-shadow $box-shadow-color;
+    box-shadow: 0 2px $box-shadow $box-shadow-color;
     transition: box-shadow $anim-delay-fast ease;
     &.dark-theme {
         background-color: $primory-orange;
         color: $primory-dark-theme-color;
-        box-shadow: 0 0 $box-shadow $primory-orange;
+        box-shadow: 0 2px $box-shadow $primory-orange;
         &:hover {
-            box-shadow: 0 0 calc(#{$box-shadow}*2) $primory-orange; // цвет тени не менять
+            box-shadow: 0 4px $box-shadow $primory-orange; // цвет тени не менять
         }
     }
     &:hover {
         cursor: pointer;
-        box-shadow: 0 0 calc(#{$box-shadow}*2) $box-shadow-color;
+        box-shadow: 0 4px $box-shadow $box-shadow-color;
     }
     a {
         color: $milk-white;
@@ -761,18 +698,18 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 $box-shadow $primory-purple;
+    border: 1px solid $primory-purple;
     transition: box-shadow $anim-delay-fast ease;
     &:hover {
         cursor: pointer;
-        box-shadow: 0 0 calc(#{$box-shadow}*2) $primory-purple; // цвет тени не менять
+        box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
     }
     &.dark-theme {
         background-color: $primory-dark-theme-color;
-        box-shadow: 0 0 $box-shadow $primory-orange;
+        border: 1px solid $primory-orange;
         color: $milk-white;
         &:hover {
-            box-shadow: 0 0 calc(#{$box-shadow}*2) $primory-orange; // цвет тени не менять
+            box-shadow: 0 4px $box-shadow $primory-orange; // цвет тени не менять
         }
     }
     &.btn-close-modal {
@@ -784,7 +721,7 @@ nav {
 
 .carousel {
     img {
-        border-radius: $border-radius;
+        border-radius: $border-radius-card;
     }
 }
 
@@ -794,7 +731,6 @@ nav {
     }
     .modal-dialog {
         .modal-content {
-            border-radius: $border-radius;
             background-color: $milk-white;
             &.dark-theme {
                 background-color: $primory-dark-theme-color;
@@ -848,7 +784,6 @@ nav {
     min-width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
-    object-fit: cover;
     background-size: cover;
     flex-direction: column;
 }
@@ -869,29 +804,10 @@ nav {
 .home-page-title {
     font-size: 3rem;
     font-weight: 700;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: center;
-    background-color: $milk-white;
+    color: $primory-dark-theme-color;
     padding: 0 2rem;
-    background-image: linear-gradient(
-        45deg,
-        $secondary-dark-theme-color 25%,
-        $primory-purple 50%,
-        $secondary-dark-theme-color 75%);
     &.first-title {
-        background-image: linear-gradient(
-        45deg,
-        $milk-white 25%,
-        $primory-purple 50%,
-        $milk-white 75%);
-    }
-    &.dark-theme {
-        background-image: linear-gradient(
-        45deg,
-        $milk-white 25%,
-        $primory-orange 50%,
-        $milk-white 75%);
+        color: $milk-white;
     }
     @media only screen and (max-width: 990px) {
         font-size: 2rem;
@@ -921,7 +837,10 @@ nav {
 }
 
 .home-page-title-screen-city-history {
-    color: $milk-white;
+    color: $primory-dark-theme-color;
+    &.dark-theme {
+        color: $milk-white;
+    }
 }
 
 .list-home-page {
@@ -944,15 +863,6 @@ nav {
         }
     }
 }
-
-@keyframes home-page__scroll-down {
-    0% { bottom: 15% }
-    25% { bottom: 10% }
-    50% { bottom: 15% }
-    75% { bottom: 10% }
-    100% { bottom: 15% }
-}
-
 
 .where-to-go__card {
     @media only screen and (max-width: 990px) {
@@ -980,19 +890,21 @@ nav {
 
 
 .spoiler-wrap {
-    box-shadow: 0 0 $box-shadow $primory-purple; // цвет тени не менять
+    // box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
     border-radius: $border-radius;
     padding: 1rem;
     margin-bottom: 3rem;
-    background-color: $milk-white;
+    background-color: #fff;
+    border: 1px solid $primory-purple;
     &.dark-theme {
-        box-shadow: 0 0 $box-shadow $primory-orange; // цвет тени не менять
+        box-shadow: 0 2px $box-shadow $primory-orange; // цвет тени не менять
         background-color: $secondary-dark-theme-color;
     }    
     &.active {
-        box-shadow: 0 0 $box-shadow $primory-purple; // цвет тени не менять
+        // box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
+        background-color: #fff;
         &.dark-theme {
-            box-shadow: 0 0 $box-shadow $primory-orange; // цвет тени не менять
+            box-shadow: 0 2px $box-shadow $primory-orange; // цвет тени не менять
             background-color: $secondary-dark-theme-color;
         }
     }
@@ -1035,34 +947,33 @@ nav {
     @media only screen and (max-width: 990px) {
         display: flex;
         .popular-people-card-block, .facts-card-block {
-            box-shadow: none;
-            border: 0;
+            background: transparent;
             &.dark-theme {
                 border-bottom: 1px solid $primory-orange;
-                box-shadow: none;
-                border: 0;
+                border: none;
+                background: transparent;
             }
         }
     }
 }
 
 .about-text-block {
-    border-radius: $border-radius;
-    box-shadow: 0 0 $box-shadow $primory-purple;
+    border-radius: $border-radius-card;
+    background-color: #fff;
     padding: 2.2rem;
     min-height: 300px;
     p {
         font-size: 1.4rem;
     }
     &.dark-theme {
-        box-shadow: 0 0 $box-shadow $primory-orange;
+        background-color: $secondary-dark-theme-color;
     }
     @media only screen and (max-width: 990px) {
         padding: 1rem;
     }
     .about-img {
         max-width: 100%;
-        border-radius: $border-radius;
+        border-radius: $border-radius-card;
         @media only screen and (max-width: 767px) {
             margin-top: 3rem;
             &.about-img-no-margin-top {
@@ -1073,267 +984,10 @@ nav {
     }
 }
 
-.dev-block {
-    padding: 1rem;
-    display: flex;
-    box-shadow: 0 0 $box-shadow $primory-purple; // цвет тени не менять
-    border-radius: $border-radius;
-    &.dark-theme {
-        box-shadow: 0 0 $box-shadow $primory-orange; // цвет тени не менять
-    }
-}
-
-.brand-block {
-    background-color: $primory-purple;
-    border-radius: $border-radius;
-    padding: 5rem;
-    margin: 5rem 0;
-    box-shadow: 0 0 $box-shadow $box-shadow-color;
-    @media screen and (max-width: 990px) {
-        padding: 1rem;
-    }
-    h1, p {
-        color: $milk-white;
-    }
-    p {
-        font-weight: 700;
-        span {
-            color: $primory-orange;
-        }
-    }
-    .wrap-mob {
-        @media screen and (max-width: 990px) {
-            flex-direction: column;
-        }
-    }
-    img {
-        &.logo-icon, &.logo-full {
-            max-width: 100%;
-        }
-        &.logo-icon {
-            box-shadow: 0 0 $box-shadow $box-shadow-color;
-            border-radius: $border-radius;
-            @media screen and (max-width: 990px) {
-                margin-top: 3rem;            
-            }
-        }
-    }
-    &.dark-theme {
-        background-color: $secondary-dark-theme-color;
-        box-shadow: 0 0 $box-shadow $primory-orange; // цвет тени не менять
-    }
-    .brand-colors {
-        margin: auto;
-        .color-1, .color-2, .color-3, .color-4, .color-5 {
-            width: 8rem;
-            height: 8rem;
-            border-radius: $border-radius;
-            border-radius: $border-radius;
-            box-shadow: 0 0 $box-shadow $box-shadow-color;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 700;
-            margin: 1rem 0;
-            &.dark-theme {
-                box-shadow: 0 0 $box-shadow $milk-white; // цвет тени не менять
-            }
-        }
-        .color-1 {
-            background-color: $milk-white;
-        }
-        .color-2 {
-            background-color: $primory-purple;
-        }
-        .color-3 {
-            background-color: $primory-orange;
-        }
-        .color-4 {
-            background-color: $primory-dark-theme-color;
-        }
-        .color-5 {
-            background-color: $secondary-dark-theme-color;
-        }
-    }
-}
-
-.alert {
-    padding: 1rem;
-    box-shadow: 0 0 $box-shadow $primory-purple; // цвет тени не менять
-    border-radius: $border-radius;
-    &.dark-theme {
-        box-shadow: 0 0 $box-shadow $primory-orange; // цвет тени не менять
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .loader {
-        background-color: $primory-dark-theme-color;
-        bottom: 0;
-        top: 0;
-        left: 0;
-        right: 0;
-        overflow: hidden;
-        position: fixed;
-        z-index: 99999;
-        .logo-loader {
-            position: absolute;
-            margin-top: 10vh;
-            width: 20vh;
-        }
-        .loader-inner {
-            bottom: 0;
-            height: 60px;
-            left: 0;
-            margin: auto;
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 100px;
-            .loader-line-wrap {
-                animation: 'spin-loader' $anim-delay-slow ease infinite;
-                box-sizing: border-box;
-                height: 50px;
-                left: 0;
-                overflow: hidden;
-                position: absolute;
-                top: 0;
-                transform-origin: 50% 100%;
-                width: 100px;
-                .loader-line {
-                    border:  solid transparent;
-                    border-radius: 100%;
-                    box-sizing: border-box;
-                    height: 100px;
-                    left: 0;
-                    margin: 0 auto;
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    width: 100px;
-                }
-                &:nth-child(1) {
-                    animation-delay: -100ms;
-                    .loader-line {
-                        border-color: $primory-purple;
-                        height: 90px;
-                        width: 90px;
-                        top: 7px;
-                    }
-                }
-                &:nth-child(2) {
-                    animation-delay: -200ms;
-                    .loader-line {
-                        border-color: $milk-white;
-                        height: 76px;
-                        width: 76px;
-                        top: 14px;
-                    }
-                }
-                &:nth-child(3) {
-                    animation-delay: -300ms;
-                    .loader-line {
-                        border-color: $primory-orange;
-                        height: 62px;
-                        width: 62px;
-                        top: 21px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    .loader {
-        background-color: $primory-purple;
-        bottom: 0;
-        top: 0;
-        left: 0;
-        right: 0;
-        overflow: hidden;
-        position: fixed;
-        z-index: 99999;
-        display: block;
-        .logo-loader {
-            position: absolute;
-            margin-top: 10vh;
-            width: 20vh;
-        }
-        .loader-inner {
-            bottom: 0;
-            height: 60px;
-            left: 0;
-            margin: auto;
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 100px;
-            .loader-line-wrap {
-                animation: 'spin-loader' $anim-delay-slow ease infinite;
-                box-sizing: border-box;
-                height: 50px;
-                left: 0;
-                overflow: hidden;
-                position: absolute;
-                top: 0;
-                transform-origin: 50% 100%;
-                width: 100px;
-                .loader-line {
-                    border:  solid transparent;
-                    border-radius: 100%;
-                    box-sizing: border-box;
-                    height: 100px;
-                    left: 0;
-                    margin: 0 auto;
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    width: 100px;
-                }
-                &:nth-child(1) {
-                    animation-delay: -100ms;
-                    .loader-line {
-                        border-color: $primory-dark-theme-color;
-                        height: 90px;
-                        width: 90px;
-                        top: 7px;
-                    }
-                }
-                &:nth-child(2) {
-                    animation-delay: -200ms;
-                    .loader-line {
-                        border-color: $milk-white;
-                        height: 76px;
-                        width: 76px;
-                        top: 14px;
-                    }
-                }
-                &:nth-child(3) {
-                    animation-delay: -300ms;
-                    .loader-line {
-                        border-color: $primory-orange;
-                        height: 62px;
-                        width: 62px;
-                        top: 21px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@keyframes spin-loader {
-    0%, 15% {
-        transform:rotate(0)
-    }
-    100% {
-        transform:rotate(360deg)
-    }   
-}
-
 .popular-people-card-block, .facts-card-block {
-    box-shadow: 0 0 $box-shadow $box-shadow-color;
     padding: 1rem;
-    border-radius: $border-radius;
+    background-color: #fff;
+    border-radius: $border-radius-card;
     img {
         object-fit: cover;
         width: 100%;
@@ -1350,7 +1004,7 @@ nav {
         }
     }
     &.dark-theme {
-        box-shadow: 0 0 $box-shadow $primory-orange; // цвет тени не менять
+        background-color: $secondary-dark-theme-color;
     }
 }
 

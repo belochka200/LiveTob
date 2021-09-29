@@ -1,0 +1,94 @@
+.brand-block {
+  background-color: #8453ff;
+  border-radius: 4px;
+  padding: 5rem;
+  margin: 5rem 0;
+}
+
+@media screen and (max-width: 990px) {
+  .brand-block {
+    padding: 1rem;
+  }
+}
+
+.brand-block h1, .brand-block p {
+  color: #ECEEF2;
+}
+
+.brand-block p {
+  font-weight: 700;
+}
+
+.brand-block p span {
+  color: #FCCA00;
+}
+
+@media screen and (max-width: 990px) {
+  .brand-block .wrap-mob {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.brand-block img.logo-icon, .brand-block img.logo-full {
+  max-width: 100%;
+}
+
+.brand-block img.logo-icon {
+  -webkit-box-shadow: 0 0 4px #161616;
+          box-shadow: 0 0 4px #161616;
+  border-radius: 16px;
+}
+
+@media screen and (max-width: 990px) {
+  .brand-block img.logo-icon {
+    margin-top: 3rem;
+  }
+}
+
+.brand-block.dark-theme {
+  background-color: #232323;
+}
+
+.brand-block .brand-colors {
+  margin: auto;
+}
+
+.brand-block .brand-colors .color-1, .brand-block .brand-colors .color-2, .brand-block .brand-colors .color-3, .brand-block .brand-colors .color-4, .brand-block .brand-colors .color-5 {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 2px 4px #161616;
+          box-shadow: 0 2px 4px #161616;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.brand-block .brand-colors .color-1.dark-theme, .brand-block .brand-colors .color-2.dark-theme, .brand-block .brand-colors .color-3.dark-theme, .brand-block .brand-colors .color-4.dark-theme, .brand-block .brand-colors .color-5.dark-theme {
+  -webkit-box-shadow: 0 0 4px #ECEEF2;
+          box-shadow: 0 0 4px #ECEEF2;
+}
+
+.brand-block .brand-colors .color-1 {
+  background-color: #ECEEF2;
+}
+
+.brand-block .brand-colors .color-2 {
+  background-color: #8453ff;
+}
+
+.brand-block .brand-colors .color-3 {
+  background-color: #FCCA00;
+}
+
+.brand-block .brand-colors .color-4 {
+  background-color: #161616;
+}
+
+.brand-block .brand-colors .color-5 {
+  background-color: #232323;
+}
+/*# sourceMappingURL=brand.css.map */

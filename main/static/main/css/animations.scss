@@ -1,0 +1,16 @@
+@keyframes home-page__scroll-down {
+    0% { bottom: 15% }
+    25% { bottom: 10% }
+    50% { bottom: 15% }
+    75% { bottom: 10% }
+    100% { bottom: 15% }
+}
+
+@keyframes spin-loader {
+    0%, 15% {
+        transform:rotate(0)
+    }
+    100% {
+        transform:rotate(360deg)
+    }   
+}

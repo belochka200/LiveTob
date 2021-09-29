@@ -1,0 +1,171 @@
+@media (prefers-color-scheme: dark) {
+  .loader {
+    background-color: #161616;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    position: fixed;
+    z-index: 99999;
+  }
+  .loader .logo-loader {
+    position: absolute;
+    margin-top: 10vh;
+    width: 20vh;
+  }
+  .loader .loader-inner {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+  }
+  .loader .loader-inner .loader-line-wrap {
+    -webkit-animation: "spin-loader" 0.8s ease infinite;
+            animation: "spin-loader" 0.8s ease infinite;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    width: 100px;
+  }
+  .loader .loader-inner .loader-line-wrap .loader-line {
+    border: solid transparent;
+    border-radius: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+  }
+  .loader .loader-inner .loader-line-wrap:nth-child(1) {
+    -webkit-animation-delay: -100ms;
+            animation-delay: -100ms;
+  }
+  .loader .loader-inner .loader-line-wrap:nth-child(1) .loader-line {
+    border-color: #8453ff;
+    height: 90px;
+    width: 90px;
+    top: 7px;
+  }
+  .loader .loader-inner .loader-line-wrap:nth-child(2) {
+    -webkit-animation-delay: -200ms;
+            animation-delay: -200ms;
+  }
+  .loader .loader-inner .loader-line-wrap:nth-child(2) .loader-line {
+    border-color: #ECEEF2;
+    height: 76px;
+    width: 76px;
+    top: 14px;
+  }
+  .loader .loader-inner .loader-line-wrap:nth-child(3) {
+    -webkit-animation-delay: -300ms;
+            animation-delay: -300ms;
+  }
+  .loader .loader-inner .loader-line-wrap:nth-child(3) .loader-line {
+    border-color: #FCCA00;
+    height: 62px;
+    width: 62px;
+    top: 21px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .loader {
+    background-color: #8453ff;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    position: fixed;
+    z-index: 99999;
+    display: block;
+  }
+  .loader .logo-loader {
+    position: absolute;
+    margin-top: 10vh;
+    width: 20vh;
+  }
+  .loader .loader-inner {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+  }
+  .loader .loader-inner .loader-line-wrap {
+    -webkit-animation: "spin-loader" 0.8s ease infinite;
+            animation: "spin-loader" 0.8s ease infinite;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    width: 100px;
+  }
+  .loader .loader-inner .loader-line-wrap .loader-line {
+    border: solid transparent;
+    border-radius: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+  }
+  .loader .loader-inner .loader-line-wrap:nth-child(1) {
+    -webkit-animation-delay: -100ms;
+            animation-delay: -100ms;
+  }
+  .loader .loader-inner .loader-line-wrap:nth-child(1) .loader-line {
+    border-color: #161616;
+    height: 90px;
+    width: 90px;
+    top: 7px;
+  }
+  .loader .loader-inner .loader-line-wrap:nth-child(2) {
+    -webkit-animation-delay: -200ms;
+            animation-delay: -200ms;
+  }
+  .loader .loader-inner .loader-line-wrap:nth-child(2) .loader-line {
+    border-color: #ECEEF2;
+    height: 76px;
+    width: 76px;
+    top: 14px;
+  }
+  .loader .loader-inner .loader-line-wrap:nth-child(3) {
+    -webkit-animation-delay: -300ms;
+            animation-delay: -300ms;
+  }
+  .loader .loader-inner .loader-line-wrap:nth-child(3) .loader-line {
+    border-color: #FCCA00;
+    height: 62px;
+    width: 62px;
+    top: 21px;
+  }
+}
+/*# sourceMappingURL=loader.css.map */

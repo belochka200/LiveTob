@@ -1,0 +1,162 @@
+$milk-white: #ECEEF2;
+$primory-purple: #8453ff;
+$primory-orange: #FCCA00;
+$primory-dark-theme-color: #161616;
+$anim-delay-slow: .8s;
+
+@media (prefers-color-scheme: dark) {
+    .loader {
+        background-color: $primory-dark-theme-color;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        position: fixed;
+        z-index: 99999;
+        .logo-loader {
+            position: absolute;
+            margin-top: 10vh;
+            width: 20vh;
+        }
+        .loader-inner {
+            bottom: 0;
+            height: 60px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100px;
+            .loader-line-wrap {
+                animation: 'spin-loader' $anim-delay-slow ease infinite;
+                box-sizing: border-box;
+                height: 50px;
+                left: 0;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                transform-origin: 50% 100%;
+                width: 100px;
+                .loader-line {
+                    border:  solid transparent;
+                    border-radius: 100%;
+                    box-sizing: border-box;
+                    height: 100px;
+                    left: 0;
+                    margin: 0 auto;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 100px;
+                }
+                &:nth-child(1) {
+                    animation-delay: -100ms;
+                    .loader-line {
+                        border-color: $primory-purple;
+                        height: 90px;
+                        width: 90px;
+                        top: 7px;
+                    }
+                }
+                &:nth-child(2) {
+                    animation-delay: -200ms;
+                    .loader-line {
+                        border-color: $milk-white;
+                        height: 76px;
+                        width: 76px;
+                        top: 14px;
+                    }
+                }
+                &:nth-child(3) {
+                    animation-delay: -300ms;
+                    .loader-line {
+                        border-color: $primory-orange;
+                        height: 62px;
+                        width: 62px;
+                        top: 21px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .loader {
+        background-color: $primory-purple;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        position: fixed;
+        z-index: 99999;
+        display: block;
+        .logo-loader {
+            position: absolute;
+            margin-top: 10vh;
+            width: 20vh;
+        }
+        .loader-inner {
+            bottom: 0;
+            height: 60px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100px;
+            .loader-line-wrap {
+                animation: 'spin-loader' $anim-delay-slow ease infinite;
+                box-sizing: border-box;
+                height: 50px;
+                left: 0;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                transform-origin: 50% 100%;
+                width: 100px;
+                .loader-line {
+                    border:  solid transparent;
+                    border-radius: 100%;
+                    box-sizing: border-box;
+                    height: 100px;
+                    left: 0;
+                    margin: 0 auto;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 100px;
+                }
+                &:nth-child(1) {
+                    animation-delay: -100ms;
+                    .loader-line {
+                        border-color: $primory-dark-theme-color;
+                        height: 90px;
+                        width: 90px;
+                        top: 7px;
+                    }
+                }
+                &:nth-child(2) {
+                    animation-delay: -200ms;
+                    .loader-line {
+                        border-color: $milk-white;
+                        height: 76px;
+                        width: 76px;
+                        top: 14px;
+                    }
+                }
+                &:nth-child(3) {
+                    animation-delay: -300ms;
+                    .loader-line {
+                        border-color: $primory-orange;
+                        height: 62px;
+                        width: 62px;
+                        top: 21px;
+                    }
+                }
+            }
+        }
+    }
+}
