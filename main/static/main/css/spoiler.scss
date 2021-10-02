@@ -1,0 +1,65 @@
+$milk-white: #ECEEF2;
+$primory-purple: #8453ff;
+$primory-orange: #FCCA00;
+$primory-dark-theme-color: #161616;
+$secondary-dark-theme-color: #232323;
+$box-shadow-color: #161616;
+$box-shadow: 4px;
+$nav-height: 55px;
+$anim-delay-slow: .8s;
+$anim-delay-fast: .25s;
+$border-radius: 16px;
+$border-radius-card: 4px;
+
+.spoiler-wrap {
+    border-radius: $border-radius;
+    padding: 1rem;
+    margin-bottom: 3rem;
+    background-color: $primory-purple;
+    &.dark-theme {
+        box-shadow: 0 2px $box-shadow $primory-orange; // цвет тени не менять
+        background-color: $secondary-dark-theme-color;
+    }
+    .spoiler-head {
+        display: flex;
+        justify-content: center;
+        h6 {
+            color: $milk-white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .spoiler-body {
+        display: none;
+        margin-top: 1rem;
+        span {
+            color: $milk-white;
+        }
+    }
+}
+
+
+.spoiler-pc {
+    display: flex;
+    @media only screen and (max-width: 990px) {
+        display: none;
+    }
+}
+
+.spoiler-mob {
+    display: none;
+    @media only screen and (max-width: 990px) {
+        display: flex;
+        .popular-people-card-block, .facts-card-block {
+            background: transparent;
+            &.dark-theme {
+                border-bottom: 1px solid $primory-orange;
+                border: none;
+                background: transparent;
+            }
+        }
+    }
+}

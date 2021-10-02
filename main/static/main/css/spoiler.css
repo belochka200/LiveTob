@@ -1,0 +1,73 @@
+.spoiler-wrap {
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  background-color: #8453ff;
+}
+
+.spoiler-wrap.dark-theme {
+  -webkit-box-shadow: 0 2px 4px #FCCA00;
+          box-shadow: 0 2px 4px #FCCA00;
+  background-color: #232323;
+}
+
+.spoiler-wrap .spoiler-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.spoiler-wrap .spoiler-head h6 {
+  color: #ECEEF2;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.spoiler-wrap .spoiler-head:hover {
+  cursor: pointer;
+}
+
+.spoiler-wrap .spoiler-body {
+  display: none;
+  margin-top: 1rem;
+}
+
+.spoiler-wrap .spoiler-body span {
+  color: #ECEEF2;
+}
+
+.spoiler-pc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 990px) {
+  .spoiler-pc {
+    display: none;
+  }
+}
+
+.spoiler-mob {
+  display: none;
+}
+
+@media only screen and (max-width: 990px) {
+  .spoiler-mob {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .spoiler-mob .popular-people-card-block, .spoiler-mob .facts-card-block {
+    background: transparent;
+  }
+  .spoiler-mob .popular-people-card-block.dark-theme, .spoiler-mob .facts-card-block.dark-theme {
+    border-bottom: 1px solid #FCCA00;
+    border: none;
+    background: transparent;
+  }
+}
+/*# sourceMappingURL=spoiler.css.map */

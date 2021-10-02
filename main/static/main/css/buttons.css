@@ -1,0 +1,124 @@
+._btn {
+  color: #ECEEF2;
+  border-radius: 16px;
+  padding: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  background: #8453ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: -webkit-box-shadow 0.25s ease;
+  transition: -webkit-box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease, -webkit-box-shadow 0.25s ease;
+  text-transform: uppercase;
+}
+
+._btn.dark-theme {
+  background-color: #FCCA00;
+  color: #161616;
+}
+
+._btn a {
+  color: #ECEEF2;
+}
+
+._btn a.dark-theme {
+  color: #161616;
+}
+
+.btn-cus-1 {
+  color: #161616;
+  border-radius: 16px;
+  padding: 10px 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  background: #ECEEF2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #8453ff;
+  -webkit-transition: -webkit-box-shadow 0.25s ease;
+  transition: -webkit-box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease, -webkit-box-shadow 0.25s ease;
+}
+
+.btn-cus-1:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 2px 4px #8453ff;
+          box-shadow: 0 2px 4px #8453ff;
+}
+
+.btn-cus-1.dark-theme {
+  background-color: #161616;
+  border: 1px solid #FCCA00;
+  color: #ECEEF2;
+}
+
+.btn-cus-1.dark-theme:hover {
+  -webkit-box-shadow: 0 4px 4px #FCCA00;
+          box-shadow: 0 4px 4px #FCCA00;
+}
+
+@media only screen and (max-width: 990px) {
+  .btn-cus-1.btn-close-modal {
+    width: 100%;
+  }
+}
+
+.btn__in-sights-wrap {
+  margin: 1rem 0;
+}
+
+.btn__in-sights-wrap .btn__in-sights {
+  background-color: #ECEEF2;
+  border: 1px solid #8453ff;
+  border-radius: 16px;
+  padding: .5rem;
+  margin-top: .5rem;
+  max-width: 250px;
+  margin-right: 1rem;
+  text-align: center;
+  -webkit-transition: -webkit-box-shadow 0.25s ease;
+  transition: -webkit-box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease, -webkit-box-shadow 0.25s ease;
+}
+
+.btn__in-sights-wrap .btn__in-sights a {
+  color: #161616;
+}
+
+.btn__in-sights-wrap .btn__in-sights.dark-theme {
+  background-color: #161616;
+  border: 1px solid #FCCA00;
+}
+
+.btn__in-sights-wrap .btn__in-sights.dark-theme a {
+  color: #FCCA00;
+}
+
+@media only screen and (max-width: 990px) {
+  .btn__in-sights-wrap .btn__in-sights {
+    max-width: 100%;
+  }
+}
+
+.btn__in-sights-wrap .btn__in-sights:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=buttons.css.map */

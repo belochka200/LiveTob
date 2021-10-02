@@ -1,0 +1,112 @@
+$milk-white: #ECEEF2;
+$primory-purple: #8453ff;
+$primory-orange: #FCCA00;
+$primory-dark-theme-color: #161616;
+$secondary-dark-theme-color: #232323;
+$box-shadow-color: #161616;
+$box-shadow: 4px;
+$nav-height: 55px;
+$anim-delay-slow: .8s;
+$anim-delay-fast: .25s;
+$border-radius: 16px;
+$border-radius-card: 4px;
+
+._btn {
+    color: $milk-white;
+    border-radius: $border-radius;
+    padding: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    background: $primory-purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // box-shadow: 0 2px $box-shadow $box-shadow-color;
+    transition: box-shadow $anim-delay-fast ease;
+    text-transform: uppercase;
+    &.dark-theme {
+        background-color: $primory-orange;
+        color: $primory-dark-theme-color;
+        // box-shadow: 0 2px $box-shadow $primory-orange;
+    }
+    a {
+        color: $milk-white;
+        &.dark-theme {
+            color: $primory-dark-theme-color;
+        }
+    }
+}
+
+.btn-cus-1 {
+    color: $primory-dark-theme-color;
+    border-radius: $border-radius;
+    padding: 10px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    background: $milk-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $primory-purple;
+    transition: box-shadow $anim-delay-fast ease;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
+    }
+    &.dark-theme {
+        background-color: $primory-dark-theme-color;
+        border: 1px solid $primory-orange;
+        color: $milk-white;
+        &:hover {
+            box-shadow: 0 4px $box-shadow $primory-orange; // цвет тени не менять
+        }
+    }
+    &.btn-close-modal {
+        @media only screen and (max-width: 990px) {
+            width: 100%;
+        }
+    }
+}
+
+.btn__in-sights-wrap {
+    margin: 1rem 0;
+    .btn__in-sights {
+        background-color: $milk-white;
+        border: 1px solid $primory-purple;
+        border-radius: $border-radius;
+        padding: .5rem;
+        margin-top: .5rem;
+        max-width: 250px;
+        margin-right: 1rem;
+        text-align: center;
+        transition: box-shadow $anim-delay-fast ease;
+        // &.rec {
+        //     color: black;
+        //     &.dark-theme {
+        //         color: $primory-orange;
+        //         &:hover {
+        //             cursor: default;
+        //         }
+        //     }
+        //     &:hover {
+        //         cursor: default;
+        //     }
+        // }
+        a {
+            color: $primory-dark-theme-color;
+        }
+        &.dark-theme {
+            background-color: $primory-dark-theme-color;
+            border: 1px solid $primory-orange;
+            a {
+                color: $primory-orange;
+            }
+        }
+        @media only screen and (max-width: 990px) {
+            max-width: 100%;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

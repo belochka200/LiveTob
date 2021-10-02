@@ -1,0 +1,149 @@
+$milk-white: #ECEEF2;
+$primory-purple: #8453ff;
+$primory-orange: #FCCA00;
+$primory-dark-theme-color: #161616;
+$secondary-dark-theme-color: #232323;
+$box-shadow-color: #161616;
+$box-shadow: 4px;
+$nav-height: 55px;
+$anim-delay-slow: .8s;
+$anim-delay-fast: .25s;
+$border-radius: 16px;
+$border-radius-card: 4px;
+
+.home-page-screen {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    min-width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.home-page-screen-2 {
+    background-color: $milk-white;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    &.dark-theme {
+        background-color: $primory-dark-theme-color;
+    }
+    @media only screen and (max-width: 990px) {
+        height: auto;
+    }
+}
+
+.home-page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: $primory-dark-theme-color;
+    padding: 0 2rem;
+    &.first-title {
+        color: $milk-white;
+    }
+    @media only screen and (max-width: 990px) {
+        font-size: 2rem;
+    }
+}
+
+
+.main-home-page-screen {
+    background-image: url("../img/home-page3.png");
+    background-position: center;
+}
+
+.home-page__scroll-down {
+    display: flex;
+    justify-content: center;
+    color: $milk-white;
+    font-size: 3rem;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 10%;
+    animation: 'home-page__scroll-down' 5s ease infinite;
+    width: 100%;
+    height: 30%;
+    &:hover {
+        color: $primory-orange;
+    }
+}
+
+.home-page-title-screen-city-history {
+    color: $primory-dark-theme-color;
+    &.dark-theme {
+        color: $milk-white;
+    }
+}
+
+.list-home-page {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    @media only screen and (max-width: 990px) {
+        font-size: 1rem;
+    }
+    .list-item-home-page {
+        color: $primory-dark-theme-color;
+        margin-bottom: 1rem;
+        &.dark-theme {
+            color: $milk-white;
+        }
+        span {
+            color: $primory-dark-theme-color;
+            &.dark-theme {
+                color: $milk-white;
+            }
+        }
+        @media only screen and (max-width: 990px) {
+            color: $milk-white;
+            span {
+                color: $milk-white;
+            }
+        }
+    }
+}
+
+.popular-people-card-block, .facts-card-block {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: $border-radius-card;
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 300px;
+        object-position: center;
+        @media screen and (max-width: 990px) {
+            height: 450px;
+        }
+    }
+    @media screen and (max-width: 990px) {
+        margin-top: 3rem;
+        p {
+            font-size: 1.2rem;
+        }
+        p, h5 {
+            color: $milk-white!important;
+        }
+    }
+    &.dark-theme {
+        background-color: $secondary-dark-theme-color;
+    }
+}
+
+.hist-wrap {
+    margin: 0 25%;
+    .hist-img-wrap {
+        display: flex;
+        justify-content: center;
+        .hist-img {
+            width: 100%;
+        }
+    }
+    @media only screen and (max-width: 990px) {
+        margin: 0;
+    }
+}

@@ -1,0 +1,47 @@
+$milk-white: #ECEEF2;
+$primory-purple: #8453ff;
+$primory-orange: #FCCA00;
+$primory-dark-theme-color: #161616;
+$secondary-dark-theme-color: #232323;
+
+html, body {
+    background-color: $milk-white;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    @media screen and (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+    &.dark-theme {
+        background-color: $primory-dark-theme-color;
+        &::-webkit-scrollbar {
+            width: 10px;
+            background-color: $secondary-dark-theme-color;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: $border-radius;
+            background-color: $primory-orange;
+        }
+        @media screen and (max-width: 990px) {
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+        }
+    }
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: $primory-purple;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: $border-radius;
+        background-color: $primory-orange;
+    }
+    @media screen and (max-width: 990px) {
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+}

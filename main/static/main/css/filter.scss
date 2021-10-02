@@ -1,0 +1,131 @@
+$milk-white: #ECEEF2;
+$primory-purple: #8453ff;
+$primory-orange: #FCCA00;
+$primory-dark-theme-color: #161616;
+$secondary-dark-theme-color: #232323;
+$box-shadow-color: #161616;
+$box-shadow: 4px;
+$nav-height: 55px;
+$anim-delay-slow: .8s;
+$anim-delay-fast: .25s;
+$border-radius: 16px;
+$border-radius-card: 4px;
+
+.filter__block {
+    margin: 2rem;
+    @media only screen and (max-width: 990px) {
+        margin: 1rem;
+    }
+    .filter__menu {
+        .filter__wrap {
+           .filter__item {
+                background-color: $milk-white;
+                box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
+                padding: 8px 16px;
+                margin: 8px;
+                border-radius: $border-radius;
+                color: $primory-dark-theme-color;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 400;
+                font-size: 1rem;
+                transition: box-shadow, border $anim-delay-fast ease;
+                border: 1px solid rgba(0, 0, 0, 0);
+                &:hover {
+                    // box-shadow: 0 4px $box-shadow $primory-purple; // цвет тени не менять
+                    border: 1px solid $primory-purple;
+                    &.dark-theme {
+                        // box-shadow: 0 4px $box-shadow $primory-orange; // цвет тени не менять
+                        border: 1px solid $primory-orange;
+                    }
+                }
+                &.active {
+                background-color: $primory-purple;
+                color: $milk-white;
+                box-shadow: none;
+                    &.dark-theme {
+                        background-color: $primory-orange;
+                        color: $primory-dark-theme-color;
+                        box-shadow: none;
+                    }
+                }
+                &.dark-theme {
+                    background-color: $primory-dark-theme-color;
+                    color: $milk-white;
+                    box-shadow: 0 2px $box-shadow $primory-orange; // цвет тени не менять
+                }
+            }
+            @media only screen and (max-width: 990px) {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-wrap: wrap;
+                height: 200px;
+                overflow-y: scroll;
+            }
+        }
+        .filter__btn-in-menu {
+            display: none;
+            @media only screen and (max-width: 990px) {
+                display: block;
+                color: $primory-purple;
+                font-size: 2rem;
+                &.dark-theme {
+                    color: $primory-orange;
+                }
+            }
+        }
+        @media only screen and (max-width: 990px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            transform: scale(0);
+            transition: transform $anim-delay-slow ease;
+            bottom: calc(#{$nav-height} + 16px);
+            z-index: 4;
+            background-color: $milk-white;
+            border-radius: $border-radius-card;
+            width: 90%;
+            padding: 1rem .5rem;
+            border: 2px solid $primory-purple;
+            &.active {
+                transform: scale(1);
+            }
+        }
+        @media only screen and (max-width: 990px) {
+            &.dark-theme {
+                background-color: $primory-dark-theme-color;
+                box-shadow: 0 2px $box-shadow $primory-orange; // цвет тени не менять
+            }
+        }
+    }
+    .filter__btn {
+        display: none;
+        @media only screen and (max-width: 990px) {
+            display: flex;
+            background-color: $primory-purple;
+            z-index: 9;
+            bottom: $nav-height;
+            right: 0;
+            color: $milk-white;
+            width: 64px;
+            height: 64px;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            border-radius: $border-radius;
+            margin: 16px;
+            font-size: 2rem;
+            box-shadow: 0 2px $box-shadow $box-shadow-color;
+            transform: scale(1);
+            transition: transform $anim-delay-slow ease;
+            &.active {
+                transform: scale(0);
+            }
+            &.dark-theme {
+                background-color: $primory-orange;
+                color: $primory-dark-theme-color;
+            }
+        }
+    }
+}
