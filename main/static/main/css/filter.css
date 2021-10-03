@@ -138,11 +138,11 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background-color: #8453ff;
+    background-color: #ECEEF2;
     z-index: 9;
     bottom: 55px;
     right: 0;
-    color: #ECEEF2;
+    color: #8453ff;
     width: 64px;
     height: 64px;
     position: fixed;

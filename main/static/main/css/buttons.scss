@@ -38,48 +38,49 @@ $border-radius-card: 4px;
 }
 
 .btn-cus-1 {
-    color: $primory-dark-theme-color;
+    background-color: $milk-white;
+    box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
+    padding: 8px 16px;
+    margin: 8px;
     border-radius: $border-radius;
-    padding: 10px 25px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    background: $milk-white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid $primory-purple;
-    transition: box-shadow $anim-delay-fast ease;
+    color: $primory-dark-theme-color;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: box-shadow, border $anim-delay-fast ease;
+    border: 1px solid rgba(0, 0, 0, 0);
     &:hover {
-        cursor: pointer;
-        box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
+        border: 1px solid $primory-purple;
+        &.dark-theme {
+            border: 1px solid $primory-orange;
+        }
     }
     &.dark-theme {
         background-color: $primory-dark-theme-color;
-        border: 1px solid $primory-orange;
         color: $milk-white;
-        &:hover {
-            box-shadow: 0 4px $box-shadow $primory-orange; // цвет тени не менять
-        }
+        box-shadow: 0 2px $box-shadow $primory-orange; // цвет тени не менять
     }
     &.btn-close-modal {
         @media only screen and (max-width: 990px) {
             width: 100%;
+        }
+        &:hover {
+            cursor: pointer;
         }
     }
 }
 
 .btn__in-sights-wrap {
     margin: 1rem 0;
-    .btn__in-sights {
-        background-color: $milk-white;
-        border: 1px solid $primory-purple;
-        border-radius: $border-radius;
-        padding: .5rem;
-        margin-top: .5rem;
-        max-width: 250px;
-        margin-right: 1rem;
-        text-align: center;
-        transition: box-shadow $anim-delay-fast ease;
+        // background-color: $milk-white;
+        // border: 1px solid $primory-purple;
+        // border-radius: $border-radius;
+        // padding: .5rem;
+        // margin-top: .5rem;
+        // max-width: 250px;
+        // margin-right: 1rem;
+        // text-align: center;
+        // transition: box-shadow $anim-delay-fast ease;
         // &.rec {
         //     color: black;
         //     &.dark-theme {
@@ -92,21 +93,53 @@ $border-radius-card: 4px;
         //         cursor: default;
         //     }
         // }
-        a {
-            color: $primory-dark-theme-color;
-        }
+        // a {
+        //     color: $primory-dark-theme-color;
+        // }
+        // &.dark-theme {
+        //     background-color: $primory-dark-theme-color;
+        //     border: 1px solid $primory-orange;
+        //     a {
+        //         color: $primory-orange;
+        //     }
+        // }
+        // @media only screen and (max-width: 990px) {
+        //     max-width: 100%;
+        // }
+        // &:hover {
+        //     cursor: pointer;
+        // }
+}
+
+.btn__in-sights {
+    background-color: $milk-white;
+    box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
+    padding: 8px 16px;
+    margin: 8px;
+    border-radius: $border-radius;
+    color: $primory-dark-theme-color;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: box-shadow, border $anim-delay-fast ease;
+    border: 1px solid rgba(0, 0, 0, 0);
+    &:hover {
+        cursor: pointer;
+        border: 1px solid $primory-purple;
         &.dark-theme {
-            background-color: $primory-dark-theme-color;
             border: 1px solid $primory-orange;
-            a {
-                color: $primory-orange;
-            }
         }
-        @media only screen and (max-width: 990px) {
-            max-width: 100%;
-        }
-        &:hover {
-            cursor: pointer;
+        color: $primory-dark-theme-color;
+    }
+    &.dark-theme {
+        background-color: $primory-dark-theme-color;
+        color: $milk-white;
+        box-shadow: 0 2px $box-shadow $primory-orange; // цвет тени не менять
+    }
+    a {
+        color: $primory-dark-theme-color;
+        &.dark-theme {
+            color: $milk-white;
         }
     }
 }

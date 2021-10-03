@@ -3,6 +3,13 @@ $primory-purple: #8453ff;
 $primory-orange: #FCCA00;
 $primory-dark-theme-color: #161616;
 $secondary-dark-theme-color: #232323;
+$box-shadow-color: #161616;
+$box-shadow: 4px;
+$nav-height: 55px;
+$anim-delay-slow: .8s;
+$anim-delay-fast: .25s;
+$border-radius: 16px;
+$border-radius-card: 4px;
 
 html, body {
     background-color: $milk-white;
@@ -44,4 +51,8 @@ html, body {
             width: 0;
         }
     }
+}
+
+*::selection {
+    background-color: $primory-purple;
 }

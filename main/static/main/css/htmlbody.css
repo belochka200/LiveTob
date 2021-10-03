@@ -1,0 +1,58 @@
+html, body {
+  background-color: #ECEEF2;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html html, body html {
+    scroll-behavior: auto;
+  }
+}
+
+html.dark-theme, body.dark-theme {
+  background-color: #161616;
+}
+
+html.dark-theme::-webkit-scrollbar, body.dark-theme::-webkit-scrollbar {
+  width: 10px;
+  background-color: #232323;
+}
+
+html.dark-theme::-webkit-scrollbar-thumb, body.dark-theme::-webkit-scrollbar-thumb {
+  border-radius: 16px;
+  background-color: #FCCA00;
+}
+
+@media screen and (max-width: 990px) {
+  html.dark-theme::-webkit-scrollbar, body.dark-theme::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #8453ff;
+}
+
+html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+  border-radius: 16px;
+  background-color: #FCCA00;
+}
+
+@media screen and (max-width: 990px) {
+  html::-webkit-scrollbar, body::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+*::-moz-selection {
+  background-color: #8453ff;
+}
+
+*::selection {
+  background-color: #8453ff;
+}
+/*# sourceMappingURL=htmlbody.css.map */

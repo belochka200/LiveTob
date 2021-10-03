@@ -47,7 +47,7 @@ $border-radius-card: 4px;
     }
     .brand-colors {
         margin: auto;
-        .color-1, .color-2, .color-3, .color-4, .color-5 {
+        .color-1, .color-2, .color-3, .color-4, .color-5, .color-6 {
             width: 8rem;
             height: 8rem;
             border-radius: 100%;
@@ -73,6 +73,9 @@ $border-radius-card: 4px;
         }
         .color-5 {
             background-color: $secondary-dark-theme-color;
+        }
+        .color-6 {
+            background-color: #fff;
         }
     }
 }

@@ -28,7 +28,7 @@ $(document).ready(function() {
                             if (obj['last_sight']) {
                                 $('.allsights').append(
                                     '<div class="col-12 col-md-4 sights last-sight dark-theme" data-sightid="' + obj['id'] + '">' + 
-                                        '<a href="show-sight-' + obj['slug'] + '" class="url__show-sights dark-theme">' + 
+                                        '<a href="show-sight-' + obj['slug'] + '" class="dark-theme">' + 
                                             '<div class="card mt-5 dark-theme">' + 
                                                 '<img src="../media/' + obj['image_preview'] + '" class="card-img-top round dark-theme">' + 
                                                 '<p class="card-title position-absolute dark-theme">' + obj['title'] + '</p>' + 
@@ -37,7 +37,10 @@ $(document).ready(function() {
                                                     '<div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center dark-theme">' + 
                                                         '<i class="fas fa-map-marker-alt dark-theme"></i>' +
                                                     '</div>' +
-                                               ' </a>' +
+                                               '</a>' +
+                                                '<div class="position-absolute card-category d-flex d-flex justify-content-center align-items-center">' +
+                                                    obj['category'] +
+                                                '</div>' +
                                             '</div>' +
                                         '</a>' +
                                     '</div>'
@@ -45,7 +48,7 @@ $(document).ready(function() {
                             } else {
                                 $('.allsights').append(
                                     '<div class="col-12 col-md-4 sights dark-theme">' + 
-                                        '<a href="show-sight-' + obj['slug'] + '" class="url__show-sights dark-theme">' + 
+                                        '<a href="show-sight-' + obj['slug'] + '" class="dark-theme">' + 
                                             '<div class="card mt-5 dark-theme">' + 
                                                 '<img src="../media/' + obj['image_preview'] + '" class="card-img-top round dark-theme">' + 
                                                 '<p class="card-title position-absolute dark-theme">' + obj['title'] + '</p>' +  
@@ -54,7 +57,10 @@ $(document).ready(function() {
                                                     '<div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center dark-theme">' + 
                                                         '<i class="fas fa-map-marker-alt dark-theme"></i>' +
                                                     '</div>' +
-                                               ' </a>' +
+                                               '</a>' +
+                                               '<div class="position-absolute card-category d-flex d-flex justify-content-center align-items-center">' +
+                                                    obj['category'] +
+                                                '</div>' +
                                             '</div>' +
                                         '</a>' +
                                     '</div>'
@@ -66,7 +72,7 @@ $(document).ready(function() {
                             if (obj['last_sight']) {
                                 $('.allsights').append(
                                     '<div class="col-12 col-md-4 sights last-sight" data-sightid="' + obj['id'] + '">' + 
-                                        '<a href="show-sight-' + obj['slug'] + '" class="url__show-sights">' + 
+                                        '<a href="show-sight-' + obj['slug'] + '">' + 
                                             '<div class="card mt-5">' + 
                                                 '<img src="../media/' + obj['image_preview'] + '" class="card-img-top round">' + 
                                                 '<p class="card-title position-absolute">' + obj['title'] + '</p>' + 
@@ -75,7 +81,10 @@ $(document).ready(function() {
                                                     '<div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">' + 
                                                         '<i class="fas fa-map-marker-alt"></i>' +
                                                     '</div>' +
-                                               ' </a>' +
+                                               '</a>' +
+                                               '<div class="position-absolute card-category d-flex d-flex justify-content-center align-items-center">' +
+                                                    obj['category'] +
+                                                '</div>' +
                                             '</div>' +
                                         '</a>' +
                                     '</div>'
@@ -83,7 +92,7 @@ $(document).ready(function() {
                             } else {
                                 $('.allsights').append(
                                     '<div class="col-12 col-md-4 sights">' + 
-                                        '<a href="show-sight-' + obj['slug'] + '" class="url__show-sights">' + 
+                                        '<a href="show-sight-' + obj['slug'] + '">' + 
                                             '<div class="card mt-5">' + 
                                                 '<img src="../media/' + obj['image_preview'] + '" class="card-img-top round">' + 
                                                 '<p class="card-title position-absolute">' + obj['title'] + '</p>' +  
@@ -92,7 +101,10 @@ $(document).ready(function() {
                                                     '<div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">' + 
                                                         '<i class="fas fa-map-marker-alt"></i>' +
                                                     '</div>' +
-                                               ' </a>' +
+                                               '</a>' +
+                                               '<div class="position-absolute card-category d-flex d-flex justify-content-center align-items-center">' +
+                                                    obj['category'] +
+                                                '</div>' +
                                             '</div>' +
                                         '</a>' +
                                     '</div>'

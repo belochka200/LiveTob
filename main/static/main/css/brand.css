@@ -56,7 +56,7 @@
   margin: auto;
 }
 
-.brand-block .brand-colors .color-1, .brand-block .brand-colors .color-2, .brand-block .brand-colors .color-3, .brand-block .brand-colors .color-4, .brand-block .brand-colors .color-5 {
+.brand-block .brand-colors .color-1, .brand-block .brand-colors .color-2, .brand-block .brand-colors .color-3, .brand-block .brand-colors .color-4, .brand-block .brand-colors .color-5, .brand-block .brand-colors .color-6 {
   width: 8rem;
   height: 8rem;
   border-radius: 100%;
@@ -67,7 +67,7 @@
   margin: 1rem 0;
 }
 
-.brand-block .brand-colors .color-1.dark-theme, .brand-block .brand-colors .color-2.dark-theme, .brand-block .brand-colors .color-3.dark-theme, .brand-block .brand-colors .color-4.dark-theme, .brand-block .brand-colors .color-5.dark-theme {
+.brand-block .brand-colors .color-1.dark-theme, .brand-block .brand-colors .color-2.dark-theme, .brand-block .brand-colors .color-3.dark-theme, .brand-block .brand-colors .color-4.dark-theme, .brand-block .brand-colors .color-5.dark-theme, .brand-block .brand-colors .color-6.dark-theme {
   -webkit-box-shadow: 0 0 4px #ECEEF2;
           box-shadow: 0 0 4px #ECEEF2;
 }
@@ -90,5 +90,9 @@
 
 .brand-block .brand-colors .color-5 {
   background-color: #232323;
+}
+
+.brand-block .brand-colors .color-6 {
+  background-color: #fff;
 }
 /*# sourceMappingURL=brand.css.map */

@@ -22,7 +22,7 @@
                                 <img src="{{ title_image }}" alt="">
                             </div>
                             <div class="modal-footer d-flex justify-content-center">
-                                <div class="btn-cus-1 btn-close-modal" data-bs-dismiss="modal">Закрыть</div>
+                                <div class="btn-cus-1 btn-close-modal text-center" data-bs-dismiss="modal">Закрыть</div>
                             </div>
                         </div>
                     </div>
@@ -61,9 +61,7 @@
             <h5 class="text title">Краткая информация</h5>
             <div class="btn__in-sights-wrap d-flex justify-content-start align-items-start flex-column">
                 {% if site %}
-                <div class="btn__in-sights">
-                    <a href="http://{{ site }}" target="_blank">Перейти на сайт</a>
-                </div>
+                <a href="http://{{ site }}" target="_blank" class="btn__in-sights">Перейти на сайт</a>
                 {% else %}
                 {% endif %}
                 {% if address|length >= 2 %}
@@ -71,11 +69,9 @@
                 {% else %}
                 <p class="text title my-3">Адрес</p>
                 {% endif %}
-                <div class="addresses d-flex flex-wrap">
+                <div class="d-flex flex-wrap">
                     {% for address in address %}
-                    <div class="btn__in-sights">
-                        <a href="https://yandex.ru/maps/?text=Тобольск, {{ address }}" target="_blank" class="url__sights">{{ address }}</a>
-                    </div>
+                    <a href="https://yandex.ru/maps/?text=Тобольск, {{ address }}" target="_blank" class="btn__in-sights">{{ address }}</a>
                     {% endfor %}
                 </div>
             </div>
@@ -87,11 +83,7 @@
             <div class="d-flex flex-wrap">
                 {% for number in number %}
                     {% if number %}
-                        {% if forloop.last %}
-                        <a href="tel:{{ number }}" class='url__sights'>{{ number }}</a>
-                        {% else %}
-                        <a href="tel:{{ number }}" class='url__sights'>{{ number }}</a> | 
-                        {% endif %}
+                    <a href="tel:{{ number }}" class='btn__in-sights'>{{ number }}</a>
                     {% else %}
                     <p class="text">отсутствует</p>
                     {% endif %}
