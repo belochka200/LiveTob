@@ -2,7 +2,9 @@
   border-radius: 16px;
   padding: 1rem;
   margin-bottom: 3rem;
-  background-color: #8453ff;
+  background: #ECEEF2;
+  -webkit-box-shadow: 0px 4px 8px rgba(22, 22, 22, 0.25);
+          box-shadow: 0px 4px 8px rgba(22, 22, 22, 0.25);
 }
 
 .spoiler-wrap.dark-theme {
@@ -21,7 +23,7 @@
 }
 
 .spoiler-wrap .spoiler-head h6 {
-  color: #ECEEF2;
+  color: #161616;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
 }
@@ -36,7 +38,7 @@
 }
 
 .spoiler-wrap .spoiler-body span {
-  color: #ECEEF2;
+  color: #161616;
 }
 
 .spoiler-pc {

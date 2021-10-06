@@ -101,15 +101,6 @@
   color: #ECEEF2;
 }
 
-@media only screen and (max-width: 990px) {
-  .list-home-page .list-item-home-page {
-    color: #ECEEF2;
-  }
-  .list-home-page .list-item-home-page span {
-    color: #ECEEF2;
-  }
-}
-
 .popular-people-card-block, .facts-card-block {
   padding: 1rem;
   background-color: #fff;
@@ -137,9 +128,6 @@
   }
   .popular-people-card-block p, .facts-card-block p {
     font-size: 1.2rem;
-  }
-  .popular-people-card-block p, .popular-people-card-block h5, .facts-card-block p, .facts-card-block h5 {
-    color: #ECEEF2 !important;
   }
 }
 

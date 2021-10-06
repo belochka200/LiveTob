@@ -87,11 +87,7 @@
             <div class="d-flex flex-wrap">
                 {% for number in number %}
                     {% if number %}
-                        {% if forloop.last %}
-                        <a href="tel:{{ number }}" class='url__sights'>{{ number }}</a>
-                        {% else %}
-                        <a href="tel:{{ number }}" class='url__sights'>{{ number }}</a> | 
-                        {% endif %}
+                    <a href="tel:{{ number }}" class='btn__in-sights'>{{ number }}</a>
                     {% else %}
                     <p class="text">отсутствует</p>
                     {% endif %}

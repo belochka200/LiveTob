@@ -10,47 +10,53 @@ $anim-delay-slow: .8s;
 $anim-delay-fast: .25s;
 $border-radius: 16px;
 $border-radius-card: 4px;
+$box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25% 
 
-._btn {
-    color: $milk-white;
-    border-radius: $border-radius;
-    padding: 14px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    background: $primory-purple;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // box-shadow: 0 2px $box-shadow $box-shadow-color;
-    transition: box-shadow $anim-delay-fast ease;
-    text-transform: uppercase;
-    &.dark-theme {
-        background-color: $primory-orange;
-        color: $primory-dark-theme-color;
-        // box-shadow: 0 2px $box-shadow $primory-orange;
-    }
-    a {
-        color: $milk-white;
-        &.dark-theme {
-            color: $primory-dark-theme-color;
-        }
-    }
-}
+
+// ._btn {
+//     color: $milk-white;
+//     border-radius: $border-radius;
+//     padding: 14px;
+//     font-family: 'Montserrat', sans-serif;
+//     font-weight: bold;
+//     background: $primory-purple;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     // box-shadow: 0 2px $box-shadow $box-shadow-color;
+//     transition: box-shadow $anim-delay-fast ease;
+//     text-transform: uppercase;
+//     &.dark-theme {
+//         background-color: $primory-orange;
+//         color: $primory-dark-theme-color;
+//         // box-shadow: 0 2px $box-shadow $primory-orange;
+//     }
+//     a {
+//         color: $milk-white;
+//         &.dark-theme {
+//             color: $primory-dark-theme-color;
+//         }
+//     }
+// }
 
 .btn-cus-1 {
     background-color: $milk-white;
     box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
-    padding: 8px 16px;
+    padding: 1rem;
     margin: 8px;
     border-radius: $border-radius;
     color: $primory-dark-theme-color;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-weight: 700;
+    text-transform: uppercase;
     font-size: 1rem;
-    transition: box-shadow, border $anim-delay-fast ease;
+    transition: all $anim-delay-fast ease;
     border: 1px solid rgba(0, 0, 0, 0);
+    text-align: center;
     &:hover {
+        cursor: pointer;
         border: 1px solid $primory-purple;
+        box-shadow: none;
         &.dark-theme {
             border: 1px solid $primory-orange;
         }
@@ -61,6 +67,7 @@ $border-radius-card: 4px;
         box-shadow: 0 2px $box-shadow $primory-orange; // цвет тени не менять
     }
     &.btn-close-modal {
+        padding: 8px 12px;
         @media only screen and (max-width: 990px) {
             width: 100%;
         }
@@ -121,11 +128,12 @@ $border-radius-card: 4px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    transition: box-shadow, border $anim-delay-fast ease;
+    transition: all $anim-delay-fast ease;
     border: 1px solid rgba(0, 0, 0, 0);
     &:hover {
         cursor: pointer;
         border: 1px solid $primory-purple;
+        box-shadow: none;
         &.dark-theme {
             border: 1px solid $primory-orange;
         }

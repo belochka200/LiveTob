@@ -10,6 +10,8 @@ $anim-delay-slow: .8s;
 $anim-delay-fast: .25s;
 $border-radius: 16px;
 $border-radius-card: 4px;
+$box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25% 
+
 
 html, body {
     background-color: $milk-white;
@@ -17,6 +19,7 @@ html, body {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
+    font-size: 1rem;
     @media screen and (prefers-reduced-motion: reduce) {
         html {
             scroll-behavior: auto;

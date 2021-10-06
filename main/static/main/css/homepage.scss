@@ -10,6 +10,8 @@ $anim-delay-slow: .8s;
 $anim-delay-fast: .25s;
 $border-radius: 16px;
 $border-radius-card: 4px;
+$box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25% 
+
 
 .home-page-screen {
     position: relative;
@@ -82,12 +84,6 @@ $border-radius-card: 4px;
                 color: $milk-white;
             }
         }
-        @media only screen and (max-width: 990px) {
-            color: $milk-white;
-            span {
-                color: $milk-white;
-            }
-        }
     }
 }
 
@@ -108,9 +104,6 @@ $border-radius-card: 4px;
         margin-top: 3rem;
         p {
             font-size: 1.2rem;
-        }
-        p, h5 {
-            color: $milk-white!important;
         }
     }
     &.dark-theme {

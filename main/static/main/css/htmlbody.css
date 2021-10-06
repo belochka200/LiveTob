@@ -4,6 +4,7 @@ html, body {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
+  font-size: 1rem;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

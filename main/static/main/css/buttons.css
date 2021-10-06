@@ -1,59 +1,26 @@
-._btn {
-  color: #ECEEF2;
-  border-radius: 16px;
-  padding: 14px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  background: #8453ff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: -webkit-box-shadow 0.25s ease;
-  transition: -webkit-box-shadow 0.25s ease;
-  transition: box-shadow 0.25s ease;
-  transition: box-shadow 0.25s ease, -webkit-box-shadow 0.25s ease;
-  text-transform: uppercase;
-}
-
-._btn.dark-theme {
-  background-color: #FCCA00;
-  color: #161616;
-}
-
-._btn a {
-  color: #ECEEF2;
-}
-
-._btn a.dark-theme {
-  color: #161616;
-}
-
 .btn-cus-1 {
   background-color: #ECEEF2;
   -webkit-box-shadow: 0 2px 4px #8453ff;
           box-shadow: 0 2px 4px #8453ff;
-  padding: 8px 16px;
+  padding: 1rem;
   margin: 8px;
   border-radius: 16px;
   color: #161616;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
+  text-transform: uppercase;
   font-size: 1rem;
-  -webkit-transition: border 0.25s ease, -webkit-box-shadow;
-  transition: border 0.25s ease, -webkit-box-shadow;
-  transition: box-shadow, border 0.25s ease;
-  transition: box-shadow, border 0.25s ease, -webkit-box-shadow;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
   border: 1px solid rgba(0, 0, 0, 0);
+  text-align: center;
 }
 
 .btn-cus-1:hover {
+  cursor: pointer;
   border: 1px solid #8453ff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .btn-cus-1:hover.dark-theme {
@@ -65,6 +32,10 @@
   color: #ECEEF2;
   -webkit-box-shadow: 0 2px 4px #FCCA00;
           box-shadow: 0 2px 4px #FCCA00;
+}
+
+.btn-cus-1.btn-close-modal {
+  padding: 8px 12px;
 }
 
 @media only screen and (max-width: 990px) {
@@ -92,16 +63,16 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  -webkit-transition: border 0.25s ease, -webkit-box-shadow;
-  transition: border 0.25s ease, -webkit-box-shadow;
-  transition: box-shadow, border 0.25s ease;
-  transition: box-shadow, border 0.25s ease, -webkit-box-shadow;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .btn__in-sights:hover {
   cursor: pointer;
   border: 1px solid #8453ff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   color: #161616;
 }
 

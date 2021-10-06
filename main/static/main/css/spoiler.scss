@@ -10,12 +10,14 @@ $anim-delay-slow: .8s;
 $anim-delay-fast: .25s;
 $border-radius: 16px;
 $border-radius-card: 4px;
+$box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25% 
 
 .spoiler-wrap {
     border-radius: $border-radius;
     padding: 1rem;
     margin-bottom: 3rem;
-    background-color: $primory-purple;
+    background: $milk-white;
+    box-shadow: $box-shadow-card;
     &.dark-theme {
         box-shadow: 0 2px $box-shadow $primory-orange; // цвет тени не менять
         background-color: $secondary-dark-theme-color;
@@ -24,7 +26,7 @@ $border-radius-card: 4px;
         display: flex;
         justify-content: center;
         h6 {
-            color: $milk-white;
+            color: $primory-dark-theme-color;
             font-family: 'Montserrat', sans-serif;
             font-weight: bold;
         }
@@ -36,7 +38,7 @@ $border-radius-card: 4px;
         display: none;
         margin-top: 1rem;
         span {
-            color: $milk-white;
+            color: $primory-dark-theme-color;
         }
     }
 }

@@ -5,8 +5,13 @@ $primory-dark-theme-color: #161616;
 $secondary-dark-theme-color: #232323;
 $box-shadow-color: #161616;
 $box-shadow: 4px;
+$nav-height: 55px;
+$anim-delay-slow: .8s;
+$anim-delay-fast: .25s;
 $border-radius: 16px;
 $border-radius-card: 4px;
+$box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25% 
+
 
 .brand-block {
     background-color: $primory-purple;

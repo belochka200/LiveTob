@@ -55,17 +55,7 @@ def join(request):
     data = {
         'title': 'Присоединиться к LiveTob',
     }
-    if request.method == 'POST':
-        form = JoinForm(request.POST)
-        if form.is_valid():
-            form.save()
-            data['form'] = form
-            data['res'] = "Всё прошло успешно"
-            return render(request, 'main/join.html', context=data)
-    else:
-        form = JoinForm()
-        data['form'] = form
-        return render(request, 'main/join.html', context=data)
+    return render(request, 'main/join.html', context=data)
 
 def login(request):
     data = {

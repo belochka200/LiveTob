@@ -38,13 +38,15 @@
                         <a href="{% url 'show_to_do' slug=i.slug %}">
                             <div class="card mt-5">
                                 <img src="{{ i.image_preview.url }}" class="card-img-top round">
-                                <div class="rec-card">Рекомендовано нами!</div>
-                                <p class="card-title position-absolute">{{ i.title }}</p>
-                                <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.address }}" target="_blank">
-                                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
-                                        <i class="fas fa-map-marker-alt"></i>
+                                <div class="card-title position-absolute">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-xl-7">{{ i.title }}</div>
+                                        <div class="col-12 col-xl-5">
+                                            <div class="rec-card col-12 text-center fw-bold">Рекомендуем</div>
+                                            <div class="col-12 card-category fw-bold mt-2">{{ i.category }}</div>
+                                        </div>                                    
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -58,12 +60,14 @@
                         <a href="{% url 'show_to_do' slug=i.slug %}">
                             <div class="card mt-5">
                                 <img src="{{ i.image_preview.url }}" class="card-img-top round">
-                                <p class="card-title position-absolute">{{ i.title }}</p>
-                                <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.address }}" target="_blank">
-                                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
-                                        <i class="fas fa-map-marker-alt"></i>
+                                <div class="card-title position-absolute">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-xl-7">{{ i.title }}</div>
+                                        <div class="col-12 col-xl-5">
+                                            <div class="col-12 card-category fw-bold mt-2">{{ i.category }}</div>
+                                        </div>                                    
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -73,7 +77,7 @@
             {% if entertainment_list.count|add:entertainment_list_rec.count >= 9 or entertainment_list.count >= 9 or entertainment_list_rec.count >= 9 %}
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-12 col-md-4">
-                    <p class="text-center mt-5"><div class="_btn btn__show-more-to-do" btn-url="{% url 'load_more_entertainment' %}">Показать ещё</div></p>
+                    <p class="text-center mt-5"><div class="btn-cus-1 btn__show-more-to-do" btn-url="{% url 'load_more_entertainment' %}">Показать ещё</div></p>
                     <p class="no-more text-center"></p>
                 </div>
             </div>

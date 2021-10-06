@@ -79,18 +79,15 @@ def load_sights(request):
     if not more_sights:
         return JsonResponse({'data': False})
     data = []
-    for i in more_sights:
-        print(int(i['category']))
-        temp = Category.objects.filter(pk=int(i['category']))
-        print(temp)
     for sight in more_sights:
+        category = Category.objects.filter(pk=sight['category'])
         obj = {
             'id': sight['id'],
             'title': sight['title'],
             'slug': sight['slug'],
             'image_preview': sight['image_preview'],
             'address': sight['adress'],
-            'category': sight['category'],
+            'category': str(category[0]),
         }
         data.append(obj)
     data[-1]['last_sight'] = True

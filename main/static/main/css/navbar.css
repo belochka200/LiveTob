@@ -66,6 +66,8 @@ nav .nav__body .nav__list .nav__link {
   color: #ECEEF2;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 nav .nav__body .nav__list .nav__link:hover {
