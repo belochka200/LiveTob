@@ -33,8 +33,8 @@ $(document).ready(function() {
                                                 '<img src="../media/' + obj['image_preview'] + '" class="card-img-top round dark-theme">' + 
                                                 '<div class="card-title position-absolute dark-theme">' + 
                                                     '<div class="row align-items-center dark-theme">' +
-                                                        '<div class="col-12 col-xl-8 dark-theme">' + obj['title'] + '</div>' + 
-                                                        '<div class="col-12 col-xl-4 dark-theme">' + 
+                                                        '<div class="col-12 col-xl-7 dark-theme">' + obj['title'] + '</div>' + 
+                                                        '<div class="col-12 col-xl-5 dark-theme">' + 
                                                             '<div class="col-12 card-category fw-bold dark-theme">' + obj['category'] + '</div>' +
                                                         '</div>' + 
                                                     '</div>' +
