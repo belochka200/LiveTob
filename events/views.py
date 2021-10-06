@@ -142,11 +142,12 @@ def cafe_load(request):
     data = []
     if category: # если есть категория
         if lastrecid: # если есть идшник рек. карточки
-            more_cafe_rec = Cafe.objects.filter(pk__gt=int(lastrecid), recomended=True, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]        
+            more_cafe_rec = Cafe.objects.filter(pk__gt=int(lastrecid), recomended=True, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended', 'category')[:9]        
             if not more_cafe_rec: # если больше нет реков
-                more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+                more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended', 'category')[:9]
                 if more_cafe:
                     for item in more_cafe:
+                        category = CafeCategory.objects.filter(pk=item['category'])
                         obj = {
                             'id': item['id'],
                             'title': item['title'],
@@ -154,6 +155,7 @@ def cafe_load(request):
                             'image_preview': item['image_preview'],
                             'address': item['address'],
                             'recomended': item['recomended'],
+                            'category': item['category'],
                         }
                         data.append(obj)
                     data[-1]['last-post-eat'] = True
@@ -162,6 +164,7 @@ def cafe_load(request):
                     return JsonResponse({'data': False})
             else: # если реки есть
                 for item in more_cafe_rec:
+                    category = CafeCategory.objects.filter(pk=item['category'])
                     obj_rec = {
                         'id': item['id'],
                         'title': item['title'],
@@ -169,11 +172,13 @@ def cafe_load(request):
                         'image_preview': item['image_preview'],
                         'address': item['address'],
                         'recomended': item['recomended'],
+                        'category': item['category'],
                     }
                     data.append(obj_rec)
                 x = 9-more_cafe_rec.count()
-                more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:x]
+                more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended', 'category')[:x]
                 if more_cafe:
+                    category = CafeCategory.objects.filter(pk=item['category'])
                     for item in more_cafe:
                         obj = {
                             'id': item['id'],
@@ -182,6 +187,7 @@ def cafe_load(request):
                             'image_preview': item['image_preview'],
                             'address': item['address'],
                             'recomended': item['recomended'],
+                            'category': item['category'],
                         }
                         data.append(obj)
                     data[-1]['last-post-eat'] = True
@@ -190,8 +196,9 @@ def cafe_load(request):
                     data[-1]['last-post-eat'] = True
                     return JsonResponse({'data': data})
         else: # если нет идшника реков последнего
-            more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended')[:9]
+            more_cafe = Cafe.objects.filter(pk__gt=int(lastid), recomended=False, category=category).values('id', 'title', 'slug', 'image_preview', 'address', 'recomended', 'category')[:9]
             if more_cafe:
+                category = CafeCategory.objects.filter(pk=item['category'])
                 for item in more_cafe:
                     obj = {
                         'id': item['id'],
@@ -276,6 +283,7 @@ def cafe_load(request):
                         'image_preview': item['image_preview'],
                         'address': item['address'],
                         'recomended': item['recomended'],
+                        'category': 
                     }
                     data.append(obj)
                 data[-1]['last-post-eat'] = True

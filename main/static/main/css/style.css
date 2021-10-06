@@ -1290,7 +1290,7 @@ h1.sights__title.dark-theme {
   background-color: #232323;
 }
 
-@media screen and (max-width: 990px) {
+@media only screen and (max-width: 990px) {
   h1.sights__title {
     top: 0;
   }
@@ -1348,16 +1348,10 @@ h3.h-bold {
   text-transform: uppercase;
   z-index: 1;
   padding: .5rem 1rem;
-  font-size: 1rem;
+  font-size: .8rem;
   background-color: #fff;
   width: 100%;
   border-radius: 0 0 4px 4px;
-}
-
-@media only screen and (max-width: 990px) {
-  .card .card-title {
-    font-size: 1rem;
-  }
 }
 
 .card .card-title.dark-theme {
@@ -1378,6 +1372,12 @@ h3.h-bold {
 .card .card-category.dark-theme {
   background-color: #161616;
   color: #ECEEF2;
+}
+
+@media only screen and (max-width: 990px) {
+  .card .card-category {
+    margin-top: 4px;
+  }
 }
 
 .card img.card-img-top {
@@ -1446,6 +1446,12 @@ h3.h-bold {
 .rec-card.dark-theme {
   background-color: #FCCA00;
   color: #161616;
+}
+
+@media only screen and (max-width: 990px) {
+  .rec-card {
+    margin-top: 4px;
+  }
 }
 
 .slider__show-sight {
