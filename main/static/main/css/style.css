@@ -1359,7 +1359,21 @@ h3.h-bold {
   color: #ECEEF2;
 }
 
-.card .card-category {
+.card .card-title .rec-card {
+  background-color: #8453ff;
+  color: #ECEEF2;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+.card .card-title .rec-card.dark-theme {
+  background-color: #FCCA00;
+  color: #161616;
+}
+
+.card .card-title .card-category {
   background-color: #ECEEF2;
   color: #161616;
   padding: 4px 8px;
@@ -1369,15 +1383,9 @@ h3.h-bold {
   text-align: center;
 }
 
-.card .card-category.dark-theme {
+.card .card-title .card-category.dark-theme {
   background-color: #161616;
   color: #ECEEF2;
-}
-
-@media only screen and (max-width: 990px) {
-  .card .card-category {
-    margin-top: 4px;
-  }
 }
 
 .card img.card-img-top {
@@ -1432,26 +1440,6 @@ h3.h-bold {
 
 .card .sights__gps-mark:hover i.dark-theme {
   color: #FCCA00;
-}
-
-.rec-card {
-  background-color: #8453ff;
-  color: #ECEEF2;
-  padding: 4px 8px;
-  border-radius: 16px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
-}
-
-.rec-card.dark-theme {
-  background-color: #FCCA00;
-  color: #161616;
-}
-
-@media only screen and (max-width: 990px) {
-  .rec-card {
-    margin-top: 4px;
-  }
 }
 
 .slider__show-sight {
