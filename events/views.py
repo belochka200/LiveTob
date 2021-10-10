@@ -678,7 +678,6 @@ def show_to_eat(request, slug):
         'address': cafe.address,
         'number': cafe.number,
         'site': cafe.site,
-        'recomended': cafe.recomended,
         'views': cafe_views,
     }
     split_num = []
@@ -699,7 +698,7 @@ def show_to_eat(request, slug):
         for j in i:
             addresses.append(j)
     data['address'] = addresses
-    return render(request, 'events/show_to_eat.html', context=data)
+    return render(request, 'main/show.html', context=data)
 
 def show_to_rest(request, slug):
     rest = get_object_or_404(Hotel, slug=slug)
@@ -721,7 +720,6 @@ def show_to_rest(request, slug):
         'address': rest.address,
         'number': rest.number,
         'site': rest.site,
-        'recomended': rest.recomended,
         'views': rest_views,
     }
     split_num = []
@@ -742,7 +740,7 @@ def show_to_rest(request, slug):
         for j in i:
             addresses.append(j)
     data['address'] = addresses
-    return render(request, 'events/show_to_rest.html', context=data)
+    return render(request, 'main/show.html', context=data)
 
 def show_to_do(request, slug):
     do = get_object_or_404(Entertainment, slug=slug)
@@ -764,7 +762,6 @@ def show_to_do(request, slug):
         'address': do.address,
         'number': do.number,
         'site': do.site,
-        'recomended': do.recomended,
         'views': do_views,
     }
     split_num = []
@@ -785,4 +782,4 @@ def show_to_do(request, slug):
         for j in i:
             addresses.append(j)
     data['address'] = addresses
-    return render(request, 'events/show_to_do.html', context=data)
+    return render(request, 'main/show.html', context=data)

@@ -57,10 +57,29 @@
                 {% endfor %}
                 </div>
             </div>
+        {% if show_history %}
+        <div class="container">
+            <div class="row justify-content-center mt-5 read-history-block mt-3">
+                <div class="col-12">
+                    <h5 class="text-center">Впервые в городе? Узнайте его историю!</h5>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 mt-3">
+                    <div class="btn-cus-1 btn-show-history">
+                        <a href="{% url 'history' %}">Читать историю города</a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 mt-3">
+                    <div class="btn-cus-1 btn-no-show-history">
+                        Спасибо, нет
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
         {% if sights_list.count >= 9 %}
-        <div class="row d-flex justify-content-center">
-            <div class="col-sm-12 col-md-4">
-                <p class="text-center mt-5"><div class="btn-cus-1 btn__show-more-sights cur-pointer" btn-url="{% url 'load-more-sights' %}">Показать ещё</div></p>
+        <div class="row justify-content-center mt-3">
+            <div class="col-12 col-md-4">
+                <div class="btn-cus-1 btn__show-more-sights cur-pointer" btn-url="{% url 'load-more-sights' %}">Показать ещё</div>
                 <p class="no-more text-center"></p>
             </div>
         </div>

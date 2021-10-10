@@ -176,6 +176,9 @@ h3 {
                 background-color: $primory-dark-theme-color;
                 color: $milk-white;
             }
+            @media screen and (max-width: 1199px) {
+                margin-top: .5rem;
+            }
         }
     }
     img {
@@ -304,6 +307,25 @@ h3 {
             }
         }
     }
+    &.modal-msg {
+        .modal-dialog {
+            .modal-body {
+                margin: 0;
+                .form-control {
+                    height: 50vh;
+                    @media only screen and (max-width: 990px) {
+                        height: 30vh;
+                    }
+                    &:focus {
+                        color: $primory-dark-theme-color;
+                        border-color: $primory-purple;
+                        box-shadow: none;
+                        font-family: 'Open Sans', sans-serif;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .where-to-go__card {
@@ -354,5 +376,18 @@ h3 {
                 margin-bottom: 3rem;
             }
         }
+    }
+}
+
+.read-history-block {
+    background-color: #fff;
+    border-radius: $border-radius-card;
+    padding: 1rem;
+    margin: 0 2px;
+}
+
+.text-in-card {
+    @media only screen and (max-width: 990px) {
+        width: 100%!important;
     }
 }

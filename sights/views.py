@@ -4,12 +4,12 @@ from rest_framework.viewsets import ModelViewSet
 from .serializers import SightSerializer
 from .models import Category, Sight, SightImage
 import json
+import random
+# from django.core.mail import send_mail
 
 def sights(request):
-    # temp = Sight.objects.all()
-    # for i in temp:
-    #     Sight.objects.filter(slug=i.slug).update(views=0)
-
+    # send_mail('Subject here', 'Here is the message.', '1livetob@gmail.com',
+    # ['belochka20022@gmail.com'], fail_silently=False)
     category = request.GET.get('category')
     if not category: # если категории нет
         sights_list = Sight.objects.all()[:9]
@@ -19,11 +19,17 @@ def sights(request):
         sights_list = Sight.objects.filter(category=chosen_category)[:9]
 
     category_list = Category.objects.all()
+    show_history = random.random()
+    if show_history > 0.5:
+        show_history = True
+    else:
+        show_history = False
     data = {
         'title': 'Достопримечательности',
         'sights_list': sights_list,
         'category_list': category_list,
         'chosen_category': chosen_category,
+        'show_history': show_history,
     }
     return render(request, 'sights/sights.html', context=data)
 
@@ -48,6 +54,7 @@ def show_sights(request, slug):
         'number': sight.number,
         'site': sight.site,
         'views': sight_views,
+        'price': sight.price,
     }
     split_num = []
     temp = data['number'].split(', ')
@@ -67,7 +74,7 @@ def show_sights(request, slug):
         for j in i:
             addresses.append(j)
     data['address'] = addresses
-    return render(request, 'sights/show_sights.html', context=data)
+    return render(request, 'main/show.html', context=data)
 
 def load_sights(request):
     last_sight_id = request.GET.get('lastSightId')

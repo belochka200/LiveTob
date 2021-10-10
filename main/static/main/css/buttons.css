@@ -16,6 +16,10 @@
   text-align: center;
 }
 
+.btn-cus-1 a {
+  color: #161616;
+}
+
 .btn-cus-1:hover {
   cursor: pointer;
   border: 1px solid #8453ff;
@@ -50,6 +54,12 @@
 
 .btn__in-sights-wrap {
   margin: 1rem 0;
+}
+
+@media only screen and (max-width: 990px) {
+  .btn__in-sights-wrap {
+    width: 100% !important;
+  }
 }
 
 .btn__in-sights {

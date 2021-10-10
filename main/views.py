@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from sights.models import Sight
 from .models import PopularPeople, InterestingFact
-from django.contrib.auth.forms import UserCreationForm
-# from .forms import JoinForm
+# from django.contrib.auth.forms import UserCreationForm
+from .forms import JoinForm
 
 
 def index(request): # главная страница
@@ -52,8 +52,15 @@ def brand(request):
     return render(request, 'main/brand.html', context=data)
 
 def join(request):
+    if request.method == 'POST':
+        user_form = JoinForm(request.POST)
+        if user_form.is_valid():
+            new_user = user_form.save()
+            # new_user.set_password(user_form.)
+            new_user.save()
     data = {
         'title': 'Присоединиться к LiveTob',
+        'form': user_form,
     }
     return render(request, 'main/join.html', context=data)
 

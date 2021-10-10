@@ -19,7 +19,7 @@ html, body {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
-    font-size: 1rem;
+    font-size: 16px!important;
     @media screen and (prefers-reduced-motion: reduce) {
         html {
             scroll-behavior: auto;
@@ -58,4 +58,5 @@ html, body {
 
 *::selection {
     background-color: $primory-purple;
+    color: $milk-white;
 }

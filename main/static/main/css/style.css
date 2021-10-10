@@ -366,7 +366,7 @@ html, body {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-  font-size: 1rem;
+  font-size: 16px !important;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -413,10 +413,12 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 
 *::-moz-selection {
   background-color: #8453ff;
+  color: #ECEEF2;
 }
 
 *::selection {
   background-color: #8453ff;
+  color: #ECEEF2;
 }
 
 nav {
@@ -973,6 +975,10 @@ nav .nav__body .nav__burger {
   text-align: center;
 }
 
+.btn-cus-1 a {
+  color: #161616;
+}
+
 .btn-cus-1:hover {
   cursor: pointer;
   border: 1px solid #8453ff;
@@ -1007,6 +1013,12 @@ nav .nav__body .nav__burger {
 
 .btn__in-sights-wrap {
   margin: 1rem 0;
+}
+
+@media only screen and (max-width: 990px) {
+  .btn__in-sights-wrap {
+    width: 100% !important;
+  }
 }
 
 .btn__in-sights {
@@ -1388,6 +1400,12 @@ h3.h-bold {
   color: #ECEEF2;
 }
 
+@media screen and (max-width: 1199px) {
+  .card .card-title .card-category {
+    margin-top: .5rem;
+  }
+}
+
 .card img.card-img-top {
   height: 100%;
   -o-object-fit: cover;
@@ -1538,6 +1556,28 @@ h3.h-bold {
   }
 }
 
+.modal.modal-msg .modal-dialog .modal-body {
+  margin: 0;
+}
+
+.modal.modal-msg .modal-dialog .modal-body .form-control {
+  height: 50vh;
+}
+
+@media only screen and (max-width: 990px) {
+  .modal.modal-msg .modal-dialog .modal-body .form-control {
+    height: 30vh;
+  }
+}
+
+.modal.modal-msg .modal-dialog .modal-body .form-control:focus {
+  color: #161616;
+  border-color: #8453ff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
 @media only screen and (max-width: 990px) {
   .where-to-go__card {
     margin-top: 3rem;
@@ -1603,6 +1643,19 @@ h3.h-bold {
   .about-text-block .about-img.about-img-no-margin-top {
     margin-top: 0;
     margin-bottom: 3rem;
+  }
+}
+
+.read-history-block {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 0 2px;
+}
+
+@media only screen and (max-width: 990px) {
+  .text-in-card {
+    width: 100% !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
