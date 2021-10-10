@@ -397,12 +397,12 @@ html.dark-theme::-webkit-scrollbar-thumb, body.dark-theme::-webkit-scrollbar-thu
 
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 10px;
-  background-color: #8453ff;
+  background-color: #ECEEF2;
 }
 
 html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   border-radius: 16px;
-  background-color: #FCCA00;
+  background-color: #8453ff;
 }
 
 @media screen and (max-width: 990px) {
@@ -1385,6 +1385,12 @@ h3.h-bold {
   color: #161616;
 }
 
+@media screen and (max-width: 1199px) {
+  .card .card-title .rec-card {
+    margin-top: .5rem;
+  }
+}
+
 .card .card-title .card-category {
   background-color: #ECEEF2;
   color: #161616;
@@ -1398,6 +1404,10 @@ h3.h-bold {
 .card .card-title .card-category.dark-theme {
   background-color: #161616;
   color: #ECEEF2;
+}
+
+.card .card-title .card-category.card-category-rec {
+  margin-top: .5rem;
 }
 
 @media screen and (max-width: 1199px) {

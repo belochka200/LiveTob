@@ -163,6 +163,9 @@ h3 {
                 background-color: $primory-orange;
                 color: $primory-dark-theme-color;
             }
+            @media screen and (max-width: 1199px) {
+                margin-top: .5rem;
+            }
         }
         .card-category {
             background-color: $milk-white;
@@ -175,6 +178,9 @@ h3 {
             &.dark-theme {
                 background-color: $primory-dark-theme-color;
                 color: $milk-white;
+            }
+            &.card-category-rec {
+                margin-top: .5rem;
             }
             @media screen and (max-width: 1199px) {
                 margin-top: .5rem;

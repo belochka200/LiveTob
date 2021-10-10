@@ -35,12 +35,12 @@ html.dark-theme::-webkit-scrollbar-thumb, body.dark-theme::-webkit-scrollbar-thu
 
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 10px;
-  background-color: #8453ff;
+  background-color: #ECEEF2;
 }
 
 html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   border-radius: 16px;
-  background-color: #FCCA00;
+  background-color: #8453ff;
 }
 
 @media screen and (max-width: 990px) {

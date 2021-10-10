@@ -34,15 +34,21 @@ $(document).ready(function() {
                                         '<div class="col-12 col-md-4 posts-to-do last-post-to-do dark-theme" data-postid="0" data-postidrec="' + obj['id'] + '">' + 
                                             '<a href="show-to-do-' + obj['slug'] + '" class="dark-theme">' + 
                                                 '<div class="card mt-5 dark-theme">' + 
-                                                    '<img src="../media/' + obj['image_preview'] + '>" class="card-img-top round dark-theme">' + 
-                                                    '<div class="rec-card dark-theme">Рекомендовано нами!</div>' +
-                                                    '<p class="card-title position-absolute dark-theme">' + obj['title'] + '</p>' + 
-                                                    '<div class="bottom-img-gradient w-100 position-absolute dark-theme"></div>' + 
+                                                    '<img src="../../media/' + obj['image_preview'] + '" class="card-img-top round dark-theme">' + 
+                                                    '<div class="card-title position-absolute dark-theme">' + 
+                                                        '<div class="row align-items-center dark-theme">' +
+                                                            '<div class="col-12 col-xl-7 dark-theme">' + obj['title'] + '</div>' + 
+                                                            '<div class="col-12 col-xl-5 dark-theme">' + 
+                                                                '<div class="rec-card col-12 text-center fw-bold dark-theme">Рекомендуем</div>' + 
+                                                                '<div class="col-12 card-category fw-bold dark-theme mt-1">' + obj['category'] + '</div>' +
+                                                            '</div>' + 
+                                                        '</div>' +
+                                                    '</div>' + 
                                                     '<a href="https://yandex.ru/maps/?text=Тобольск, ' + obj['address'] + '" target="_blank">' +
                                                         '<div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center dark-theme">' + 
                                                             '<i class="fas fa-map-marker-alt dark-theme"></i>' +
                                                         '</div>' +
-                                                   ' </a>' +
+                                                    '</a>' +
                                                 '</div>' +
                                             '</a>' +
                                         '</div>'
@@ -52,14 +58,20 @@ $(document).ready(function() {
                                         '<div class="col-12 col-md-4 posts-to-do last-post-to-do dark-theme" data-postid="' + obj['id'] + '">' + 
                                             '<a href="show-to-do-' + obj['slug'] + '" class="dark-theme">' + 
                                                 '<div class="card mt-5 dark-theme">' + 
-                                                    '<img src="../media/' + obj['image_preview'] + '>" class="card-img-top round dark-theme">' + 
-                                                    '<p class="card-title position-absolute dark-theme">' + obj['title'] + '</p>' + 
-                                                    '<div class="bottom-img-gradient w-100 position-absolute dark-theme"></div>' + 
+                                                    '<img src="../../media/' + obj['image_preview'] + '" class="card-img-top round dark-theme">' + 
+                                                    '<div class="card-title position-absolute dark-theme">' + 
+                                                        '<div class="row align-items-center dark-theme">' +
+                                                            '<div class="col-12 col-xl-7 dark-theme">' + obj['title'] + '</div>' + 
+                                                            '<div class="col-12 col-xl-5 dark-theme">' + 
+                                                                '<div class="col-12 card-category fw-bold dark-theme">' + obj['category'] + '</div>' +
+                                                            '</div>' + 
+                                                        '</div>' +
+                                                    '</div>' + 
                                                     '<a href="https://yandex.ru/maps/?text=Тобольск, ' + obj['address'] + '" target="_blank">' +
                                                         '<div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center dark-theme">' + 
                                                             '<i class="fas fa-map-marker-alt dark-theme"></i>' +
                                                         '</div>' +
-                                                   ' </a>' +
+                                                    '</a>' +
                                                 '</div>' +
                                             '</a>' +
                                         '</div>'
@@ -71,15 +83,21 @@ $(document).ready(function() {
                                         '<div class="col-12 col-md-4 posts-to-do dark-theme">' + 
                                             '<a href="show-to-do-' + obj['slug'] + '" class="dark-theme">' + 
                                                 '<div class="card mt-5 dark-theme">' + 
-                                                    '<img src="../media/' + obj['image_preview'] + '>" class="card-img-top round dark-theme">' + 
-                                                    '<div class="rec-card dark-theme">Рекомендовано нами!</div>' +
-                                                    '<p class="card-title position-absolute dark-theme">' + obj['title'] + '</p>' + 
-                                                    '<div class="bottom-img-gradient w-100 position-absolute dark-theme"></div>' + 
+                                                    '<img src="../../media/' + obj['image_preview'] + '" class="card-img-top round dark-theme">' + 
+                                                    '<div class="card-title position-absolute dark-theme">' + 
+                                                        '<div class="row align-items-center dark-theme">' +
+                                                            '<div class="col-12 col-xl-7 dark-theme">' + obj['title'] + '</div>' + 
+                                                            '<div class="col-12 col-xl-5 dark-theme">' + 
+                                                                '<div class="rec-card col-12 text-center fw-bold dark-theme">Рекомендуем</div>' + 
+                                                                '<div class="col-12 card-category fw-bold dark-theme">' + obj['category'] + '</div>' +
+                                                            '</div>' + 
+                                                        '</div>' +
+                                                    '</div>' + 
                                                     '<a href="https://yandex.ru/maps/?text=Тобольск, ' + obj['address'] + '" target="_blank">' +
                                                         '<div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center dark-theme">' + 
                                                             '<i class="fas fa-map-marker-alt dark-theme"></i>' +
                                                         '</div>' +
-                                                   ' </a>' +
+                                                    '</a>' +
                                                 '</div>' +
                                             '</a>' +
                                         '</div>'
@@ -89,14 +107,20 @@ $(document).ready(function() {
                                         '<div class="col-12 col-md-4 posts-to-do dark-theme">' + 
                                             '<a href="show-to-do-' + obj['slug'] + '" class="dark-theme">' + 
                                                 '<div class="card mt-5 dark-theme">' + 
-                                                    '<img src="../media/' + obj['image_preview'] + '>" class="card-img-top round dark-theme">' + 
-                                                    '<p class="card-title position-absolute dark-theme">' + obj['title'] + '</p>' + 
-                                                    '<div class="bottom-img-gradient w-100 position-absolute dark-theme"></div>' + 
+                                                    '<img src="../../media/' + obj['image_preview'] + '" class="card-img-top round dark-theme">' + 
+                                                    '<div class="card-title position-absolute dark-theme">' + 
+                                                        '<div class="row align-items-center dark-theme">' +
+                                                            '<div class="col-12 col-xl-7 dark-theme">' + obj['title'] + '</div>' + 
+                                                            '<div class="col-12 col-xl-5 dark-theme">' + 
+                                                                '<div class="col-12 card-category fw-bold dark-theme">' + obj['category'] + '</div>' +
+                                                            '</div>' + 
+                                                        '</div>' +
+                                                    '</div>' + 
                                                     '<a href="https://yandex.ru/maps/?text=Тобольск, ' + obj['address'] + '" target="_blank">' +
                                                         '<div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center dark-theme">' + 
                                                             '<i class="fas fa-map-marker-alt dark-theme"></i>' +
                                                         '</div>' +
-                                                   ' </a>' +
+                                                    '</a>' +
                                                 '</div>' +
                                             '</a>' +
                                         '</div>'
@@ -112,15 +136,21 @@ $(document).ready(function() {
                                         '<div class="col-12 col-md-4 posts-to-do last-post-to-do" data-postid="0" data-postidrec="' + obj['id'] + '">' + 
                                             '<a href="show-to-do-' + obj['slug'] + '">' + 
                                                 '<div class="card mt-5">' + 
-                                                    '<img src="../media/' + obj['image_preview'] + '>" class="card-img-top round">' + 
-                                                    '<div class="rec-card dark-theme">Рекомендовано нами!</div>' +
-                                                    '<p class="card-title position-absolute">' + obj['title'] + '</p>' + 
-                                                    '<div class="bottom-img-gradient w-100 position-absolute"></div>' + 
+                                                    '<img src="../../media/' + obj['image_preview'] + '" class="card-img-top round">' + 
+                                                    '<div class="card-title position-absolute">' + 
+                                                        '<div class="row align-items-center">' +
+                                                            '<div class="col-12 col-xl-7">' + obj['title'] + '</div>' + 
+                                                            '<div class="col-12 col-xl-5">' + 
+                                                                '<div class="rec-card col-12 text-center fw-bold">Рекомендуем</div>' + 
+                                                                '<div class="col-12 card-category fw-bold">' + obj['category'] + '</div>' +
+                                                            '</div>' + 
+                                                        '</div>' +
+                                                    '</div>' + 
                                                     '<a href="https://yandex.ru/maps/?text=Тобольск, ' + obj['address'] + '" target="_blank">' +
                                                         '<div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">' + 
                                                             '<i class="fas fa-map-marker-alt"></i>' +
                                                         '</div>' +
-                                                   ' </a>' +
+                                                    '</a>' +
                                                 '</div>' +
                                             '</a>' +
                                         '</div>'
@@ -130,14 +160,20 @@ $(document).ready(function() {
                                         '<div class="col-12 col-md-4 posts-to-do last-post-to-do" data-postid="' + obj['id'] + '">' + 
                                             '<a href="show-to-do-' + obj['slug'] + '">' + 
                                                 '<div class="card mt-5">' + 
-                                                    '<img src="../media/' + obj['image_preview'] + '>" class="card-img-top round">' + 
-                                                    '<p class="card-title position-absolute">' + obj['title'] + '</p>' + 
-                                                    '<div class="bottom-img-gradient w-100 position-absolute"></div>' + 
+                                                    '<img src="../../media/' + obj['image_preview'] + '" class="card-img-top round">' + 
+                                                    '<div class="card-title position-absolute">' + 
+                                                        '<div class="row align-items-center">' +
+                                                            '<div class="col-12 col-xl-7">' + obj['title'] + '</div>' + 
+                                                            '<div class="col-12 col-xl-5">' + 
+                                                                '<div class="col-12 card-category fw-bold">' + obj['category'] + '</div>' +
+                                                            '</div>' + 
+                                                        '</div>' +
+                                                    '</div>' + 
                                                     '<a href="https://yandex.ru/maps/?text=Тобольск, ' + obj['address'] + '" target="_blank">' +
                                                         '<div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">' + 
                                                             '<i class="fas fa-map-marker-alt"></i>' +
                                                         '</div>' +
-                                                   ' </a>' +
+                                                    '</a>' +
                                                 '</div>' +
                                             '</a>' +
                                         '</div>'
@@ -149,15 +185,21 @@ $(document).ready(function() {
                                         '<div class="col-12 col-md-4 posts-to-do">' + 
                                             '<a href="show-to-do-' + obj['slug'] + '">' + 
                                                 '<div class="card mt-5">' + 
-                                                    '<img src="../media/' + obj['image_preview'] + '>" class="card-img-top round">' + 
-                                                    '<div class="rec-card dark-theme">Рекомендовано нами!</div>' +
-                                                    '<p class="card-title position-absolute">' + obj['title'] + '</p>' + 
-                                                    '<div class="bottom-img-gradient w-100 position-absolute"></div>' + 
+                                                    '<img src="../../media/' + obj['image_preview'] + '" class="card-img-top round">' + 
+                                                    '<div class="card-title position-absolute">' + 
+                                                        '<div class="row align-items-center">' +
+                                                            '<div class="col-12 col-xl-7">' + obj['title'] + '</div>' + 
+                                                            '<div class="col-12 col-xl-5">' + 
+                                                                '<div class="rec-card col-12 text-center fw-bold">Рекомендуем</div>' + 
+                                                                '<div class="col-12 card-category fw-bold">' + obj['category'] + '</div>' +
+                                                            '</div>' + 
+                                                        '</div>' +
+                                                    '</div>' + 
                                                     '<a href="https://yandex.ru/maps/?text=Тобольск, ' + obj['address'] + '" target="_blank">' +
                                                         '<div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">' + 
                                                             '<i class="fas fa-map-marker-alt"></i>' +
                                                         '</div>' +
-                                                   ' </a>' +
+                                                    '</a>' +
                                                 '</div>' +
                                             '</a>' +
                                         '</div>'
@@ -167,14 +209,20 @@ $(document).ready(function() {
                                         '<div class="col-12 col-md-4 posts-to-do">' + 
                                             '<a href="show-to-do-' + obj['slug'] + '">' + 
                                                 '<div class="card mt-5">' + 
-                                                    '<img src="../media/' + obj['image_preview'] + '>" class="card-img-top round">' + 
-                                                    '<p class="card-title position-absolute">' + obj['title'] + '</p>' + 
-                                                    '<div class="bottom-img-gradient w-100 position-absolute"></div>' + 
+                                                    '<img src="../../media/' + obj['image_preview'] + '" class="card-img-top round">' + 
+                                                    '<div class="card-title position-absolute">' + 
+                                                        '<div class="row align-items-center">' +
+                                                            '<div class="col-12 col-xl-7">' + obj['title'] + '</div>' + 
+                                                            '<div class="col-12 col-xl-5">' + 
+                                                                '<div class="col-12 card-category fw-bold">' + obj['category'] + '</div>' +
+                                                            '</div>' + 
+                                                        '</div>' +
+                                                    '</div>' + 
                                                     '<a href="https://yandex.ru/maps/?text=Тобольск, ' + obj['address'] + '" target="_blank">' +
                                                         '<div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">' + 
                                                             '<i class="fas fa-map-marker-alt"></i>' +
                                                         '</div>' +
-                                                   ' </a>' +
+                                                    '</a>' +
                                                 '</div>' +
                                             '</a>' +
                                         '</div>'

@@ -43,11 +43,11 @@ html, body {
     }
     &::-webkit-scrollbar {
         width: 10px;
-        background-color: $primory-purple;
+        background-color: $milk-white;
     }
     &::-webkit-scrollbar-thumb {
         border-radius: $border-radius;
-        background-color: $primory-orange;
+        background-color: $primory-purple;
     }
     @media screen and (max-width: 990px) {
         &::-webkit-scrollbar {
