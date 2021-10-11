@@ -88,12 +88,13 @@ nav {
                     border: 2px solid rgba(255,255,255, 0);
                     transition: all $anim-delay-fast ease;
                     background-color: $milk-white;
-                    width: 105px;
+                    width: 150px;
                     &:focus-visible {
                         outline: none;
                     }
                     @media only screen and (max-width: 990px) {
                         width: 100%;
+                        height: 49px;
                     }
                 }
                 .search-btn, .search-microphone {
@@ -111,6 +112,10 @@ nav {
                 .search-microphone {
                     border-radius: 0;
                     padding: 0 .5rem;
+                    transition: all $anim-delay-fast ease;
+                    &.active {
+                        background-color: #fff;
+                    }
                 }
                 @media only screen and (max-width: 990px) {
                     margin-top: 1rem;
