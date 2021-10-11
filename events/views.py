@@ -680,15 +680,17 @@ def show_to_eat(request, slug):
         'site': cafe.site,
         'views': cafe_views,
     }
-    split_num = []
-    temp = data['number'].split(', ')
-    split_num.append(temp)
-    data['number'] = split_num
-    numbers = []
-    for i in data['number']:
-        for j in i:
-            numbers.append(j)
-    data['number'] = numbers
+    if data['number']:
+        split_num = []
+        temp = data['number'].split(', ')
+        split_num.append(temp)
+        data['number'] = split_num
+        numbers = []
+        for i in data['number']:
+            for j in i:
+                numbers.append(j)
+        data['number'] = numbers
+
     split_address = []
     temp = data['address'].split(' / ')
     split_address.append(temp)
@@ -698,6 +700,26 @@ def show_to_eat(request, slug):
         for j in i:
             addresses.append(j)
     data['address'] = addresses
+
+    more = Cafe.objects.order_by('?').filter(category=cafe.category)[:3]
+    n = 0
+    temp = []
+    for i in more:
+        more = get_object_or_404(Cafe, title=i)
+        temp.append([])
+        temp[n].append(more.title)
+        temp[n].append(more.image_preview.url)
+        temp[n].append(more.slug)
+        temp[n].append(more.category)
+        temp[n].append(more.address)
+        n += 1
+    data['more'] = temp
+    temp = []
+    temp.append(data['more'][0][3])
+    category = get_object_or_404(CafeCategory, category_name=temp[0])
+    temp.append(category.slug)
+    data['category'] = temp
+    data['type'] = 'eat'
     return render(request, 'main/show.html', context=data)
 
 def show_to_rest(request, slug):
@@ -722,15 +744,17 @@ def show_to_rest(request, slug):
         'site': rest.site,
         'views': rest_views,
     }
-    split_num = []
-    temp = data['number'].split(', ')
-    split_num.append(temp)
-    data['number'] = split_num
-    numbers = []
-    for i in data['number']:
-        for j in i:
-            numbers.append(j)
-    data['number'] = numbers
+    if data['number']:
+        split_num = []
+        temp = data['number'].split(', ')
+        split_num.append(temp)
+        data['number'] = split_num
+        numbers = []
+        for i in data['number']:
+            for j in i:
+                numbers.append(j)
+        data['number'] = numbers
+
     split_address = []
     temp = data['address'].split(' / ')
     split_address.append(temp)
@@ -740,6 +764,26 @@ def show_to_rest(request, slug):
         for j in i:
             addresses.append(j)
     data['address'] = addresses
+
+    more = Hotel.objects.order_by('?').filter(category=rest.category)[:3]
+    n = 0
+    temp = []
+    for i in more:
+        more = get_object_or_404(Hotel, title=i)
+        temp.append([])
+        temp[n].append(more.title)
+        temp[n].append(more.image_preview.url)
+        temp[n].append(more.slug)
+        temp[n].append(more.category)
+        temp[n].append(more.address)
+        n += 1
+    data['more'] = temp
+    temp = []
+    temp.append(data['more'][0][3])
+    category = get_object_or_404(HotelCategory, category_name=temp[0])
+    temp.append(category.slug)
+    data['category'] = temp
+    data['type'] = 'rest'
     return render(request, 'main/show.html', context=data)
 
 def show_to_do(request, slug):
@@ -764,15 +808,17 @@ def show_to_do(request, slug):
         'site': do.site,
         'views': do_views,
     }
-    split_num = []
-    temp = data['number'].split(', ')
-    split_num.append(temp)
-    data['number'] = split_num
-    numbers = []
-    for i in data['number']:
-        for j in i:
-            numbers.append(j)
-    data['number'] = numbers
+    if data['number']:
+        split_num = []
+        temp = data['number'].split(', ')
+        split_num.append(temp)
+        data['number'] = split_num
+        numbers = []
+        for i in data['number']:
+            for j in i:
+                numbers.append(j)
+        data['number'] = numbers
+
     split_address = []
     temp = data['address'].split(' / ')
     split_address.append(temp)
@@ -782,4 +828,24 @@ def show_to_do(request, slug):
         for j in i:
             addresses.append(j)
     data['address'] = addresses
+
+    more = Entertainment.objects.order_by('?').filter(category=do.category)[:3]
+    n = 0
+    temp = []
+    for i in more:
+        more = get_object_or_404(Entertainment, title=i)
+        temp.append([])
+        temp[n].append(more.title)
+        temp[n].append(more.image_preview.url)
+        temp[n].append(more.slug)
+        temp[n].append(more.category)
+        temp[n].append(more.address)
+        n += 1
+    data['more'] = temp
+    temp = []
+    temp.append(data['more'][0][3])
+    category = get_object_or_404(EntertainmentCategory, category_name=temp[0])
+    temp.append(category.slug)
+    data['category'] = temp
+    data['type'] = 'ent'
     return render(request, 'main/show.html', context=data)

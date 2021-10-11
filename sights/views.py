@@ -1,15 +1,14 @@
+import random
+
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from rest_framework.viewsets import ModelViewSet
-from .serializers import SightSerializer
+
 from .models import Category, Sight, SightImage
-import json
-import random
-# from django.core.mail import send_mail
+from .serializers import SightSerializer
+
 
 def sights(request):
-    # send_mail('Subject here', 'Here is the message.', '1livetob@gmail.com',
-    # ['belochka20022@gmail.com'], fail_silently=False)
     category = request.GET.get('category')
     if not category: # если категории нет
         sights_list = Sight.objects.all()[:9]
@@ -56,15 +55,17 @@ def show_sights(request, slug):
         'views': sight_views,
         'price': sight.price,
     }
-    split_num = []
-    temp = data['number'].split(', ')
-    split_num.append(temp)
-    data['number'] = split_num
-    numbers = []
-    for i in data['number']:
-        for j in i:
-            numbers.append(j)
-    data['number'] = numbers
+    if data['number']:
+        split_num = []
+        temp = data['number'].split(', ')
+        split_num.append(temp)
+        data['number'] = split_num
+        numbers = []
+        for i in data['number']:
+            for j in i:
+                numbers.append(j)
+        data['number'] = numbers
+
     split_address = []
     temp = data['address'].split(' / ')
     split_address.append(temp)
@@ -74,6 +75,26 @@ def show_sights(request, slug):
         for j in i:
             addresses.append(j)
     data['address'] = addresses
+
+    more = Sight.objects.order_by('?').filter(category=sight.category)[:3]
+    n = 0
+    temp = []
+    for i in more:
+        moreSights = get_object_or_404(Sight, title=i)
+        temp.append([])
+        temp[n].append(moreSights.title)
+        temp[n].append(moreSights.image_preview.url)
+        temp[n].append(moreSights.slug)
+        temp[n].append(moreSights.category)
+        temp[n].append(moreSights.adress)
+        n += 1
+    data['more'] = temp
+    temp = []
+    temp.append(data['more'][0][3])
+    category = get_object_or_404(Category, category_name=temp[0])
+    temp.append(category.slug)
+    data['category'] = temp
+    data['type'] = 'sights'
     return render(request, 'main/show.html', context=data)
 
 def load_sights(request):

@@ -73,20 +73,18 @@
                     <a href="https://yandex.ru/maps/?text=Тобольск, {{ address }}" target="_blank" class="btn__in-sights">{{ address }}</a>
                     {% endfor %}
                 </div>
-                {% if number|length >= 2 %}
-                <p class="text title mt-3 mx-2">Телефоны</p>
-                {% else %}
-                <p class="text title mt-3 mx-2">Телефон</p>
-                {% endif %}
-                <div class="d-flex flex-wrap">
-                    {% for number in number %}
-                        {% if number %}
+                {% if number%}
+                    {% if number|length >= 2 %}
+                    <p class="text title mt-3 mx-2">Телефоны</p>
+                    {% else %}
+                    <p class="text title mt-3 mx-2">Телефон</p>
+                    {% endif %}
+                    <div class="d-flex flex-wrap">
+                        {% for number in number %}
                         <a href="tel:{{ number }}" class='btn__in-sights'>{{ number }}</a>
-                        {% else %}
-                        <p class="text">отсутствует</p>
-                        {% endif %}
-                    {% endfor %}
-                </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
                 {% if price %}
                 <p class="text title mt-3 mx-2">Стоимость билета</p>
                 <div class="price mx-2 mt-1">{{ price }}</div>
@@ -98,6 +96,52 @@
         <p class="text text-in-card col-8">
             {{ full_text|linebreaksbr }}
         </p>
+
+        <div class="rec-posts mt-5 pb-5 align-items-center d-flex flex-column">
+            <h5 class="text-center">Похожее</h5>
+            <div class="row justify-content-center m-0">
+                {% for i in more %}
+                    <div class="col-12 col-md-4">
+                        {% if type == 'sights' %}
+                        <a href="{% url 'show_sights' slug=i.2 %}">
+                        {% elif type == 'eat' %}
+                        <a href="{% url 'show_to_eat' slug=i.2 %}">
+                        {% elif type == 'rest' %}
+                        <a href="{% url 'show_to_rest' slug=i.2 %}">
+                        {% elif type == 'ent' %}
+                        <a href="{% url 'show_to_do' slug=i.2 %}">
+                        {% endif %}
+                            <div class="card mt-5">
+                                <img src="{{ i.1 }}" class="card-img-top round">
+                                <div class="card-title position-absolute">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-xl-7">{{ i.0 }}</div>
+                                        <div class="col-12 col-xl-5">
+                                            <div class="col-12 fw-bold card-category">{{ i.3 }}</div>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.4 }}" target="_blank">
+                                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                               </a>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+                {% if type == 'sights' %}
+                <a href="{% url 'sights' %}?category={{ category.1 }}" class="btn-cus-1 col-12 col-md-6 mt-5">Посмотреть ещё в категории {{ category.0 }}</a>
+                {% elif type == 'eat' %}
+                <a href="{% url 'where_to_eat' %}?category={{ category.1 }}" class="btn-cus-1 col-12 col-md-6 mt-5">Посмотреть ещё в категории {{ category.0 }}</a>                
+                {% elif type == 'rest' %}
+                <a href="{% url 'where_to_rest' %}?category={{ category.1 }}" class="btn-cus-1 col-12 col-md-6 mt-5">Посмотреть ещё в категории {{ category.0 }}</a>                
+                {% elif type == 'ent' %}
+                <a href="{% url 'where_to_do' %}?category={{ category.1 }}" class="btn-cus-1 col-12 col-md-6 mt-5">Посмотреть ещё в категории {{ category.0 }}</a>                
+                {% endif %}
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

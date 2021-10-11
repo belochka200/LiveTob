@@ -86,7 +86,7 @@ h1 {
         background-color: $milk-white;
         top: $nav-height;
         left: 0;
-        z-index: 2;
+        z-index: 666;
         box-shadow: 0 -2px $box-shadow $box-shadow-color;
         font-size: 1rem;
         &.dark-theme {
@@ -396,4 +396,10 @@ h3 {
     @media only screen and (max-width: 990px) {
         width: 100%!important;
     }
+}
+
+.rec-posts {
+    border: 2px solid $primory-purple;
+    border-radius: $border-radius;
+    padding: 1rem;
 }

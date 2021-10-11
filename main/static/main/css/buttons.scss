@@ -34,6 +34,7 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
         cursor: pointer;
         border: 1px solid $primory-purple;
         box-shadow: none;
+        color: $primory-dark-theme-color;
         &.dark-theme {
             border: 1px solid $primory-orange;
         }

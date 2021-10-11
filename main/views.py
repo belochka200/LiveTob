@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from sights.models import Sight
+from sights.models import Category
 from .models import PopularPeople, InterestingFact
 # from django.contrib.auth.forms import UserCreationForm
 from .forms import JoinForm
+from django.db.models import Q
 
 
 def index(request): # главная страница
@@ -30,19 +32,10 @@ def history(request): # история города
     }
     return render(request, 'main/history.html', context=data)
 
-# def load(request):
-#     return render(request, 'main/load.html')
-
 def developers(request):
     data = {
         'title': 'API LiveTob | Разработчикам'
     }
-    # response = requests.get('http://127.0.0.1:8000/api/sights/?format=json')
-    # response = response.json()
-    # for i in response:
-    #     print(f'Название: {i["title"]} | Категория: {i["category"]}')
-        # print(i['title'])
-    # print(response)
     return render(request, 'main/developers.html', context=data)
 
 def brand(request):
@@ -69,3 +62,30 @@ def login(request):
         'title': 'Войти в LiveTob',
     }
     return render(request, 'main/login.html', context=data)
+
+def search(request):
+    data = {
+        'title': 'Результаты поиска',
+    }
+    query = request.GET.get('q')
+    category = Category.objects.all()
+    for i in category:
+        if str(i).lower() == query.lower():
+            category = get_object_or_404(Category, category_name=i)
+            sights = Sight.objects.filter(category=category)
+            data['sights'] = sights
+            return render(request, 'main/search_result.html', context=data)
+            
+    
+    # if len(str(query)) < 5:
+    #     data['ans'] = 'Ваш запрос должен состоять не менее чем из 5 символов'
+    #     return render(request, 'main/search_result.html', context=data)
+
+    # sights = Sight.objects.filter(title__iexact=query)
+    # data['sights1'] = sights
+    # sights = Sight.objects.filter(title__contains=query)
+    # data['sights'] = sights
+    # sights = Sight.objects.filter(title__iexact=query)
+    # data['sights2'] = sights
+    # print(sights)
+    return render(request, 'main/search_result.html', context=data)

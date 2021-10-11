@@ -135,10 +135,6 @@
   background-color: #232323;
 }
 
-.hist-wrap {
-  margin: 0 25%;
-}
-
 .hist-wrap .hist-img-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -154,7 +150,7 @@
 
 @media only screen and (max-width: 990px) {
   .hist-wrap {
-    margin: 0;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=homepage.css.map */

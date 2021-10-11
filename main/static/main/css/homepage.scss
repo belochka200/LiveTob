@@ -112,7 +112,6 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
 }
 
 .hist-wrap {
-    margin: 0 25%;
     .hist-img-wrap {
         display: flex;
         justify-content: center;
@@ -121,6 +120,7 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
         }
     }
     @media only screen and (max-width: 990px) {
-        margin: 0;
+        // margin: 0;
+        width: 100%;
     }
 }

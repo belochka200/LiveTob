@@ -25,6 +25,7 @@
   border: 1px solid #8453ff;
   -webkit-box-shadow: none;
           box-shadow: none;
+  color: #161616;
 }
 
 .btn-cus-1:hover.dark-theme {

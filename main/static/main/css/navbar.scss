@@ -47,9 +47,9 @@ nav {
     .nav__body {
         position: relative;
         display: flex;
-        justify-content: center;
         align-items: center;
         height: $nav-height;
+        justify-content: center;
         .nav__list {
             z-index: 5;
             .nav__link {
@@ -78,6 +78,44 @@ nav {
             }
             @media only screen and (max-width: 990px) {
                 flex-direction: column;
+            }
+            .search {
+                .search-input {
+                    border-radius: $border-radius 0 0 $border-radius;
+                    padding: 4px 8px;
+                    font-family: 'Open Sans', sans-serif;
+                    color: $primory-dark-theme-color;
+                    border: 2px solid rgba(255,255,255, 0);
+                    transition: all $anim-delay-fast ease;
+                    background-color: $milk-white;
+                    width: 105px;
+                    &:focus-visible {
+                        outline: none;
+                    }
+                    @media only screen and (max-width: 990px) {
+                        width: 100%;
+                    }
+                }
+                .search-btn, .search-microphone {
+                    border: none;
+                    background: $milk-white;
+                    text-align: center;
+                    color: $primory-purple;
+                    // padding: 0 .5rem;
+                    border-radius: 0 $border-radius $border-radius 0;
+                    cursor: pointer;
+                }
+                .search-btn {
+                    padding: 0 .5rem;
+                }
+                .search-microphone {
+                    border-radius: 0;
+                    padding: 0 .5rem;
+                }
+                @media only screen and (max-width: 990px) {
+                    margin-top: 1rem;
+                    width: 100%;
+                }
             }
         }
         .nav__logo {
