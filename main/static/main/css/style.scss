@@ -11,6 +11,7 @@
 @import "homepage";
 
 $milk-white: #ECEEF2;
+$white: #fff;
 $primory-purple: #8453ff;
 $primory-orange: #FCCA00;
 $primory-dark-theme-color: #161616;
@@ -83,7 +84,7 @@ h1 {
         position: fixed;
         padding: 1rem;
         width: 100%;
-        background-color: $milk-white;
+        background-color: $white;
         top: $nav-height;
         left: 0;
         z-index: 666;
@@ -402,4 +403,9 @@ h3 {
     border: 2px solid $primory-purple;
     border-radius: $border-radius;
     padding: 1rem;
+}
+
+.wrap-search {
+    // border-radius: $border-radius-card;
+    border-bottom: .25rem solid $primory-purple;
 }

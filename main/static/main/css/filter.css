@@ -12,12 +12,17 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .filter__block .filter__menu .filter__wrap .filter__item {
   background-color: #ECEEF2;
-  -webkit-box-shadow: 0 2px 4px #8453ff;
-          box-shadow: 0 2px 4px #8453ff;
+  -webkit-box-shadow: 0px 4px 8px rgba(22, 22, 22, 0.25);
+          box-shadow: 0px 4px 8px rgba(22, 22, 22, 0.25);
   padding: 8px 16px;
   margin: 8px;
   border-radius: 16px;
@@ -41,8 +46,7 @@
 }
 
 .filter__block .filter__menu .filter__wrap .filter__item.active {
-  background-color: #8453ff;
-  color: #ECEEF2;
+  border: 1px solid #8453ff;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -148,7 +152,7 @@
     z-index: 9;
     bottom: 55px;
     right: 0;
-    color: #8453ff;
+    color: #161616;
     width: 64px;
     height: 64px;
     position: fixed;

@@ -807,6 +807,7 @@ def show_to_do(request, slug):
         'number': do.number,
         'site': do.site,
         'views': do_views,
+        'price': do.price,
     }
     if data['number']:
         split_num = []

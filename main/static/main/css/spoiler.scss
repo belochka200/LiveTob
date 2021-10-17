@@ -1,4 +1,5 @@
 $milk-white: #ECEEF2;
+$white: #fff;
 $primory-purple: #8453ff;
 $primory-orange: #FCCA00;
 $primory-dark-theme-color: #161616;
@@ -14,8 +15,7 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
 
 .spoiler-wrap {
     border-radius: $border-radius;
-    padding: 1rem;
-    margin-bottom: 3rem;
+    margin: 1.5rem .5rem;
     background: $milk-white;
     box-shadow: $box-shadow-card;
     &.dark-theme {
@@ -25,10 +25,12 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
     .spoiler-head {
         display: flex;
         justify-content: center;
+        height: 58px;
+        align-items: center;
         h6 {
             color: $primory-dark-theme-color;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
         }
         &:hover {
             cursor: pointer;
@@ -36,7 +38,7 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
     }
     .spoiler-body {
         display: none;
-        margin-top: 1rem;
+        // padding: 0 1rem 1rem 0;
         span {
             color: $primory-dark-theme-color;
         }

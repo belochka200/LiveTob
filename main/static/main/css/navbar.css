@@ -23,13 +23,16 @@ nav:before {
   height: 100%;
   width: 100%;
   z-index: 2;
-  background-color: #8453ff;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0px 4px rgba(22, 22, 22, 0.25);
+          box-shadow: 0 0px 4px rgba(22, 22, 22, 0.25);
 }
 
 @media screen and (max-width: 990px) {
   nav:before {
     -webkit-box-shadow: 0 2px 4px #161616;
             box-shadow: 0 2px 4px #161616;
+    background-color: #8453ff;
   }
 }
 
@@ -63,7 +66,7 @@ nav .nav__body .nav__list {
 }
 
 nav .nav__body .nav__list .nav__link {
-  color: #ECEEF2;
+  color: #161616;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   -webkit-transition: all 0.25s ease;
@@ -71,7 +74,11 @@ nav .nav__body .nav__list .nav__link {
 }
 
 nav .nav__body .nav__list .nav__link:hover {
-  color: #FCCA00;
+  color: #8453ff;
+}
+
+nav .nav__body .nav__list .nav__link.dark-theme {
+  color: #ECEEF2;
 }
 
 @media only screen and (max-width: 990px) {
@@ -106,7 +113,7 @@ nav .nav__body .nav__list .nav__link:hover {
 }
 
 nav .nav__body .nav__list .search .search-input {
-  border-radius: 16px 0 0 16px;
+  border-radius: 4px 0 0 4px;
   padding: 4px 8px;
   font-family: 'Open Sans', sans-serif;
   color: #161616;
@@ -119,6 +126,8 @@ nav .nav__body .nav__list .search .search-input {
 
 nav .nav__body .nav__list .search .search-input:focus-visible {
   outline: none;
+  background-color: #fff;
+  border: 2px solid #8453ff;
 }
 
 @media only screen and (max-width: 990px) {
@@ -133,7 +142,7 @@ nav .nav__body .nav__list .search .search-btn, nav .nav__body .nav__list .search
   background: #ECEEF2;
   text-align: center;
   color: #8453ff;
-  border-radius: 0 16px 16px 0;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
 }
 
@@ -160,14 +169,11 @@ nav .nav__body .nav__list .search .search-microphone.active {
 }
 
 nav .nav__body .nav__logo {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 125px;
-          flex: 0 0 125px;
   z-index: 3;
 }
 
 nav .nav__body .nav__logo img {
-  max-width: 100%;
+  width: 36px;
   border-radius: 0;
 }
 

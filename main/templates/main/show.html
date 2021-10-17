@@ -1,5 +1,6 @@
 {% extends 'main/layout.html' %}
 {% load static %}
+{% load thumbnail %}
 
 {% block title %}{{ title }}{% endblock %}
 
@@ -10,7 +11,7 @@
         <div id="carouselExampleIndicators" class="carousel slide mb-5 slider__show-sight" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active cur-pointer" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="{{ title_image }}" class="d-block w-100" alt="title-image">
+                    <img src="{{ title_image.url }}" class="d-block w-100" alt="title-image">
                 </div>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-fullscreen">
@@ -19,7 +20,7 @@
                                 <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
                             </div>
                             <div class="modal-body">
-                                <img src="{{ title_image }}" alt="">
+                                <img src="{{ title_image.url }}" alt="">
                             </div>
                             <div class="modal-footer d-flex justify-content-center">
                                 <div class="btn-cus-1 btn-close-modal text-center" data-bs-dismiss="modal">Закрыть</div>
@@ -99,7 +100,7 @@
 
         <div class="rec-posts mt-5 pb-5 align-items-center d-flex flex-column">
             <h5 class="text-center">Похожее</h5>
-            <div class="row justify-content-center m-0">
+            <div class="row justify-content-center m-0 w-100">
                 {% for i in more %}
                     <div class="col-12 col-md-4">
                         {% if type == 'sights' %}

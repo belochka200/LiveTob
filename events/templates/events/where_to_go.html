@@ -1,5 +1,5 @@
 {% extends 'main/layout.html' %}
-
+{% load thumbnail %}
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
@@ -33,7 +33,9 @@
                             <div class="col-12 col-md-4 px-3">
                                 <a href="{% url 'show_to_eat' slug=i.slug %}">
                                     <div class="card where-to-go__card">
-                                        <img src="{{ i.image_preview.url }}" class="card-img-top round">
+                                        {% thumbnail i.image_preview "300" as thumb %}
+                                        <img src="{{ thumb.url }}" class="card-img-top round">
+                                        {% endthumbnail %}
                                         <div class="card-title position-absolute">
                                             <div class="row align-items-center">
                                                 <div class="col-12 col-xl-7">{{ i.title }}</div>
@@ -76,7 +78,9 @@
                             <div class="col-12 col-md-4 px-3">
                                 <a href="{% url 'show_to_rest' slug=i.slug %}">
                                     <div class="card where-to-go__card">
-                                        <img src="{{ i.image_preview.url }}" class="card-img-top round">
+                                        {% thumbnail i.image_preview "300" as thumb %}
+                                        <img src="{{ thumb.url }}" class="card-img-top round">
+                                        {% endthumbnail %}
                                         <div class="card-title position-absolute">
                                             <div class="row align-items-center">
                                                 <div class="col-12 col-xl-7">{{ i.title }}</div>
@@ -119,7 +123,9 @@
                             <div class="col-12 col-md-4 px-3">
                                 <a href="{% url 'show_to_do' slug=i.slug %}">
                                     <div class="card where-to-go__card">
-                                        <img src="{{ i.image_preview.url }}" class="card-img-top round">
+                                        {% thumbnail i.image_preview "300" as thumb %}
+                                        <img src="{{ thumb.url }}" class="card-img-top round">
+                                        {% endthumbnail %}
                                         <div class="card-title position-absolute">
                                             <div class="row align-items-center">
                                                 <div class="col-12 col-xl-7">{{ i.title }}</div>

@@ -24,6 +24,8 @@ INSTALLED_APPS = [
     'events',
     'sights',
     'rest_framework',
+    'sorl.thumbnail',
+    'django_webp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,6 +57,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'django_webp.context_processors.webp',
             ],
         },
     },
@@ -121,10 +124,10 @@ MEDIA_ROOT = 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-ADMINS = [('Egor', 'belochka20022@gmail.com')]
+# ADMINS = [('Egor', 'belochka20022@gmail.com')]
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = '1livetob@gmail.com'
-EMAIL_HOST_PASSWORD = 'livetob666'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = '1livetob@gmail.com'
+# EMAIL_HOST_PASSWORD = 'livetob666'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True

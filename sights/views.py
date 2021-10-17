@@ -1,3 +1,8 @@
+'''
+Сделать функции, возвращающие data & obj
+Сделать сразу же, как появится время, иначе всё может
+пойти не по плану и всё упадёт перед дедлайном
+'''
 import random
 
 from django.http import JsonResponse
@@ -6,6 +11,7 @@ from rest_framework.viewsets import ModelViewSet
 
 from .models import Category, Sight, SightImage
 from .serializers import SightSerializer
+from sorl.thumbnail import get_thumbnail
 
 
 def sights(request):
@@ -47,7 +53,7 @@ def show_sights(request, slug):
     data = {
         'title': sight.title,
         'full_text': sight.full_text,
-        'title_image': sight.image_preview.url,
+        'title_image': sight.image_preview,
         'img': sight_img,
         'address': sight.adress,
         'number': sight.number,
@@ -113,7 +119,7 @@ def load_sights(request):
             'id': sight['id'],
             'title': sight['title'],
             'slug': sight['slug'],
-            'image_preview': sight['image_preview'],
+            'image_preview': str(get_thumbnail(sight['image_preview'], '300', format='WEBP')),
             'address': sight['adress'],
             'category': str(category[0]),
         }

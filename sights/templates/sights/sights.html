@@ -1,5 +1,5 @@
 {% extends 'main/layout.html' %}
-
+{% load thumbnail %}
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
@@ -29,31 +29,33 @@
             </div>
 
             <div class="row justify-content-center m-0 allsights">
-                {% for i in sights_list %}
-                    {% if forloop.last %}
-                    <div class="col-12 col-md-4 sights last-sight" data-sightid="{{ i.pk }}">
-                    {% else %}
-                    <div class="col-12 col-md-4 sights">
-                    {% endif %}
-                        <a href="{% url 'show_sights' slug=i.slug %}">
-                            <div class="card mt-5">
-                                <img src="{{ i.image_preview.url }}" class="card-img-top round">
-                                <div class="card-title position-absolute">
-                                    <div class="row align-items-center">
-                                        <div class="col-12 col-xl-7">{{ i.title }}</div>
-                                        <div class="col-12 col-xl-5">
-                                            <div class="col-12 fw-bold card-category">{{ i.category }}</div>
-                                        </div>                                    
-                                    </div>
+            {% for i in sights_list %}
+                {% if forloop.last %}
+                <div class="col-12 col-md-4 sights last-sight" data-sightid="{{ i.pk }}">
+                {% else %}
+                <div class="col-12 col-md-4 sights">
+                {% endif %}
+                    <a href="{% url 'show_sights' slug=i.slug %}">
+                        <div class="card mt-5">
+                            {% thumbnail i.image_preview "300" as thumb %}
+                            <img src="{{ thumb.url }}" class="card-img-top round">
+                            {% endthumbnail %}
+                            <div class="card-title position-absolute">
+                                <div class="row align-items-center">
+                                    <div class="col-12 col-xl-7">{{ i.title }}</div>
+                                    <div class="col-12 col-xl-5">
+                                        <div class="col-12 fw-bold card-category">{{ i.category }}</div>
+                                    </div>                                    
                                 </div>
-                                <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.address }}" target="_blank">
-                                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                               </a>
                             </div>
-                        </a>
-                    </div>
+                            <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.address }}" target="_blank">
+                                <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </a>
+                </div>
                 {% endfor %}
                 </div>
             </div>

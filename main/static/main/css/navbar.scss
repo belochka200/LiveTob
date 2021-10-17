@@ -1,4 +1,5 @@
 $milk-white: #ECEEF2;
+$white: #fff;
 $primory-purple: #8453ff;
 $primory-orange: #FCCA00;
 $primory-dark-theme-color: #161616;
@@ -33,9 +34,14 @@ nav {
         height: 100%;
         width: 100%;
         z-index: 2;
-        background-color: $primory-purple;
+        // background-color: $primory-purple;
+        background-color: $white;
+        // box-shadow: $box-shadow-card;
+        box-shadow: 0 0px 4px rgba(22, 22, 22, .25);
         @media screen and (max-width: 990px) {
             box-shadow: 0 2px $box-shadow $box-shadow-color;
+            // box-shadow: $box-shadow-card;
+            background-color: $primory-purple;
         }
     }
     &.dark-theme:before {
@@ -53,12 +59,17 @@ nav {
         .nav__list {
             z-index: 5;
             .nav__link {
-                color: $milk-white;
+                // color: $milk-white;
+                color: $primory-dark-theme-color;
                 font-family: 'Montserrat', sans-serif;
                 font-size: 1rem;
                 transition: all $anim-delay-fast ease;
                 &:hover {
-                    color: $primory-orange;
+                    // color: $primory-orange;
+                    color: $primory-purple;
+                }
+                &.dark-theme {
+                    color: $milk-white;
                 }
                 @media only screen and (max-width: 990px) {
                     font-size: 1.4rem;
@@ -81,7 +92,7 @@ nav {
             }
             .search {
                 .search-input {
-                    border-radius: $border-radius 0 0 $border-radius;
+                    border-radius: $border-radius-card 0 0 $border-radius-card;
                     padding: 4px 8px;
                     font-family: 'Open Sans', sans-serif;
                     color: $primory-dark-theme-color;
@@ -91,6 +102,8 @@ nav {
                     width: 150px;
                     &:focus-visible {
                         outline: none;
+                        background-color: $white;
+                        border: 2px solid $primory-purple;
                     }
                     @media only screen and (max-width: 990px) {
                         width: 100%;
@@ -102,8 +115,7 @@ nav {
                     background: $milk-white;
                     text-align: center;
                     color: $primory-purple;
-                    // padding: 0 .5rem;
-                    border-radius: 0 $border-radius $border-radius 0;
+                    border-radius: 0 $border-radius-card $border-radius-card 0;
                     cursor: pointer;
                 }
                 .search-btn {
@@ -114,7 +126,7 @@ nav {
                     padding: 0 .5rem;
                     transition: all $anim-delay-fast ease;
                     &.active {
-                        background-color: #fff;
+                        background-color: $white;
                     }
                 }
                 @media only screen and (max-width: 990px) {
@@ -124,10 +136,9 @@ nav {
             }
         }
         .nav__logo {
-            flex: 0 0 125px;
             z-index: 3;
             img {
-                max-width: 100%;
+                width: 36px;
                 border-radius: 0;
                 &.dark-theme {
                     opacity: 1;

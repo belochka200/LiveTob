@@ -1,5 +1,5 @@
 from django.db import models
-
+# from sorl.thumbnail import get_thumbnail
 
 class Category(models.Model):
     category_name = models.CharField('Категория', max_length=250)
@@ -24,11 +24,10 @@ class Sight(models.Model):
     number = models.CharField('Номер телефона', max_length=255, blank=True)
     site = models.CharField('Сайт', max_length=255, blank=True)
     image_preview = models.ImageField('Изображение')
-    
 
     def __str__(self):
         return self.title
-    
+
     class Meta:
         verbose_name = 'Достопримечательность'
         verbose_name_plural = 'Достопримечательности'

@@ -1,4 +1,4 @@
-from main import views
+# from main import views
 from django.db import models
 
 
@@ -90,6 +90,7 @@ class Entertainment(models.Model):
     schedule = models.CharField('График работы', max_length=255, blank=True)
     number = models.CharField('Номер телефона', max_length=255, blank=True)
     site = models.CharField('Сайт', max_length=255, blank=True)
+    price = models.CharField('Стоимость билета', max_length=255, blank=True, help_text='Стоимость билета для мастер-класса')
     description = models.TextField('Описание', blank=True)
     image_preview = models.ImageField('Изображение')
 

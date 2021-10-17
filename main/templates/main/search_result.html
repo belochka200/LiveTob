@@ -1,20 +1,254 @@
 {% extends 'main/layout.html' %}
-
+{% load thumbnail %}
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
 <section>
 	<div class="container">
 		<div class="content mt-6">
-			<h1 class="text-center page-title w-100">{{ title }}</h1>
-            {{ ans }}
-            {% for i in sights %}
-            {{ i }} <br>
-            {% endfor %}
-            {% for i in sights2 %}
-            {{ i }} <br>
-            {% endfor %}
-		</div>
-	</div>
+            <h1 class="text-center page-title w-100">{{ title }}</h1>
+
+            {% if not sights and not cafe and not rest and not do and not sights2 and not cafe2 and not rest2 and not do2 %}
+            <h4 class="text-center">По запросу "{{ query }}" ничего не найдено</h4>
+            {% endif %}
+
+            {% if sights %}
+            <div class="wrap-search py-5">
+                <h4 class="text-center">достопримечательности</h4>
+                <div class="row justify-content-center m-0">
+                {% for i in sights %}
+                <div class="col-12 col-md-4">
+                    <a href="{% url 'show_sights' slug=i.2 %}">
+                        <div class="card mt-5">
+                            {% thumbnail i.1 "300" as thumb %}
+                            <img src="{{ thumb.url }}" class="card-img-top round">
+                            {% endthumbnail %}
+                            <div class="card-title position-absolute">
+                                <div class="row align-items-center">
+                                    <div class="col-12 col-xl-7">{{ i.0 }}</div>
+                                    <div class="col-12 col-xl-5">
+                                        <div class="col-12 fw-bold card-category">{{ i.4 }}</div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.3 }}" target="_blank">
+                                <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if cafe %}
+            <div class="wrap-search py-5">
+                <h4 class="text-center">кафе</h4>
+                <div class="row justify-content-center m-0">
+                {% for i in cafe %}
+                <div class="col-12 col-md-4">
+                    <a href="{% url 'show_to_eat' slug=i.2 %}">
+                        <div class="card mt-5">
+                            {% thumbnail i.1 "300" as thumb %}
+                            <img src="{{ thumb.url }}" class="card-img-top round">
+                            {% endthumbnail %}
+                            <div class="card-title position-absolute">
+                                <div class="row align-items-center">
+                                    <div class="col-12 col-xl-7">{{ i.0 }}</div>
+                                    <div class="col-12 col-xl-5">
+                                        <div class="col-12 fw-bold card-category">{{ i.4 }}</div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.3 }}" target="_blank">
+                                <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+                </div>    
+            </div>
+            {% endif %}
+
+            {% if rest %}
+            <div class="wrap-search py-5">
+                <h4 class="text-center">отели</h4>
+                <div class="row justify-content-center m-0">
+                    {% for i in rest %}
+                    <div class="col-12 col-md-4">
+                        <a href="{% url 'show_to_rest' slug=i.2 %}">
+                            <div class="card mt-5">
+                                {% thumbnail i.1 "300" as thumb %}
+                                <img src="{{ thumb.url }}" class="card-img-top round">
+                                {% endthumbnail %}
+                                <div class="card-title position-absolute">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-xl-7">{{ i.0 }}</div>
+                                        <div class="col-12 col-xl-5">
+                                            <div class="col-12 fw-bold card-category">{{ i.4 }}</div>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.3 }}" target="_blank">
+                                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if do %}
+            <div class="wrap-search py-5">
+                <h4 class="text-center">развлечения</h4>
+                <div class="row justify-content-center m-0">
+                    {% for i in do %}
+                    <div class="col-12 col-md-4">
+                        <a href="{% url 'show_to_do' slug=i.2 %}">
+                            <div class="card mt-5">
+                                {% thumbnail i.1 "300" as thumb %}
+                                <img src="{{ thumb.url }}" class="card-img-top round">
+                                {% endthumbnail %}
+                                <div class="card-title position-absolute">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-xl-7">{{ i.0 }}</div>
+                                        <div class="col-12 col-xl-5">
+                                            <div class="col-12 fw-bold card-category">{{ i.4 }}</div>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.3 }}" target="_blank">
+                                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div> 
+            </div>
+            {% endif %}
+
+            {% if sights2 or cafe2 or rest2 or do2 %}
+            <div class="wrap-search py-5">
+                <h4 class="text-center">возможно вы искали</h4>
+                <div class="row justify-content-center m-0">
+
+                    {% for i in sights2 %}
+                    <div class="col-12 col-md-4">
+                        <a href="{% url 'show_sights' slug=i.2 %}">
+                            <div class="card mt-5">
+                                {% thumbnail i.1 "300" as thumb %}
+                                <img src="{{ thumb.url }}" class="card-img-top round">
+                                {% endthumbnail %}
+                                <div class="card-title position-absolute">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-xl-7">{{ i.0 }}</div>
+                                        <div class="col-12 col-xl-5">
+                                            <div class="col-12 fw-bold card-category">{{ i.4 }}</div>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.3 }}" target="_blank">
+                                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+
+                    {% for i in cafe2 %}
+                    <div class="col-12 col-md-4">
+                        <a href="{% url 'show_sights' slug=i.2 %}">
+                            <div class="card mt-5">
+                                {% thumbnail i.1 "300" as thumb %}
+                                <img src="{{ thumb.url }}" class="card-img-top round">
+                                {% endthumbnail %}
+                                <div class="card-title position-absolute">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-xl-7">{{ i.0 }}</div>
+                                        <div class="col-12 col-xl-5">
+                                            <div class="col-12 fw-bold card-category">{{ i.4 }}</div>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.3 }}" target="_blank">
+                                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+
+                    {% for i in rest2 %}
+                    <div class="col-12 col-md-4">
+                        <a href="{% url 'show_sights' slug=i.2 %}">
+                            <div class="card mt-5">
+                                {% thumbnail i.1 "300" as thumb %}
+                                <img src="{{ thumb.url }}" class="card-img-top round">
+                                {% endthumbnail %}
+                                <div class="card-title position-absolute">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-xl-7">{{ i.0 }}</div>
+                                        <div class="col-12 col-xl-5">
+                                            <div class="col-12 fw-bold card-category">{{ i.4 }}</div>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.3 }}" target="_blank">
+                                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+
+                    {% for i in do2 %}
+                    <div class="col-12 col-md-4">
+                        <a href="{% url 'show_sights' slug=i.2 %}">
+                            <div class="card mt-5">
+                                {% thumbnail i.1 "300" as thumb %}
+                                <img src="{{ thumb.url }}" class="card-img-top round">
+                                {% endthumbnail %}
+                                <div class="card-title position-absolute">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-xl-7">{{ i.0 }}</div>
+                                        <div class="col-12 col-xl-5">
+                                            <div class="col-12 fw-bold card-category">{{ i.4 }}</div>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <a href="https://yandex.ru/maps/?text=Тобольск, {{ i.3 }}" target="_blank">
+                                    <div class="position-absolute sights__gps-mark d-flex d-flex justify-content-center align-items-center">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+            {% endif %}
+	    </div>
+    </div>
 </section>
 {% endblock %}

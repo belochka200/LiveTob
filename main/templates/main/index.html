@@ -1,5 +1,5 @@
 {% extends 'main/layout.html' %}
-
+{% load thumbnail %}
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
@@ -109,7 +109,9 @@
                 <div class="col-12 col-md-5 popular-people-card-block my-3 d-flex align-items-center">
                     <div class="row">
                         <div class="col-12 col-xl-6 m-auto">
-                            <img src="{{ i.image.url }}">
+                            {% thumbnail i.image "300" as thumb %}
+                            <img src="{{ thumb.url }}">
+                            {% endthumbnail %}
                         </div>
                         <div class="col-12 col-xl-6 mt-3">
                             <h5>{{ i.name }} ({{ i.bored }})</h5>
@@ -134,7 +136,9 @@
                             <div class="col-12 col-md-5 popular-people-card-block my-3">
                                 <div class="row">
                                     <div class="col-12 col-xl-6">
-                                        <img src="{{ i.image.url }}">
+                                        {% thumbnail i.image "300" as thumb %}
+                                        <img src="{{ thumb.url }}">
+                                        {% endthumbnail %}
                                     </div>
                                     <div class="col-12 col-xl-6 mt-3">
                                         <h5>{{ i.name }} ({{ i.bored }})</h5>
@@ -158,7 +162,9 @@
                 <div class="col-12 col-md-5 popular-people-card-block my-3 d-flex align-items-center">
                     <div class="row">
                         <div class="col-12 col-xl-6 m-auto">
-                            <img src="{{ i.image.url }}">
+                            {% thumbnail i.image "300" as thumb %}
+                            <img src="{{ thumb.url }}">
+                            {% endthumbnail %}
                         </div>
                         <div class="col-12 col-xl-6 mt-3">
                             <h5>Факт №{{ i.pk }}</h5>
@@ -183,7 +189,9 @@
                             <div class="col-12 col-md-5 facts-card-block my-3">
                                 <div class="row">
                                     <div class="col-12 col-xl-6">
-                                        <img src="{{ i.image.url }}">
+                                        {% thumbnail i.image "300" as thumb %}
+                                        <img src="{{ thumb.url }}">
+                                        {% endthumbnail %}
                                     </div>
                                     <div class="col-12 col-xl-6 mt-3">
                                         <h5>Факт №{{ i.pk }}</h5>

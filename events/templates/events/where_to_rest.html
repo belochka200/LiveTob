@@ -1,5 +1,5 @@
 {% extends 'main/layout.html' %}
-
+{% load thumbnail %}
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
@@ -37,7 +37,9 @@
                     {% endif %}
                         <a href="{% url 'show_to_rest' slug=i.slug %}">
                             <div class="card mt-5">
-                                <img src="{{ i.image_preview.url }}" class="card-img-top round">
+                                {% thumbnail i.image_preview "300" as thumb%}
+                                <img src="{{ thumb.url }}" class="card-img-top round">
+                                {% endthumbnail %}
                                 <div class="card-title position-absolute">
                                     <div class="row align-items-center">
                                         <div class="col-12 col-xl-7">{{ i.title }}</div>
@@ -64,7 +66,9 @@
                     {% endif %}
                         <a href="{% url 'show_to_rest' slug=i.slug %}">
                             <div class="card mt-5">
-                                <img src="{{ i.image_preview.url }}" class="card-img-top round">
+                                {% thumbnail i.image_preview "300" as thumb%}
+                                <img src="{{ thumb.url }}" class="card-img-top round">
+                                {% endthumbnail %}
                                 <div class="card-title position-absolute">
                                     <div class="row align-items-center">
                                         <div class="col-12 col-xl-7">{{ i.title }}</div>
