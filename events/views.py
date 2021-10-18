@@ -5,6 +5,7 @@ from .models import (Cafe, CafeCategory, CafeImage, Entertainment,
                      EntertainmentCategory, EntertainmentImage, Hotel,
                      HotelCategory, HotelImage)
 
+from sorl.thumbnail import get_thumbnail
 
 def where_to_go(request): # all
     cafe = Cafe.objects.order_by('?')[:3]
@@ -154,7 +155,7 @@ def cafe_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -171,7 +172,7 @@ def cafe_load(request):
                         'id': item['id'],
                         'title': item['title'],
                         'slug': item['slug'],
-                        'image_preview': item['image_preview'],
+                        'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                         'address': item['address'],
                         'recomended': item['recomended'],
                         'category': str(category[0]),
@@ -187,7 +188,7 @@ def cafe_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -208,7 +209,7 @@ def cafe_load(request):
                         'id': item['id'],
                         'title': item['title'],
                         'slug': item['slug'],
-                        'image_preview': item['image_preview'],
+                        'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                         'address': item['address'],
                         'recomended': item['recomended'],
                         'category': str(category[0]),
@@ -232,7 +233,7 @@ def cafe_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -249,7 +250,7 @@ def cafe_load(request):
                         'id': item['id'],
                         'title': item['title'],
                         'slug': item['slug'],
-                        'image_preview': item['image_preview'],
+                        'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                         'address': item['address'],
                         'recomended': item['recomended'],
                         'category': str(category[0]),
@@ -265,7 +266,7 @@ def cafe_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -280,7 +281,7 @@ def cafe_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -298,7 +299,7 @@ def cafe_load(request):
                         'id': item['id'],
                         'title': item['title'],
                         'slug': item['slug'],
-                        'image_preview': item['image_preview'],
+                        'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                         'address': item['address'],
                         'recomended': item['recomended'],
                         'category': str(category[0]),
@@ -328,7 +329,7 @@ def hotel_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -345,7 +346,7 @@ def hotel_load(request):
                         'id': item['id'],
                         'title': item['title'],
                         'slug': item['slug'],
-                        'image_preview': item['image_preview'],
+                        'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                         'address': item['address'],
                         'recomended': item['recomended'],
                         'category': str(category[0]),
@@ -361,7 +362,7 @@ def hotel_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -382,7 +383,7 @@ def hotel_load(request):
                         'id': item['id'],
                         'title': item['title'],
                         'slug': item['slug'],
-                        'image_preview': item['image_preview'],
+                        'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                         'address': item['address'],
                         'recomended': item['recomended'],
                         'category': str(category[0]),
@@ -406,7 +407,7 @@ def hotel_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -423,7 +424,7 @@ def hotel_load(request):
                         'id': item['id'],
                         'title': item['title'],
                         'slug': item['slug'],
-                        'image_preview': item['image_preview'],
+                        'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                         'address': item['address'],
                         'recomended': item['recomended'],
                         'category': str(category[0]),
@@ -439,7 +440,7 @@ def hotel_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -454,7 +455,7 @@ def hotel_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -472,7 +473,7 @@ def hotel_load(request):
                         'id': item['id'],
                         'title': item['title'],
                         'slug': item['slug'],
-                        'image_preview': item['image_preview'],
+                        'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                         'address': item['address'],
                         'recomended': item['recomended'],
                         'category': str(category[0]),
@@ -502,7 +503,7 @@ def ent_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -519,7 +520,7 @@ def ent_load(request):
                         'id': item['id'],
                         'title': item['title'],
                         'slug': item['slug'],
-                        'image_preview': item['image_preview'],
+                        'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                         'address': item['address'],
                         'recomended': item['recomended'],
                         'category': str(category[0])
@@ -535,7 +536,7 @@ def ent_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -556,7 +557,7 @@ def ent_load(request):
                         'id': item['id'],
                         'title': item['title'],
                         'slug': item['slug'],
-                        'image_preview': item['image_preview'],
+                        'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                         'address': item['address'],
                         'recomended': item['recomended'],
                         'category': str(category[0]),
@@ -580,7 +581,7 @@ def ent_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0])
@@ -597,7 +598,7 @@ def ent_load(request):
                         'id': item['id'],
                         'title': item['title'],
                         'slug': item['slug'],
-                        'image_preview': item['image_preview'],
+                        'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                         'address': item['address'],
                         'recomended': item['recomended'],
                         'category': str(category[0]),
@@ -613,7 +614,7 @@ def ent_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -628,7 +629,7 @@ def ent_load(request):
                             'id': item['id'],
                             'title': item['title'],
                             'slug': item['slug'],
-                            'image_preview': item['image_preview'],
+                            'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                             'address': item['address'],
                             'recomended': item['recomended'],
                             'category': str(category[0]),
@@ -646,7 +647,7 @@ def ent_load(request):
                         'id': item['id'],
                         'title': item['title'],
                         'slug': item['slug'],
-                        'image_preview': item['image_preview'],
+                        'image_preview': str(get_thumbnail(item['image_preview'], '300', format='WEBP')),
                         'address': item['address'],
                         'recomended': item['recomended'],
                         'category': str(category[0]),
@@ -673,7 +674,7 @@ def show_to_eat(request, slug):
     data = {
         'title': cafe.title,
         'description': cafe.description,
-        'title_image': cafe.image_preview.url,
+        'title_image': cafe.image_preview,
         'img': cafe_img,
         'address': cafe.address,
         'number': cafe.number,
@@ -708,7 +709,7 @@ def show_to_eat(request, slug):
         more = get_object_or_404(Cafe, title=i)
         temp.append([])
         temp[n].append(more.title)
-        temp[n].append(more.image_preview.url)
+        temp[n].append(more.image_preview)
         temp[n].append(more.slug)
         temp[n].append(more.category)
         temp[n].append(more.address)
@@ -737,7 +738,7 @@ def show_to_rest(request, slug):
     data = {
         'title': rest.title,
         'description': rest.description,
-        'title_image': rest.image_preview.url,
+        'title_image': str(get_thumbnail(rest['image_preview'], '300', format='WEBP')),
         'img': rest_img,
         'address': rest.address,
         'number': rest.number,
@@ -772,7 +773,7 @@ def show_to_rest(request, slug):
         more = get_object_or_404(Hotel, title=i)
         temp.append([])
         temp[n].append(more.title)
-        temp[n].append(more.image_preview.url)
+        temp[n].append(more.image_preview)
         temp[n].append(more.slug)
         temp[n].append(more.category)
         temp[n].append(more.address)
@@ -801,7 +802,7 @@ def show_to_do(request, slug):
     data = {
         'title': do.title,
         'description': do.description,
-        'title_image': do.image_preview.url,
+        'title_image': do.image_preview,
         'img': do_img,
         'address': do.address,
         'number': do.number,
@@ -837,7 +838,7 @@ def show_to_do(request, slug):
         more = get_object_or_404(Entertainment, title=i)
         temp.append([])
         temp[n].append(more.title)
-        temp[n].append(more.image_preview.url)
+        temp[n].append(more.image_preview)
         temp[n].append(more.slug)
         temp[n].append(more.category)
         temp[n].append(more.address)

@@ -56,6 +56,7 @@
   color: #161616;
   -webkit-box-shadow: none;
           box-shadow: none;
+  border: 1px solid #FCCA00;
 }
 
 .filter__block .filter__menu .filter__wrap .filter__item.dark-theme {

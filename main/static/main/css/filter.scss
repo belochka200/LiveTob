@@ -2,6 +2,7 @@ $milk-white: #ECEEF2;
 $white: #fff;
 $primory-purple: #8453ff;
 $primory-orange: #FCCA00;
+// $primory-orange: #bb82ff;
 $primory-dark-theme-color: #161616;
 $secondary-dark-theme-color: #232323;
 $box-shadow-color: #161616;
@@ -26,7 +27,6 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
            .filter__item {
                 background-color: $milk-white;
                 box-shadow: $box-shadow-card;
-                // box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
                 padding: 8px 16px;
                 margin: 8px;
                 border-radius: $border-radius;
@@ -45,13 +45,14 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
                     }
                 }
                 &.active {
-                border: 1px solid $primory-purple;
-                box-shadow: none;
-                    &.dark-theme {
-                        background-color: $primory-orange;
-                        color: $primory-dark-theme-color;
-                        box-shadow: none;
-                    }
+                    border: 1px solid $primory-purple;
+                    box-shadow: none;
+                        &.dark-theme {
+                            background-color: $primory-orange;
+                            color: $primory-dark-theme-color;
+                            box-shadow: none;
+                            border: 1px solid $primory-orange;
+                        }
                 }
                 &.dark-theme {
                     background-color: $primory-dark-theme-color;

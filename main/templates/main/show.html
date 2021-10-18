@@ -11,7 +11,9 @@
         <div id="carouselExampleIndicators" class="carousel slide mb-5 slider__show-sight" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active cur-pointer" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="{{ title_image.url }}" class="d-block w-100" alt="title-image">
+                    {% thumbnail title_image '1080' format='WEBP' as thumb %}
+                    <img src="{{ thumb.url }}" class="d-block w-100" alt="title-image">
+                    {% endthumbnail %}
                 </div>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-fullscreen">
@@ -20,7 +22,9 @@
                                 <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
                             </div>
                             <div class="modal-body">
-                                <img src="{{ title_image.url }}" alt="">
+                                {% thumbnail title_image '1080' format='WEBP' as thumb %}
+                                <img src="{{ thumb.url }}" alt="">
+                                {% endthumbnail %}
                             </div>
                             <div class="modal-footer d-flex justify-content-center">
                                 <div class="btn-cus-1 btn-close-modal text-center" data-bs-dismiss="modal">Закрыть</div>
@@ -30,7 +34,9 @@
                 </div>
                 {% for i in img %}
                     <div class="carousel-item cur-pointer" data-bs-toggle="modal" data-bs-target="#exampleModal{{ i.id }}">
-                        <img src="{{ i.image.url }}" class="d-block w-100" alt="image">
+                        {% thumbnail i.image '1080' format='WEBP' as thumb%}
+                        <img src="{{ thumb.url }}" class="d-block w-100" alt="image">
+                        {% endthumbnail %}
                     </div>
                     <div class="modal fade" id="exampleModal{{ i.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-fullscreen">
@@ -39,7 +45,9 @@
                                     <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
                                 </div>
                                 <div class="modal-body">
+                                    {% thumbnail i.image '1080' format='WEBP' as thumb %}
                                     <img src="{{ i.image.url }}" alt="">
+                                    {% endthumbnail %}
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center">
                                     <div class="btn-cus-1 btn-close-modal" data-bs-dismiss="modal">Закрыть</div>
@@ -88,7 +96,7 @@
                 {% endif %}
                 {% if price %}
                 <p class="text title mt-3 mx-2">Стоимость билета</p>
-                <div class="price mx-2 mt-1">{{ price }}</div>
+                <div class="price mx-2 mt-1"><p class="text">{{ price }}</p></div>
                 {% endif %}
                 <br>
                 <p class="text mx-2"><i class="far fa-eye"></i> {{ views }}</p>
@@ -113,7 +121,9 @@
                         <a href="{% url 'show_to_do' slug=i.2 %}">
                         {% endif %}
                             <div class="card mt-5">
-                                <img src="{{ i.1 }}" class="card-img-top round">
+                                {% thumbnail i.1 "300" format='WEBP' as thumb %}
+                                <img src="{{ thumb.url }}" class="card-img-top round">
+                                {% endthumbnail %}
                                 <div class="card-title position-absolute">
                                     <div class="row align-items-center">
                                         <div class="col-12 col-xl-7">{{ i.0 }}</div>

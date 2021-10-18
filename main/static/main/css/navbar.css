@@ -71,14 +71,19 @@ nav .nav__body .nav__list .nav__link {
   font-size: 1rem;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
+  border-bottom: 2px solid transparent;
 }
 
 nav .nav__body .nav__list .nav__link:hover {
-  color: #8453ff;
+  border-bottom: 2px solid #8453ff;
 }
 
 nav .nav__body .nav__list .nav__link.dark-theme {
   color: #ECEEF2;
+}
+
+nav .nav__body .nav__list .nav__link.dark-theme:hover {
+  border-bottom: 2px solid #FCCA00;
 }
 
 @media only screen and (max-width: 990px) {
@@ -124,10 +129,19 @@ nav .nav__body .nav__list .search .search-input {
   width: 150px;
 }
 
+nav .nav__body .nav__list .search .search-input.dark-theme {
+  background-color: #161616;
+}
+
 nav .nav__body .nav__list .search .search-input:focus-visible {
   outline: none;
   background-color: #fff;
   border: 2px solid #8453ff;
+}
+
+nav .nav__body .nav__list .search .search-input:focus-visible.dark-theme {
+  background-color: #161616;
+  border: 2px solid #FCCA00;
 }
 
 @media only screen and (max-width: 990px) {
@@ -146,6 +160,11 @@ nav .nav__body .nav__list .search .search-btn, nav .nav__body .nav__list .search
   cursor: pointer;
 }
 
+nav .nav__body .nav__list .search .search-btn.dark-theme, nav .nav__body .nav__list .search .search-microphone.dark-theme {
+  color: #FCCA00;
+  background-color: #161616;
+}
+
 nav .nav__body .nav__list .search .search-btn {
   padding: 0 .5rem;
 }
@@ -159,6 +178,10 @@ nav .nav__body .nav__list .search .search-microphone {
 
 nav .nav__body .nav__list .search .search-microphone.active {
   background-color: #fff;
+}
+
+nav .nav__body .nav__list .search .search-microphone.active.dark-theme {
+  background-color: #232323;
 }
 
 @media only screen and (max-width: 990px) {

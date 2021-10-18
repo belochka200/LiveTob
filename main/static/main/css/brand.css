@@ -19,8 +19,13 @@
   font-weight: 700;
 }
 
-.brand-block p span {
-  color: #FCCA00;
+.brand-block h1 {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #ECEEF2;
+}
+
+.brand-block h1.dark-theme {
+  border-bottom: 2px solid #FCCA00;
 }
 
 @media screen and (max-width: 990px) {

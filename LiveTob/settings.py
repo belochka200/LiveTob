@@ -123,6 +123,7 @@ MEDIA_ROOT = 'media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+THUMBNAIL_DEBUG = True
 
 # ADMINS = [('Egor', 'belochka20022@gmail.com')]
 

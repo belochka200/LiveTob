@@ -56,7 +56,14 @@ footer .footer__text {
 }
 
 footer .footer-link {
-  color: #FCCA00;
+  color: #ECEEF2;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+footer .footer-link:hover {
+  border-bottom: 2px solid #FCCA00;
 }
 
 footer .social-networks-footer {

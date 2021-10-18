@@ -14,6 +14,7 @@ $milk-white: #ECEEF2;
 $white: #fff;
 $primory-purple: #8453ff;
 $primory-orange: #FCCA00;
+// $primory-orange: #bb82ff;
 $primory-dark-theme-color: #161616;
 $secondary-dark-theme-color: #232323;
 $box-shadow-color: #161616;
@@ -199,7 +200,7 @@ h3 {
         }
     }
     &.dark-theme {
-        background-color: #343434;
+        background-color: $primory-dark-theme-color;
     }
     &:hover {
         transform: translateY(-8px);
@@ -256,10 +257,10 @@ h3 {
 .sights__fast-info {
     font-family: 'Open Sans', sans-serif;
     padding-bottom: 1rem;
-    border-bottom: $primory-purple solid 1px;
+    border-bottom: $primory-purple solid 12px;
     margin-bottom: 1rem;
     &.dark-theme {
-        border-bottom: $primory-orange solid 1px;
+        border-bottom: $primory-orange solid 2px;
     }
     .title {
         text-transform: uppercase;
@@ -400,12 +401,19 @@ h3 {
 }
 
 .rec-posts {
-    border: 2px solid $primory-purple;
-    border-radius: $border-radius;
+    // border: 2px solid $primory-purple;
+    border-top: 2px solid $primory-purple;
+    // border-radius: $border-radius;
     padding: 1rem;
+    &.dark-theme {
+        border-top: 2px solid $primory-orange;
+    }
 }
 
 .wrap-search {
     // border-radius: $border-radius-card;
-    border-bottom: .25rem solid $primory-purple;
+    border-bottom: 2px solid $primory-purple;
+    &.dark-theme {
+        border-bottom: 2px solid $primory-orange;
+    }
 }

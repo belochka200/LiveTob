@@ -20,7 +20,7 @@
                 <div class="col-12 col-md-4">
                     <a href="{% url 'show_sights' slug=i.2 %}">
                         <div class="card mt-5">
-                            {% thumbnail i.1 "300" as thumb %}
+                            {% thumbnail i.1 "300" format="WEBP" as thumb %}
                             <img src="{{ thumb.url }}" class="card-img-top round">
                             {% endthumbnail %}
                             <div class="card-title position-absolute">
@@ -52,7 +52,7 @@
                 <div class="col-12 col-md-4">
                     <a href="{% url 'show_to_eat' slug=i.2 %}">
                         <div class="card mt-5">
-                            {% thumbnail i.1 "300" as thumb %}
+                            {% thumbnail i.1 "300" format="WEBP" as thumb %}
                             <img src="{{ thumb.url }}" class="card-img-top round">
                             {% endthumbnail %}
                             <div class="card-title position-absolute">
@@ -84,7 +84,7 @@
                     <div class="col-12 col-md-4">
                         <a href="{% url 'show_to_rest' slug=i.2 %}">
                             <div class="card mt-5">
-                                {% thumbnail i.1 "300" as thumb %}
+                                {% thumbnail i.1 "300" format="WEBP" as thumb %}
                                 <img src="{{ thumb.url }}" class="card-img-top round">
                                 {% endthumbnail %}
                                 <div class="card-title position-absolute">
@@ -116,7 +116,7 @@
                     <div class="col-12 col-md-4">
                         <a href="{% url 'show_to_do' slug=i.2 %}">
                             <div class="card mt-5">
-                                {% thumbnail i.1 "300" as thumb %}
+                                {% thumbnail i.1 "300" format="WEBP" as thumb %}
                                 <img src="{{ thumb.url }}" class="card-img-top round">
                                 {% endthumbnail %}
                                 <div class="card-title position-absolute">
@@ -149,7 +149,7 @@
                     <div class="col-12 col-md-4">
                         <a href="{% url 'show_sights' slug=i.2 %}">
                             <div class="card mt-5">
-                                {% thumbnail i.1 "300" as thumb %}
+                                {% thumbnail i.1 "300" format="WEBP" as thumb %}
                                 <img src="{{ thumb.url }}" class="card-img-top round">
                                 {% endthumbnail %}
                                 <div class="card-title position-absolute">
@@ -172,9 +172,9 @@
 
                     {% for i in cafe2 %}
                     <div class="col-12 col-md-4">
-                        <a href="{% url 'show_sights' slug=i.2 %}">
+                        <a href="{% url 'show_to_eat' slug=i.2 %}">
                             <div class="card mt-5">
-                                {% thumbnail i.1 "300" as thumb %}
+                                {% thumbnail i.1 "300" format="WEBP" as thumb %}
                                 <img src="{{ thumb.url }}" class="card-img-top round">
                                 {% endthumbnail %}
                                 <div class="card-title position-absolute">
@@ -197,9 +197,9 @@
 
                     {% for i in rest2 %}
                     <div class="col-12 col-md-4">
-                        <a href="{% url 'show_sights' slug=i.2 %}">
+                        <a href="{% url 'show_to_rest' slug=i.2 %}">
                             <div class="card mt-5">
-                                {% thumbnail i.1 "300" as thumb %}
+                                {% thumbnail i.1 "300" format="WEBP" as thumb %}
                                 <img src="{{ thumb.url }}" class="card-img-top round">
                                 {% endthumbnail %}
                                 <div class="card-title position-absolute">
@@ -222,9 +222,9 @@
 
                     {% for i in do2 %}
                     <div class="col-12 col-md-4">
-                        <a href="{% url 'show_sights' slug=i.2 %}">
+                        <a href="{% url 'show_to_do' slug=i.2 %}">
                             <div class="card mt-5">
-                                {% thumbnail i.1 "300" as thumb %}
+                                {% thumbnail i.1 "300" format="WEBP" as thumb %}
                                 <img src="{{ thumb.url }}" class="card-img-top round">
                                 {% endthumbnail %}
                                 <div class="card-title position-absolute">

@@ -89,7 +89,7 @@ def show_sights(request, slug):
         moreSights = get_object_or_404(Sight, title=i)
         temp.append([])
         temp[n].append(moreSights.title)
-        temp[n].append(moreSights.image_preview.url)
+        temp[n].append(moreSights.image_preview)
         temp[n].append(moreSights.slug)
         temp[n].append(moreSights.category)
         temp[n].append(moreSights.adress)

@@ -1,6 +1,6 @@
 {% extends 'main/layout.html' %}
 {% load static %}
-
+{% load thumbnail %}
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
@@ -18,12 +18,16 @@
 					</p>
 				</div>
 				<div class="col-12 col-md-6">
-					<img src="{% static 'main/img/aboutimg1.png' %}" alt="" srcset="" class="about-img">
+					{% thumbnail 'about/aboutimg1.png' '600' format='WEBP' as thumb %}
+					<img src="{{ thumb.url }}" alt="" srcset="" class="about-img">
+					{% endthumbnail %}
 				</div>
 			</div>
 			<div class="row my-5 about-text-block align-items-center">
 				<div class="col-12 col-md-6">
-					<img src="{% static 'main/img/aboutimg2.png' %}" alt="" srcset="" class="about-img about-img-no-margin-top">
+					{% thumbnail 'about/aboutimg2.png' '600' format='WEBP' as thumb %}
+					<img src="{{ thumb.url }}" alt="" srcset="" class="about-img about-img-no-margin-top">
+					{% endthumbnail %}
 				</div>
 				<div class="col-12 col-md-6">
 					<p class="text fw-bold">
@@ -41,7 +45,9 @@
 					</p>
 				</div>
 				<div class="col-12 col-md-6">
-					<img src="{% static 'main/img/aboutimg3.png' %}" alt="" srcset="" class="about-img">
+					{% thumbnail 'about/aboutimg3.png' '600' format='WEBP' as thumb %}
+					<img src="{{ thumb.url }}" alt="" srcset="" class="about-img">
+					{% endthumbnail %}
 				</div>
 			</div>
 			<div class="row my-5 about-text-block align-items-center">
@@ -55,34 +61,17 @@
 					</p>
 				</div>
 				<div class="col-12 col-md-6 d-flex flex-column align-items-center">
-					<img src="{% static 'main/img/FKhD.png' %}" alt="" srcset="" class="about-img" width="300px">
-					<img src="{% static 'main/img/logo_razvitie.png' %}" alt="" srcset="" class="about-img" width="300px">
-					<img src="{% static 'main/img/logo_shkola.png' %}" alt="" srcset="" class="about-img" width="300px">
+					{% thumbnail 'about/FKhD.png' '300' format='WEBP' as thumb %}
+					<img src="{{ thumb.url }}" alt="" srcset="" class="about-img" width="300px">
+					{% endthumbnail %}
+					{% thumbnail 'about/logo_razvitie.png' '300' format='WEBP' as thumb %}
+					<img src="{{ thumb.url }}" alt="" srcset="" class="about-img" width="300px">
+					{% endthumbnail %}
+					{% thumbnail 'about/logo_shkola.png' '300' format='WEBP' as thumb %}
+					<img src="{{ thumb.url }}" alt="" srcset="" class="about-img" width="300px">
+					{% endthumbnail %}
 				</div>
 			</div>
-			<!-- <div class="row justify-content-center"> -->
-				<!-- <div class="col-12 col-xl-4">
-					<h3 class="text-center mt-5">цель</h3>
-					<p class="text-center text mt-3 about-text-block d-flex align-items-center">
-						Развитие туризма в Тобольске и приобщение местных жителей к его истории и культуре.
-					</p>	
-				</div>
-				<div class="col-12 col-xl-4">
-					<h3 class="text-center mt-5">работа</h3>
-					<p class="text-center text mt-3 about-text-block d-flex align-items-center">
-						Помочь туристам и жителям города узнать новую информацию о его исторически и культурно значимых местах, показать туристам и жителям города, где и как можно провести свой досуг.
-					</p>	
-				</div> -->
-				<!-- <div class="col-12">
-					<h3 class="text-center mt-5">анонс</h3>
-					<p class="text-center text mt-3">Возможно появление новых разделов, как "афиша" — анонс мероприятий в городе и "новости" — главные события города.</p>
-					<p class="text-center text mt-3 about-text-block d-flex align-items-center">
-						В разделе "афиша" пользователи смогут анонсировать свои мероприятия.<br><br>
-						Появится возможность ставить оценку всем местам из раздела "Куда сходить" и дополнять оценку комментарием.<br><br>
-						Обновление API<br><br>
-					</p>
-				</div> -->
-			<!-- </div> -->
 		</div>
 	</div>
 </section>

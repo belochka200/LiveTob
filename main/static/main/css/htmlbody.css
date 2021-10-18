@@ -50,12 +50,12 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 }
 
 *::-moz-selection {
-  background-color: #8453ff;
+  background-color: #FCCA00;
   color: #ECEEF2;
 }
 
 *::selection {
-  background-color: #8453ff;
+  background-color: #FCCA00;
   color: #ECEEF2;
 }
 /*# sourceMappingURL=htmlbody.css.map */

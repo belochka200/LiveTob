@@ -37,7 +37,7 @@
                 {% endif %}
                     <a href="{% url 'show_sights' slug=i.slug %}">
                         <div class="card mt-5">
-                            {% thumbnail i.image_preview "300" as thumb %}
+                            {% thumbnail i.image_preview "300" format='WEBP' as thumb %}
                             <img src="{{ thumb.url }}" class="card-img-top round">
                             {% endthumbnail %}
                             <div class="card-title position-absolute">
