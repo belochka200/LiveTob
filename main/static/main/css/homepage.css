@@ -87,6 +87,7 @@
 .list-home-page .list-item-home-page {
   color: #161616;
   margin-bottom: 1rem;
+  padding: 0 .5rem .5rem 0;
 }
 
 .list-home-page .list-item-home-page.dark-theme {

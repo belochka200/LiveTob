@@ -53,6 +53,10 @@
   cursor: pointer;
 }
 
+.btn-cus-1.btn-show-history a.dark-theme {
+  color: #ECEEF2;
+}
+
 .btn__in-sights-wrap {
   margin: 1rem 0;
 }

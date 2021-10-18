@@ -99,7 +99,7 @@ h1 {
         }
     }
     @media only screen and (max-width: 990px) {
-        font-size: 1.4rem;
+        font-size: 1rem;
         &.page-title {
             margin: 0;
             position: fixed;
@@ -392,6 +392,9 @@ h3 {
     border-radius: $border-radius-card;
     padding: 1rem;
     margin: 0 2px;
+    &.dark-theme {
+        background-color: $secondary-dark-theme-color;
+    }
 }
 
 .text-in-card {

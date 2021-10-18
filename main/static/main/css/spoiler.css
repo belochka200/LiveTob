@@ -31,6 +31,10 @@
   font-weight: 700;
 }
 
+.spoiler-wrap .spoiler-head h6.dark-theme {
+  color: #ECEEF2;
+}
+
 .spoiler-wrap .spoiler-head:hover {
   cursor: pointer;
 }

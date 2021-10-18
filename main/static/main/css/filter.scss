@@ -113,7 +113,6 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
             z-index: 9;
             bottom: $nav-height;
             right: 0;
-            // color: $primory-purple;
             color: $primory-dark-theme-color;
             width: 64px;
             height: 64px;
@@ -130,8 +129,9 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
                 transform: scale(0);
             }
             &.dark-theme {
-                background-color: $primory-orange;
-                color: $primory-dark-theme-color;
+                background-color: $secondary-dark-theme-color;
+                color: $milk-white;
+                box-shadow: 0 2px 4px $primory-orange;
             }
         }
     }

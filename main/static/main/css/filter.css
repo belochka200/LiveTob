@@ -180,8 +180,10 @@
             transform: scale(0);
   }
   .filter__block .filter__btn.dark-theme {
-    background-color: #FCCA00;
-    color: #161616;
+    background-color: #232323;
+    color: #ECEEF2;
+    -webkit-box-shadow: 0 2px 4px #FCCA00;
+            box-shadow: 0 2px 4px #FCCA00;
   }
 }
 /*# sourceMappingURL=filter.css.map */

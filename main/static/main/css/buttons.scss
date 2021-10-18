@@ -17,7 +17,6 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
 
 .btn-cus-1 {
     background-color: $milk-white;
-    // box-shadow: 0 2px $box-shadow $primory-purple; // цвет тени не менять
     box-shadow: $box-shadow-card;
     padding: 1rem;
     margin: 8px;
@@ -54,6 +53,13 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
         }
         &:hover {
             cursor: pointer;
+        }
+    }
+    &.btn-show-history {
+        a {
+            &.dark-theme {
+                color: $milk-white;
+            }
         }
     }
 }

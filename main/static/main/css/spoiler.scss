@@ -32,6 +32,9 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
             color: $primory-dark-theme-color;
             font-family: 'Open Sans', sans-serif;
             font-weight: 700;
+            &.dark-theme {
+                color: $milk-white;
+            }
         }
         &:hover {
             cursor: pointer;
