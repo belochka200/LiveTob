@@ -1,8 +1,7 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import render
 from events.models import *
 from sights.models import *
 
-# from django.contrib.auth.forms import UserCreationForm
 from .forms import JoinForm
 from .models import *
 
@@ -49,7 +48,6 @@ def join(request):
         user_form = JoinForm(request.POST)
         if user_form.is_valid():
             new_user = user_form.save()
-            # new_user.set_password(user_form.)о
         
             new_user.save()
     data = {
@@ -69,6 +67,7 @@ def search(request):
     Костыль. Исправить, перенести БД на MySQL, переписать весь поиск
     '''
     query = request.GET.get('q')
+    query_split = query[:-2]
     data = {
         'title': 'Результаты поиска',
         'query': query,
@@ -107,7 +106,7 @@ def search(request):
             data['sights'].append([i.title, i.image_preview, i.slug, i.adress, i.category])
         if str(query).lower() in str(i.full_text).lower():
             data['sights2'].append([i.title, i.image_preview, i.slug, i.adress, i.category])
-    
+
     for i in rest:
         if str(query).lower() in str(i.title).lower():
             data['rest'].append([i.title, i.image_preview, i.slug, i.address, i.category])
@@ -119,23 +118,11 @@ def search(request):
             data['cafe'].append([i.title, i.image_preview, i.slug, i.address, i.category])
         if str(query).lower() in str(i.description).lower():
             data['cafe2'].append([i.title, i.image_preview, i.slug, i.address, i.category])
-    
+
     for i in do:
         if str(query).lower() in str(i.title).lower():
             data['do'].append([i.title, i.image_preview, i.slug, i.address, i.category])
         if str(query).lower() in str(i.description).lower():
             data['do2'].append([i.title, i.image_preview, i.slug, i.address, i.category])
 
-    return render(request, 'main/search_result.html', context=data)    
-    # if len(str(query)) < 5:
-    #     data['ans'] = 'Ваш запрос должен состоять не менее чем из 5 символов'
-    #     return render(request, 'main/search_result.html', context=data)
-
-    # sights = Sight.objects.filter(title__iexact=query)
-    # data['sights1'] = sights
-    # sights = Sight.objects.filter(title__contains=query)
-    # data['sights'] = sights
-    # sights = Sight.objects.filter(title__iexact=query)
-    # data['sights2'] = sights
-    # print(sights)
-    # return render(request, 'main/search_result.html', context=data)
+    return render(request, 'main/search_result.html', context=data)

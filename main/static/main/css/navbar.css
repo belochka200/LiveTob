@@ -131,6 +131,7 @@ nav .nav__body .nav__list .search .search-input {
 
 nav .nav__body .nav__list .search .search-input.dark-theme {
   background-color: #161616;
+  color: #ECEEF2;
 }
 
 nav .nav__body .nav__list .search .search-input:focus-visible {

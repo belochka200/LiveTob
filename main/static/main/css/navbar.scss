@@ -102,6 +102,7 @@ nav {
                     width: 150px;
                     &.dark-theme {
                         background-color: $primory-dark-theme-color;
+                        color: $milk-white;
                     }
                     &:focus-visible {
                         outline: none;

@@ -424,13 +424,21 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 }
 
 *::-moz-selection {
-  background-color: #FCCA00;
+  background-color: #8453ff;
   color: #ECEEF2;
 }
 
 *::selection {
-  background-color: #FCCA00;
+  background-color: #8453ff;
   color: #ECEEF2;
+}
+
+*::-moz-selection.dark-theme {
+  background-color: #FCCA00;
+}
+
+*::selection.dark-theme {
+  background-color: #FCCA00;
 }
 
 nav {
@@ -566,6 +574,7 @@ nav .nav__body .nav__list .search .search-input {
 
 nav .nav__body .nav__list .search .search-input.dark-theme {
   background-color: #161616;
+  color: #ECEEF2;
 }
 
 nav .nav__body .nav__list .search .search-input:focus-visible {
