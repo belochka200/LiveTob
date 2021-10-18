@@ -1801,4 +1801,10 @@ h3.h-bold {
 .wrap-search.dark-theme {
   border-bottom: 2px solid #FCCA00;
 }
+
+@media only screen and (max-width: 990px) {
+  .wrap-search h4 {
+    font-size: 1rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */

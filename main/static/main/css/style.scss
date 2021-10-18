@@ -404,9 +404,7 @@ h3 {
 }
 
 .rec-posts {
-    // border: 2px solid $primory-purple;
     border-top: 2px solid $primory-purple;
-    // border-radius: $border-radius;
     padding: 1rem;
     &.dark-theme {
         border-top: 2px solid $primory-orange;
@@ -414,9 +412,13 @@ h3 {
 }
 
 .wrap-search {
-    // border-radius: $border-radius-card;
     border-bottom: 2px solid $primory-purple;
     &.dark-theme {
         border-bottom: 2px solid $primory-orange;
+    }
+    @media only screen and (max-width: 990px) {
+        h4 {
+            font-size: 1rem;
+        }
     }
 }
