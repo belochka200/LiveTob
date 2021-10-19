@@ -674,7 +674,7 @@ def show_to_eat(request, slug):
     data = {
         'title': cafe.title,
         'description': cafe.description,
-        'title_image': cafe.image_preview,
+        'title_image': str(get_thumbnail(cafe.image_preview, '300', format='WEBP')),
         'img': cafe_img,
         'address': cafe.address,
         'number': cafe.number,
@@ -738,7 +738,7 @@ def show_to_rest(request, slug):
     data = {
         'title': rest.title,
         'description': rest.description,
-        'title_image': str(get_thumbnail(rest['image_preview'], '300', format='WEBP')),
+        'title_image': str(get_thumbnail(rest.image_preview, '300', format='WEBP')),
         'img': rest_img,
         'address': rest.address,
         'number': rest.number,
@@ -802,7 +802,7 @@ def show_to_do(request, slug):
     data = {
         'title': do.title,
         'description': do.description,
-        'title_image': do.image_preview,
+        'title_image': str(get_thumbnail(do.image_preview, '300', format='WEBP')),
         'img': do_img,
         'address': do.address,
         'number': do.number,

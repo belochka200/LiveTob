@@ -11,13 +11,12 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    top: 54px;
+    top: 50px;
     left: 0;
     right: 0;
     z-index: 5;
-    padding: .5rem;
+    padding: 1rem;
     border-radius: 4px;
-    margin: 1rem;
     background-color: #ECEEF2;
     color: #161616;
     -webkit-box-shadow: 0px 4px 8px rgba(22, 22, 22, 0.25);
@@ -26,8 +25,8 @@
     font-family: 'Open Sans', sans-serif;
   }
   .chosen_category.dark-theme {
-    background-color: #FCCA00;
-    color: #161616;
+    background-color: #232323;
+    color: #ECEEF2;
   }
 }
 
@@ -37,6 +36,6 @@
 }
 
 .chosen_category .btn__close-category.dark-theme {
-  color: #161616;
+  color: #ECEEF2;
 }
 /*# sourceMappingURL=category.css.map */

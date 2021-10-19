@@ -20,28 +20,28 @@ $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25%
         position: fixed;
         display: flex;
         justify-content: space-between;
-        top: 54px;
+        top: 50px;
         left: 0;
         right: 0;
         z-index: 5;
-        padding: .5rem;
+        padding: 1rem;
         border-radius: $border-radius-card;
-        margin: 1rem;
+        // margin: 1rem;
         background-color: $milk-white;
         color: $primory-dark-theme-color;
         box-shadow: $box-shadow-card;
         font-size: 1.2rem;
         font-family: 'Open Sans', sans-serif;
         &.dark-theme {
-            background-color: $primory-orange;
-            color: $primory-dark-theme-color;
+            background-color: $secondary-dark-theme-color;
+            color: $milk-white;
         }
     }
     .btn__close-category {
         color: $primory-dark-theme-color;
         padding-left: 8px;
         &.dark-theme {
-            color: $primory-dark-theme-color;
+            color: $milk-white;
         }
     }
 }

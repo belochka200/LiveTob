@@ -130,6 +130,9 @@
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+  .filter__block .filter__menu.dark-theme {
+    border: 2px solid #FCCA00;
+  }
 }
 
 @media only screen and (max-width: 990px) {
