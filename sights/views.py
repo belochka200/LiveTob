@@ -107,9 +107,11 @@ def load_sights(request):
     last_sight_id = request.GET.get('lastSightId')
     category = request.GET.get('category')
     if category:
-        more_sights = Sight.objects.filter(pk__gt=int(last_sight_id), category=category).values('id', 'title', 'slug', 'image_preview', 'adress', 'category')[:9]
+        more_sights = Sight.objects.filter(pk__gt=int(last_sight_id), category=category).values(
+            'id', 'title', 'slug', 'image_preview', 'adress', 'category')[:9]
     else:
-        more_sights = Sight.objects.filter(pk__gt=int(last_sight_id)).values('id', 'title', 'slug', 'image_preview', 'adress', 'category')[:9]
+        more_sights = Sight.objects.filter(pk__gt=int(last_sight_id)).values(
+            'id', 'title', 'slug', 'image_preview', 'adress', 'category')[:9]
     if not more_sights:
         return JsonResponse({'data': False})
     data = []
@@ -125,7 +127,12 @@ def load_sights(request):
         }
         data.append(obj)
     data[-1]['last_sight'] = True
+
+    test()
     return JsonResponse({'data': data})
+
+def test():
+    return "qq"
 
 def sights_api(request):
     return render(request, 'sights/sights_api.html')

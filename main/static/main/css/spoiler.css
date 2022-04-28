@@ -2,13 +2,13 @@
   border-radius: 16px;
   margin: 1.5rem .5rem;
   background: #ECEEF2;
-  -webkit-box-shadow: 0px 4px 8px rgba(22, 22, 22, 0.25);
-          box-shadow: 0px 4px 8px rgba(22, 22, 22, 0.25);
+  -webkit-box-shadow: 6px 6px 16px rgba(22, 22, 22, 0.25), -6px -6px 16px white;
+          box-shadow: 6px 6px 16px rgba(22, 22, 22, 0.25), -6px -6px 16px white;
 }
 
 .spoiler-wrap.dark-theme {
-  -webkit-box-shadow: 0 2px 4px #FCCA00;
-          box-shadow: 0 2px 4px #FCCA00;
+  -webkit-box-shadow: 0 2px 4px #ff8f00;
+          box-shadow: 0 2px 4px #ff8f00;
   background-color: #232323;
 }
 
@@ -73,7 +73,7 @@
     background: transparent;
   }
   .spoiler-mob .popular-people-card-block.dark-theme, .spoiler-mob .facts-card-block.dark-theme {
-    border-bottom: 1px solid #FCCA00;
+    border-bottom: 1px solid #ff8f00;
     border: none;
     background: transparent;
   }

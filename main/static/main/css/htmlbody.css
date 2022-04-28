@@ -40,7 +40,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   border-radius: 16px;
-  background-color: #8453ff;
+  background-color: #ff8f00;
 }
 
 @media screen and (max-width: 990px) {
@@ -50,12 +50,12 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 }
 
 *::-moz-selection {
-  background-color: #8453ff;
+  background-color: #ff8f00;
   color: #ECEEF2;
 }
 
 *::selection {
-  background-color: #8453ff;
+  background-color: #ff8f00;
   color: #ECEEF2;
 }
 /*# sourceMappingURL=htmlbody.css.map */

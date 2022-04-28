@@ -1,7 +1,10 @@
 $milk-white: #ECEEF2;
 $white: #fff;
-$primory-purple: #8453ff;
-$primory-orange: #FCCA00;
+// $primory-purple: #8453ff;
+$primory-purple: #ff8f00;
+// $primory-orange: #FCCA00;
+$primory-orange: #ff8f00;
+
 // $primory-orange: #bb82ff;
 $primory-dark-theme-color: #161616;
 $secondary-dark-theme-color: #232323;
@@ -13,12 +16,13 @@ $anim-delay-fast: .25s;
 $border-radius: 16px;
 $border-radius-card: 4px;
 $box-shadow-card: 0px 4px 8px rgba(22, 22, 22, .25); // #161616 opacity 25% 
+$box-shadow-neo: 6px 6px 16px rgba(22, 22, 22, .25), -6px -6px 16px rgb(255, 255, 255);
 
 .spoiler-wrap {
     border-radius: $border-radius;
     margin: 1.5rem .5rem;
     background: $milk-white;
-    box-shadow: $box-shadow-card;
+    box-shadow: $box-shadow-neo;
     &.dark-theme {
         box-shadow: 0 2px $box-shadow $primory-orange; // цвет тени не менять
         background-color: $secondary-dark-theme-color;

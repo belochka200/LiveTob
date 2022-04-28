@@ -7,6 +7,28 @@ from .models import (Cafe, CafeCategory, CafeImage, Entertainment,
 
 from sorl.thumbnail import get_thumbnail
 
+
+def ReturnCategory(category):
+    if not category:
+        chosen_category = ''
+    else:
+        chosen_category = get_object_or_404(CafeCategory, slug=category)
+    
+    return chosen_category
+
+# def CheckCategory(category):
+
+#     if not category:
+#         chosen_category = ''
+#     else:
+#         chosen_category = get_object_or_404(CafeCategory, slug=category)
+
+
+#     data['cafe_list'] = 
+#     return data['cafe_list']
+
+
+
 def where_to_go(request): # all
     cafe = Cafe.objects.order_by('?')[:3]
     hotel = Hotel.objects.order_by('?')[:3]
@@ -27,8 +49,7 @@ def where_to_eat(request): # еда
         'category_list': category_list,
     }
     if not category:
-        chosen_category = ''
-        data['chosen_category'] = chosen_category
+        data['chosen_category'] = ''
         cafe_list_rec = Cafe.objects.filter(recomended=True)[:9] # берём рекомендованные
         if not cafe_list_rec.count() == 0:
             data['cafe_list_rec'] = cafe_list_rec
@@ -42,7 +63,9 @@ def where_to_eat(request): # еда
             cafe_list = Cafe.objects.filter(recomended=False)[:9]
             data['cafe_list'] = cafe_list
     else:
-        chosen_category = get_object_or_404(CafeCategory, slug=category)
+        # ReturnCategory(category)
+        # print(ReturnCategory(category))
+        chosen_category = ReturnCategory(category)
         data['chosen_category'] = chosen_category
         cafe_list_rec = Cafe.objects.filter(recomended=True, category=chosen_category)[:9]
         if not cafe_list_rec.count() == 0:

@@ -1,5 +1,5 @@
 .brand-block {
-  background-color: #8453ff;
+  background-color: #ff8f00;
   border-radius: 4px;
   padding: 5rem;
   margin: 5rem 0;
@@ -25,7 +25,7 @@
 }
 
 .brand-block h1.dark-theme {
-  border-bottom: 2px solid #FCCA00;
+  border-bottom: 2px solid #ff8f00;
 }
 
 @media screen and (max-width: 990px) {
@@ -82,11 +82,11 @@
 }
 
 .brand-block .brand-colors .color-2 {
-  background-color: #8453ff;
+  background-color: #ff8f00;
 }
 
 .brand-block .brand-colors .color-3 {
-  background-color: #FCCA00;
+  background-color: #ff8f00;
 }
 
 .brand-block .brand-colors .color-4 {

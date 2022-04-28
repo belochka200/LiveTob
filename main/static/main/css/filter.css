@@ -36,34 +36,34 @@
 }
 
 .filter__block .filter__menu .filter__wrap .filter__item:hover {
-  border: 1px solid #8453ff;
+  border: 1px solid #ff8f00;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
 .filter__block .filter__menu .filter__wrap .filter__item:hover.dark-theme {
-  border: 1px solid #FCCA00;
+  border: 1px solid #ff8f00;
 }
 
 .filter__block .filter__menu .filter__wrap .filter__item.active {
-  border: 1px solid #8453ff;
+  border: 1px solid #ff8f00;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
 .filter__block .filter__menu .filter__wrap .filter__item.active.dark-theme {
-  background-color: #FCCA00;
+  background-color: #ff8f00;
   color: #161616;
   -webkit-box-shadow: none;
           box-shadow: none;
-  border: 1px solid #FCCA00;
+  border: 1px solid #ff8f00;
 }
 
 .filter__block .filter__menu .filter__wrap .filter__item.dark-theme {
   background-color: #161616;
   color: #ECEEF2;
-  -webkit-box-shadow: 0 2px 4px #FCCA00;
-          box-shadow: 0 2px 4px #FCCA00;
+  -webkit-box-shadow: 0 2px 4px #ff8f00;
+          box-shadow: 0 2px 4px #ff8f00;
 }
 
 @media only screen and (max-width: 990px) {
@@ -91,11 +91,11 @@
 @media only screen and (max-width: 990px) {
   .filter__block .filter__menu .filter__btn-in-menu {
     display: block;
-    color: #8453ff;
+    color: #ff8f00;
     font-size: 2rem;
   }
   .filter__block .filter__menu .filter__btn-in-menu.dark-theme {
-    color: #FCCA00;
+    color: #ff8f00;
   }
 }
 
@@ -124,22 +124,22 @@
     border-radius: 4px;
     width: 90%;
     padding: 1rem .5rem;
-    border: 2px solid #8453ff;
+    border: 2px solid #ff8f00;
   }
   .filter__block .filter__menu.active {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
   .filter__block .filter__menu.dark-theme {
-    border: 2px solid #FCCA00;
+    border: 2px solid #ff8f00;
   }
 }
 
 @media only screen and (max-width: 990px) {
   .filter__block .filter__menu.dark-theme {
     background-color: #161616;
-    -webkit-box-shadow: 0 2px 4px #FCCA00;
-            box-shadow: 0 2px 4px #FCCA00;
+    -webkit-box-shadow: 0 2px 4px #ff8f00;
+            box-shadow: 0 2px 4px #ff8f00;
   }
 }
 
@@ -185,8 +185,8 @@
   .filter__block .filter__btn.dark-theme {
     background-color: #232323;
     color: #ECEEF2;
-    -webkit-box-shadow: 0 2px 4px #FCCA00;
-            box-shadow: 0 2px 4px #FCCA00;
+    -webkit-box-shadow: 0 2px 4px #ff8f00;
+            box-shadow: 0 2px 4px #ff8f00;
   }
 }
 /*# sourceMappingURL=filter.css.map */

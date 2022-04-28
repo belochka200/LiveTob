@@ -32,7 +32,7 @@ nav:before {
   nav:before {
     -webkit-box-shadow: 0 2px 4px #161616;
             box-shadow: 0 2px 4px #161616;
-    background-color: #8453ff;
+    background-color: #ff8f00;
   }
 }
 
@@ -75,7 +75,7 @@ nav .nav__body .nav__list .nav__link {
 }
 
 nav .nav__body .nav__list .nav__link:hover {
-  border-bottom: 2px solid #8453ff;
+  border-bottom: 2px solid #ff8f00;
 }
 
 nav .nav__body .nav__list .nav__link.dark-theme {
@@ -137,7 +137,7 @@ nav .nav__body .nav__list .search .search-input.dark-theme {
 nav .nav__body .nav__list .search .search-input:focus-visible {
   outline: none;
   background-color: #fff;
-  border: 2px solid #8453ff;
+  border: 2px solid #ff8f00;
 }
 
 nav .nav__body .nav__list .search .search-input:focus-visible.dark-theme {
@@ -156,7 +156,7 @@ nav .nav__body .nav__list .search .search-btn, nav .nav__body .nav__list .search
   border: none;
   background: #ECEEF2;
   text-align: center;
-  color: #8453ff;
+  color: #ff8f00;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
 }
@@ -289,7 +289,7 @@ nav .nav__body .nav__burger {
     top: 100%;
     width: 100%;
     height: calc(100% + 55px);
-    background-color: #8453ff;
+    background-color: #ff8f00;
     -webkit-transition: all 0.8s ease;
     transition: all 0.8s ease;
   }

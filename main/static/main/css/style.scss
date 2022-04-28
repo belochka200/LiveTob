@@ -12,8 +12,11 @@
 
 $milk-white: #ECEEF2;
 $white: #fff;
-$primory-purple: #8453ff;
-$primory-orange: #FCCA00;
+// $primory-purple: #8453ff;
+$primory-purple: #ff8f00;
+// $primory-orange: #FCCA00;
+$primory-orange: #ff8f00;
+
 // $primory-orange: #bb82ff;
 $primory-dark-theme-color: #161616;
 $secondary-dark-theme-color: #232323;
@@ -156,7 +159,7 @@ h3 {
         }
         .rec-card {
             background-color: $primory-purple;
-            color: $milk-white;
+            color: black;
             padding: 4px 8px;
             border-radius: $border-radius;
             font-family: 'Open Sans', sans-serif;

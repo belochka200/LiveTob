@@ -1,5 +1,5 @@
 footer {
-  background-color: #8453ff;
+  background-color: #804800;
   padding: 4rem 1rem 1rem 1rem;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -39,7 +39,7 @@ footer.dark-theme {
 }
 
 footer .email {
-  color: #FCCA00;
+  color: #ff8f00;
 }
 
 footer .footer__text {
@@ -63,7 +63,7 @@ footer .footer-link {
 }
 
 footer .footer-link:hover {
-  border-bottom: 2px solid #FCCA00;
+  border-bottom: 2px solid #ff8f00;
 }
 
 footer .social-networks-footer {
